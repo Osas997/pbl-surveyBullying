@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware("sudahlogin")->group(function () {
-    Route::get("/login", [AuthController::class, "login"])->name("login");
-    Route::post("/login", [AuthController::class, "authenticate"]);
+Route::middleware("sudahLogin")->group(function () {
+    Route::get("/login", [AuthContoller::class, "login"])->name("login");
+    Route::post("/login", [AuthContoller::class, "authenticate"]);
 });
