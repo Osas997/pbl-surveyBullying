@@ -5,7 +5,7 @@
    <div class=" w-full sm:cointainer">
       <div class="flex justify-center items-center">
          <div
-            class="bg-white w-screen h-screen px-16 flex flex-col items-center justify-center sm:my-6 sm:max-w-[550px] sm:rounded-[40px] sm:h-full">
+            class="sm:bg-white bg-gray-100 w-screen h-screen px-16 flex flex-col items-center justify-center sm:my-6 sm:max-w-[550px] sm:rounded-[40px] sm:h-full">
             <div class="flex justify-center items-center mt-12 mb-8 ">
                <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" srcset="" class="w-16 h-16">
             </div>
@@ -41,7 +41,7 @@
                @csrf
                <div class="form-group min-w-[280px] sm:min-w-[330px]">
                   <p class="font-semibold text-black">Username</p>
-                  <input autocomplete="off" type="text" placeholder="Masukan Username" name="username" class="input input-bordered bg-transparent
+                  <input autocomplete="off" type="text" placeholder="Masukan Username" name="username" class="input input-bordered bg-transparent rounded-md
                             @error('username')
                             border-red-600 @else border-[#0090D4]
                             @enderror 
@@ -56,7 +56,7 @@
                <div class="form-group mt-4 min-w-[280px] sm:min-w-[330px]
                         ">
                   <p class="font-semibold text-black">Password</p>
-                  <input type="password" placeholder="*********" name="password" class="input input-bordered bg-transparent w-full max-w-xs border-2 focus:border-[#0090D4] focus:outline-none text-black   
+                  <input type="password" placeholder="*********" name="password" class="input input-bordered bg-transparent w-full max-w-xs border-2 focus:border-[#0090D4] focus:outline-none text-black   rounded-md
                         @error('username')
                         border-red-600 @else border-[#0090D4]
                         @enderror " />
