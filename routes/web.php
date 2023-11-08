@@ -31,4 +31,10 @@ Route::middleware("sudahLogin")->group(function () {
 Route::middleware('sekolah')->group(function () {
     Route::get("/logout", [AuthContoller::class, "logout"])->name("logout");
     Route::get("/sekolah/masuk", [SekolahController::class, "index"])->name("viewSekolah");
+    Route::get("/guru/masuk", [AuthContoller::class, "viewLoginGuru"])->name("viewLoginGuru");
+    Route::post("/guru/masuk", [AuthContoller::class, "loginGuru"])->name("loginGuru");
+
+    Route::middleware("guru")->group(function () {
+        Route::get("/guru/dashboard",)->name("guru.dashboard");
+    });
 });

@@ -13,9 +13,14 @@ class AuthContoller extends Controller
         return view("auth.login");
     }
 
-    public function ViewRegister()
+    public function viewRegister()
     {
         return view("auth.register");
+    }
+
+    public function viewLoginGuru()
+    {
+        return view("auth.loginGuru");
     }
 
     public function register(Request $request)
@@ -46,6 +51,20 @@ class AuthContoller extends Controller
         }
 
         return back()->with("loginError", "Username Atau Password Salah");
+    }
+
+    public function loginGuru(Request $request)
+    {
+        $request->validate([
+            'pin_guru' => 'required',
+        ]);
+
+        if (Sekolah::where("pin_guru", $request->pin_guru)->where('npsn', auth("sekolah")->user()->npsn)->exists()) {
+            $request->session()->put('guru', true);
+            return redirect()->intended("/guru/dashboard");
+        }
+
+        return back()->with("loginError", "PIN Salah");
     }
 
     public function logout(Request $request)

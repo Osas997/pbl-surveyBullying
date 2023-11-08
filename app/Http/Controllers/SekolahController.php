@@ -8,6 +8,6 @@ class SekolahController extends Controller
 {
     public function index()
     {
-        return "hellow";
+        return view('sekolah.index');
     }
 }
