@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('pertanyaan', function (Blueprint $table) {
             $table->id();
             $table->string('pertanyaan', 255);
-            $table->string('tipe', 100);
+            $table->string('tipe_pertanyaan', 50);
+            $table->string('tipe_perilaku', 50);
             $table->timestamps();
         });
     }
