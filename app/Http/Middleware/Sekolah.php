@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class SudahLogin
+class Sekolah
 {
     /**
      * Handle an incoming request.
@@ -16,11 +16,10 @@ class SudahLogin
      */
     public function handle(Request $request, Closure $next): Response
     {
-
-        if (auth("sekolah")->check()) {
-            return redirect("/sekolah/masuk");
+        if (Auth::guard("sekolah")->check()) {
+            return $next($request);
+        } else {
+            return redirect("/login");
         }
-
-        return $next($request);
     }
 }

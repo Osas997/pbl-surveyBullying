@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthContoller;
+use App\Http\Controllers\SekolahController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    // $responden = S::count();
+    // return view('index', compact('responden'));
+    return "hello";
+})->name('index');
+
 Route::middleware("sudahLogin")->group(function () {
-    Route::get("/login", [AuthContoller::class, "login"])->name("login");
-    Route::post("/login", [AuthContoller::class, "authenticate"]);
+    Route::get("/login", [AuthContoller::class, "login"])->name("viewLogin");
+    Route::get("/register", [AuthContoller::class, "viewRegister"])->name("viewRegister");
+    Route::post("/login", [AuthContoller::class, "authenticate"])->name('login');
+    Route::post("/register", [AuthContoller::class, "register"])->name("register");
+});
+
+Route::middleware('sekolah')->group(function () {
+    Route::get("/logout", [AuthContoller::class, "logout"])->name("logout");
+    Route::get("/sekolah/masuk", [SekolahController::class, "index"])->name("viewSekolah");
 });

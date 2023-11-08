@@ -41,25 +41,11 @@ return [
             'provider' => 'users',
         ],
 
-        "admin" => [
-            'driver' => 'session',
-            'provider' => 'admin',
-        ],
-
         "sekolah" => [
             'driver' => 'session',
             'provider' => 'sekolah',
         ],
 
-        "guru" => [
-            'driver' => 'session',
-            'provider' => 'guru',
-        ],
-
-        "murid" => [
-            'driver' => 'session',
-            'provider' => 'murid',
-        ],
     ],
 
     /*
@@ -85,40 +71,10 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
-    ], 'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,
-        ],
-
-        'admin' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Admin::class,
-        ],
-
         'sekolah' => [
             'driver' => 'eloquent',
             'model' => App\Models\Sekolah::class,
         ],
-
-        'guru' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Guru::class,
-        ],
-
-        'murid' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Murid::class,
-        ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*

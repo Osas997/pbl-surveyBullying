@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sekolah;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,6 +13,26 @@ class AuthContoller extends Controller
         return view("auth.login");
     }
 
+    public function ViewRegister()
+    {
+        return view("auth.register");
+    }
+
+    public function register(Request $request)
+    {
+        $validate = $request->validate([
+            "npsn" => "required|unique:sekolah",
+            "password" => "required",
+            "nama_sekolah" => "required",
+            "alamat_sekolah" => "required",
+            "status" => "required",
+            "pin_guru" => "required",
+        ]);
+
+        Sekolah::create($validate);
+        return redirect()->route("viewLogin")->with('successAddSekolah', "Sekolah Berhasil Register");
+    }
+
     public function authenticate(Request $request)
     {
         $request->validate([
@@ -19,24 +40,9 @@ class AuthContoller extends Controller
             'password' => 'required',
         ]);
 
-        if (Auth::guard("admin")->attempt(["username" => $request->username, "password" => $request->password])) {
-            $request->session()->regenerate();
-            return redirect()->intended('/admin/dashboard');
-        }
-
         if (Auth::guard("sekolah")->attempt(["npsn" => $request->username, "password" => $request->password])) {
             $request->session()->regenerate();
-            return redirect()->intended('/sekolah/dashboard');
-        }
-
-        if (Auth::guard("guru")->attempt(["nuptk" => $request->username, "password" => $request->password])) {
-            $request->session()->regenerate();
-            return redirect()->intended('/guru/dashboard');
-        }
-
-        if (Auth::guard("murid")->attempt(["nisn" => $request->username, "password" => $request->password])) {
-            $request->session()->regenerate();
-            return redirect()->intended('/murid/dashboard');
+            return redirect()->intended("/sekolah/masuk");
         }
 
         return back()->with("loginError", "Username Atau Password Salah");
