@@ -61,7 +61,7 @@
                      <input type="text" placeholder="Masukan NPSN" name="npsn" class="input input-bordered bg-transparent w-full max-w-xs border-2 focus:border-[#0090D4] focus:outline-none text-black   rounded-md
                            @error('npsn')
                            border-red-600 @else border-[#0090D4]
-                           @enderror " />
+                           @enderror " value="{{ old('npsn') }}" />
                   </div>
                   @error('npsn')
                   <div class="mt-2">
@@ -74,7 +74,7 @@
                      <input type="text" placeholder="Alamat Sekolah" name="alamat_sekolah" class="input input-bordered bg-transparent w-full max-w-xs border-2 focus:border-[#0090D4] focus:outline-none text-black   rounded-md
                          @error('alamat_sekolah')
                          border-red-600 @else border-[#0090D4]
-                         @enderror " />
+                         @enderror " value="{{ old('alamat_sekolah') }}" />
                   </div>
                   @error('alamat_sekolah')
                   <div class="mt-2">
@@ -100,15 +100,13 @@
                   </div>
                   @enderror
 
-            
-
                   {{-- passowrd --}}
                   <div class="form-group mt-4 min-w-[280px] sm:min-w-[330px]">
                      <p class="font-semibold text-black mb-1">Password</p>
                      <input type="password" placeholder="Password" name="password" class="input input-bordered bg-transparent w-full max-w-xs border-2 focus:border-[#0090D4] focus:outline-none text-black   rounded-md
                          @error('password')
                          border-red-600 @else border-[#0090D4]
-                         @enderror " />
+                         @enderror " value="{{ old('password') }}" />
                   </div>
                   @error('password')
                   <div class="mt-2">
@@ -122,7 +120,7 @@
                      <input type="password" placeholder="Pin Guru" name="pin_guru" class="input input-bordered bg-transparent w-full max-w-xs border-2 focus:border-[#0090D4] focus:outline-none text-black   rounded-md
                          @error('pin_guru')
                          border-red-600 @else border-[#0090D4]
-                         @enderror " />
+                         @enderror " value="{{ old('pin_guru') }}" />
                   </div>
                   @error('pin_guru')
                   <div class="mt-2">
