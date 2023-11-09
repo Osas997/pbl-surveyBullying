@@ -100,18 +100,7 @@
                   </div>
                   @enderror
 
-                  <div class="form-group mt-4 min-w-[280px] sm:min-w-[330px]">
-                     <p class="font-semibold text-black mb-1">Status Sekolah</p>
-                     <input type="text" placeholder="Alamat Sekolah" name="alamat_sekolah" class="input input-bordered bg-transparent w-full max-w-xs border-2 focus:border-[#0090D4] focus:outline-none text-black   rounded-md
-                         @error('alamat_sekolah')
-                         border-red-600 @else border-[#0090D4]
-                         @enderror " />
-                  </div>
-                  @error('alamat_sekolah')
-                  <div class="mt-2">
-                     <span class="text-red-500 align-start italic text-sm">{{ $message }}</span>
-                  </div>
-                  @enderror
+            
 
                   {{-- passowrd --}}
                   <div class="form-group mt-4 min-w-[280px] sm:min-w-[330px]">
