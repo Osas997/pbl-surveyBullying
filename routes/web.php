@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthContoller;
+use App\Http\Controllers\GuruController;
 use App\Http\Controllers\SekolahController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,10 +32,11 @@ Route::middleware("sudahLogin")->group(function () {
 Route::middleware('sekolah')->group(function () {
     Route::get("/logout", [AuthContoller::class, "logout"])->name("logout");
     Route::get("/sekolah/masuk", [SekolahController::class, "index"])->name("viewSekolah");
+
     Route::get("/guru/masuk", [AuthContoller::class, "viewLoginGuru"])->name("viewLoginGuru");
     Route::post("/guru/masuk", [AuthContoller::class, "loginGuru"])->name("loginGuru");
 
     Route::middleware("guru")->group(function () {
-        Route::get("/guru/dashboard",)->name("guru.dashboard");
+        Route::get("/guru/dashboard", [GuruController::class, "dashboard"])->name("guru.dashboard");
     });
 });
