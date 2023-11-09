@@ -115,7 +115,7 @@
                   @enderror
 
                   {{-- pin guru --}}
-                  <div class="form-group mt-4 min-w-[280px] sm:min-w-[330px]">
+                  <div class="form-group mt-2 min-w-[280px] sm:min-w-[330px]">
                      <p class="font-semibold text-black mb-1">Pin Guru</p>
                      <input type="password" placeholder="Pin Guru" name="pin_guru" class="input input-bordered bg-transparent w-full max-w-xs border-2 focus:border-[#0090D4] focus:outline-none text-black   rounded-md
                          @error('pin_guru')

@@ -11,8 +11,8 @@
             <p class="text-start font-medium text-sm mb-8 text-gray-800">Masukan Data Diri Siswa Dengan Benar</p>
             <form action="{{ route('murid.signup') }}" method="POST">
                @csrf
-               <div class="form-group min-w-[280px] sm:min-w-[330px] mb-4">
-                  <p class="font-semibold text-black mb-1">Nama Murid</p>
+               <div class="form-group min-w-[280px] sm:min-w-[330px]">
+                  <p class="font-semibold text-black mb-2">Nama Murid</p>
                   <input autocomplete="off" type="text" placeholder="Masukan Nama Murid" name="nama_murid" class="input input-bordered bg-transparent rounded-md
                             @error('nama_murid')
                             border-red-600 @else border-[#0090D4]
@@ -21,12 +21,12 @@
                      value="{{old('nama_murid')}}" />
                </div>
                @error('nama_murid')
-               <div class="mt-2">
+               <div class="">
                   <p class="text-red-500 text-sm italic">{{ $message }}</p>
                </div>
                @enderror
-               <div class="form-group min-w-[280px] sm:min-w-[330px] mb-4">
-                  <p class="font-semibold text-black mb-1">NISN</p>
+               <div class="form-group min-w-[280px] sm:min-w-[330px] ">
+                  <p class="font-semibold text-black mb-2 mt-3">NISN</p>
                   <input autocomplete="off" type="text" placeholder="Masukan NISN" name="nisn" class="input input-bordered bg-transparent rounded-md
                             @error('nisn')
                             border-red-600 @else border-[#0090D4]
@@ -39,8 +39,8 @@
                   <p class="text-red-500 text-sm italic">{{ $message }}</p>
                </div>
                @enderror
-               <div class="form-group min-w-[280px] sm:min-w-[330px] mb-4">
-                  <p class="font-semibold text-black mb-1">Kelas</p>
+               <div class="form-group min-w-[280px] sm:min-w-[330px] ">
+                  <p class="font-semibold text-black mb-2 mt-3">Kelas</p>
                   <input autocomplete="off" type="text" placeholder="Masukan Kelas" name="kelas" class="input input-bordered bg-transparent rounded-md
                             @error('kelas')
                             border-red-600 @else border-[#0090D4]
@@ -54,7 +54,7 @@
                </div>
                @enderror
                <div class="form-group mt-4 min-w-[280px] sm:min-w-[330px]">
-                  <p class="font-semibold text-black mb-1 ">Jenis Kelamin</p>
+                  <p class="font-semibold text-black mb-2 mt-3">Jenis Kelamin</p>
                   <select name="jenis_kelamin" class="bg-transparent w-full max-w-xs border-2 focus:border-[#0090D4] focus:outline-none text-black   rounded-md
                   @error('alamat_sekolah')
                   border-red-600 @else border-[#0090D4]
