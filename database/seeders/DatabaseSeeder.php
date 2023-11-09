@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Pertanyaan;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,5 +20,23 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        Pertanyaan::create([
+            "pertanyaan" => "Saya dipanggil dengan nama panggilan yang jelek, diolok-olok, atau diejek sehingga saya merasa sakit hati?",
+            "tipe_pertanyaan" => "korban",
+            "tipe_perilaku" => "verbal",
+        ]);
+
+        Pertanyaan::create([
+            "pertanyaan" => "Teman teman dengan sengaja mengabaikan saya, tidak mengajak saya bergabung dengan kelompoknya atau menganggap saya tidak ada",
+            "tipe_pertanyaan" => "korban",
+            "tipe_perilaku" => "relational",
+        ]);
+
+        Pertanyaan::create([
+            "pertanyaan" => "Saya dipukul, ditendang, didorong, dipojokkan ke tembok, atau dikunci di dalam ruangan",
+            "tipe_pertanyaan" => "korban",
+            "tipe_perilaku" => "fisik",
+        ]);
     }
 }
