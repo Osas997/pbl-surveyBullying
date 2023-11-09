@@ -44,6 +44,7 @@ Route::middleware('sekolah')->group(function () {
         Route::get("/guru/pertanyaan", [Pertanyaan::class, "index"])->name("guru.pertanyaan");
     });
 
+    Route::get("/murid/dashboard", [MuridController::class, "dashboard"])->name("murid.dashboard");
     Route::get("/murid/signup", [MuridController::class, "index"])->name("murid.viewSignup");
     Route::post("/murid/signup", [MuridController::class, "store"])->name("murid.signup");
 

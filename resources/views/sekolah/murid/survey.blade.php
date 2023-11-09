@@ -2,7 +2,6 @@
 @section('title','Isi Survey')
 @section('content')
 <div class="w-full min-h-screen overflow-x-hidden scroll-smooth ">
-    {{-- @include('sekolah.murid.navbar') --}}
     <div class="w-full md:w-8/12 mx-auto px-10 mt-10">
         <div class="w-full mx-auto bg-white p-8 rounded shadow-md">
             <div class="flex justify-start items-center gap-4">
@@ -23,7 +22,7 @@
                     <span class=" md:text-lg uppercase">Isi Survey</span>
                 </p>
             </div>
-            <form action="" method="POST">
+            <form action="{{ route('survey') }}" method="POST">
                 @csrf
                 @foreach ($dataPertanyaan as $data)
                 <span class="text-md font-bold my-4 block">
@@ -37,7 +36,8 @@
                     </div>
                     @endif
                     <input type="hidden" value="{{ $data->id }}" name="survey[{{ $data->id }}][id_pertanyaan]">
-                    <input type="hidden" value="{{ $data->tipe }}" name="survey[{{ $data->id }}][tipe_pertanyaan]">
+                    <input type="hidden" value="{{ $data->tipe_pertanyaan }}"
+                        name="survey[{{ $data->id }}][tipe_pertanyaan]">
                 </span>
                 <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
                     <label class="cursor-pointer">

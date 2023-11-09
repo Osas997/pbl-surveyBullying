@@ -13,9 +13,14 @@ class MuridController extends Controller
         return view("sekolah.murid.signup");
     }
 
+    public function dashboard()
+    {
+        return "h3h3";
+        // return view("sekolah.murid.dashboard");
+    }
+
     public function store(Request $request)
     {
-        // dd($request->all());
         $validate =  $request->validate([
             "nisn" => "required",
             "nama_murid" => "required",
@@ -24,8 +29,7 @@ class MuridController extends Controller
         ]);
 
         $validate["id_sekolah"] = auth("sekolah")->user()->id;
-        $murid = Murid::create($validate);
-        $request->session()->put('murid', $murid->id);
+        $request->session()->put('murid', $validate);
         return redirect()->intended("/murid/survey");
     }
 }
