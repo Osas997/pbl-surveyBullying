@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthContoller;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\MuridController;
 use App\Http\Controllers\SekolahController;
+use App\Http\Controllers\SurveyController;
 use App\Models\Pertanyaan;
 use Illuminate\Support\Facades\Route;
 
@@ -43,7 +44,8 @@ Route::middleware('sekolah')->group(function () {
         Route::get("/guru/pertanyaan", [Pertanyaan::class, "index"])->name("guru.pertanyaan");
     });
 
-    Route::get("/murid/signup", [MuridController::class, "store"])->name("murid.signup");
+    Route::get("/murid/signup", [MuridController::class, "index"])->name("murid.viewSignup");
+    Route::post("/murid/signup", [MuridController::class, "store"])->name("murid.signup");
 
     Route::middleware("murid_survey")->group(function () {
         Route::get("/murid/survey", [SurveyController::class, "index"])->name("viewSurvey");

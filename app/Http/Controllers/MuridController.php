@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class MuridController extends Controller
 {
+
+    public function index()
+    {
+        return view("sekolah.murid.signup");
+    }
+
     public function store(Request $request)
     {
         $validate = $request->validate([
