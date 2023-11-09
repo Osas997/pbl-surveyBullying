@@ -18,6 +18,7 @@ class MuridSurvey
         if ($request->session()->has('murid')) {
             return $next($request);
         }
-        return redirect()->route('signUpMurid');
+
+        return redirect()->route('murid.viewSignup');
     }
 }
