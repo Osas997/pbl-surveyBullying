@@ -9,8 +9,8 @@
             <div class="flex justify-center items-center mt-12 mb-8 ">
                <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" srcset="" class="w-16 h-16">
             </div>
-            <h2 class="text-center font-semibold text-3xl text-black">Welcome Back</h2>
-            <p class="text-center font-medium text-xs mb-8 text-gray-800">Please enter your details!</p>
+            <h2 class="text-center font-semibold text-3xl text-black">Selamat Datang</h2>
+            <p class="text-center font-medium text-sm mb-8 text-gray-800">Masukan Username dan Passwrod Akun Sekolah dibawah ini</p>
             @if (session()->has('loginError'))
             <div id="alert-2"
                class="flex items-center p-4 mb-4 text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
@@ -40,7 +40,7 @@
             <form action="{{ route('login') }}" method="post">
                @csrf
                <div class="form-group min-w-[280px] sm:min-w-[330px]">
-                  <p class="font-semibold text-black">Username</p>
+                  <p class="font-semibold text-black mb-1">Username</p>
                   <input autocomplete="off" type="text" placeholder="Masukan Username" name="username" class="input input-bordered bg-transparent rounded-md
                             @error('username')
                             border-red-600 @else border-[#0090D4]
@@ -55,7 +55,7 @@
                @enderror
                <div class="form-group mt-4 min-w-[280px] sm:min-w-[330px]
                         ">
-                  <p class="font-semibold text-black">Password</p>
+                  <p class="font-semibold text-black mb-1">Password</p>
                   <input type="password" placeholder="*********" name="password" class="input input-bordered bg-transparent w-full max-w-xs border-2 focus:border-[#0090D4] focus:outline-none text-black   rounded-md
                         @error('username')
                         border-red-600 @else border-[#0090D4]
@@ -66,10 +66,15 @@
                   <span class="text-red-500 align-start italic text-sm">{{ $message }}</span>
                </div>
                @enderror
+               <div class="flex mt-2 text-sm">
+                  <p class="mr-1">Tidak Mempunyai Akun Sekolah?</p>
+                  <a href="{{route('register')}}"><span class="text-blue-500 font-medium">Buat Akun</span></a>
+               </div>
                <button type="submit"
                   class="block bg-blue-500 w-full py-4 mt-8 mb-14 rounded-full text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">Login</button>
 
             </form>
+
          </div>
       </div>
    </div>
