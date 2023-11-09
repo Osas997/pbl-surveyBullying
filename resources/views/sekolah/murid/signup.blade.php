@@ -2,7 +2,7 @@
 @section('title', 'Data Diri')
 @section('content')
 <h1>Hello Wolrd</h1>
-<form action="{{ route('') }}">
+<form action="{{ route('murid.signup') }}">
    @csrf
    <input type="text" name="nama_murid" placeholder="Nama Murid">
    <input type="text" name="nisn" placeholder="NISN">
