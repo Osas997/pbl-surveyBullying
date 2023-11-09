@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthContoller;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\SekolahController;
+use App\Models\Pertanyaan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,5 +39,6 @@ Route::middleware('sekolah')->group(function () {
 
     Route::middleware("guru")->group(function () {
         Route::get("/guru/dashboard", [GuruController::class, "dashboard"])->name("guru.dashboard");
+        Route::get("/guru/pertanyaan", [Pertanyaan::class, "index"])->name("guru.pertanyaan");
     });
 });
