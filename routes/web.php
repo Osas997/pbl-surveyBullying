@@ -47,8 +47,8 @@ Route::middleware('sekolah')->group(function () {
     Route::get("/murid/signup", [MuridController::class, "index"])->name("murid.viewSignup");
     Route::post("/murid/signup", [MuridController::class, "store"])->name("murid.signup");
 
-    Route::get("/murid/survey", [SurveyController::class, "index"])->name("viewSurvey");
     Route::middleware("murid_survey")->group(function () {
+        Route::get("/murid/survey", [SurveyController::class, "index"])->name("viewSurvey");
         Route::post("/murid/survey", [SurveyController::class, "store"])->name("survey");
     });
 });
