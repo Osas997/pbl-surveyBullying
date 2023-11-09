@@ -1,6 +1,7 @@
 @extends('layout.pages')
 @section('title', 'Data Diri')
 @section('content')
+
 <div class="bg-[#0090D4] w-screen h-screen overflow-x-hidden ">
    <div class=" w-full sm:cointainer">
       <div class="flex justify-center items-center">
@@ -77,6 +78,7 @@
    </div>
 </div>
 </div>
+
 {{-- <form action="{{ route('murid.signup') }}">
    @csrf
    <input type="text" name="nama_murid" placeholder="Nama Murid">

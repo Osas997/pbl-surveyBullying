@@ -13,11 +13,11 @@ class SurveyController extends Controller
     public function index()
     {
         $pertanyaan = Pertanyaan::get();
-        return "hello";
-        // return view('dashboard.murid.survey', [
-        //     'title' => 'Survey Test',
-        //     "dataPertanyaan" => $pertanyaan,
-        // ]);
+
+        return view('sekolah.murid.survey', [
+            'title' => 'Survey Test',
+            "dataPertanyaan" => $pertanyaan,
+        ]);
     }
 
 
