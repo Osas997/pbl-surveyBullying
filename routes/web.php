@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     // $responden = S::count();
-    // return view('index', compact('responden'));
+    return view('welcome');
     return "hello";
 })->name('index');
 
