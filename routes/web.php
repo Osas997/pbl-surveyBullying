@@ -26,6 +26,22 @@ Route::get('/', function () {
     return view('welcome', compact('responden'));
 })->name('index');
 
+// ! duumy route hasil 
+Route::get('/hasil-pelaku',function(){
+    return view('sekolah.murid.hasilPelaku');
+})->name('murid.hasilpelaku');
+Route::get('/hasil-korban',function(){
+    return view('sekolah.murid.hasilKorban');
+})->name('murid.hasilkorban');
+
+Route::get('/hasil-pelaku/print',function(){
+    return view('sekolah.murid.printPelaku');
+})->name('murid.hasilpelaku.print');
+
+Route::get('/hasil-korban/print',function(){
+    return view('sekolah.murid.printKorban');
+})->name('murid.hasilkorban.print');
+
 Route::middleware("sudahLogin")->group(function () {
     Route::get("/login", [AuthContoller::class, "login"])->name("viewLogin");
     Route::get("/register", [AuthContoller::class, "viewRegister"])->name("viewRegister");

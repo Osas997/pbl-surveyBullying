@@ -51,7 +51,7 @@
                         value="{{ old('nama_sekolah') }}" />
                   </div>
                   @error('nama_sekolah')
-                  <div class="mt-2">
+                  <div class="">
                      <p class="text-red-500 text-sm italic">{{ $message }}</p>
                   </div>
                   @enderror
@@ -64,7 +64,7 @@
                            @enderror " value="{{ old('npsn') }}" />
                   </div>
                   @error('npsn')
-                  <div class="mt-2">
+                  <div class="">
                      <span class="text-red-500 align-start italic text-sm">{{ $message }}</span>
                   </div>
                   @enderror
@@ -77,7 +77,7 @@
                          @enderror " value="{{ old('alamat_sekolah') }}" />
                   </div>
                   @error('alamat_sekolah')
-                  <div class="mt-2">
+                  <div class="">
                      <span class="text-red-500 align-start italic text-sm">{{ $message }}</span>
                   </div>
                   @enderror
@@ -95,7 +95,7 @@
                      </select>
                   </div>
                   @error('status')
-                  <div class="mt-2">
+                  <div class="">
                      <span class="text-red-500 align-start italic text-sm">{{ $message }}</span>
                   </div>
                   @enderror
@@ -109,13 +109,13 @@
                          @enderror " value="{{ old('password') }}" />
                   </div>
                   @error('password')
-                  <div class="mt-2">
+                  <div class="">
                      <span class="text-red-500 align-start italic text-sm">{{ $message }}</span>
                   </div>
                   @enderror
 
                   {{-- pin guru --}}
-                  <div class="form-group mt-4 min-w-[280px] sm:min-w-[330px]">
+                  <div class="form-group mt-2 min-w-[280px] sm:min-w-[330px]">
                      <p class="font-semibold text-black mb-1">Pin Guru</p>
                      <input type="password" placeholder="Pin Guru" name="pin_guru" class="input input-bordered bg-transparent w-full max-w-xs border-2 focus:border-[#0090D4] focus:outline-none text-black   rounded-md
                          @error('pin_guru')
@@ -123,13 +123,13 @@
                          @enderror " value="{{ old('pin_guru') }}" />
                   </div>
                   @error('pin_guru')
-                  <div class="mt-2">
+                  <div class="">
                      <span class="text-red-500 align-start italic text-sm">{{ $message }}</span>
                   </div>
                   @enderror
 
 
-                  <div class="flex mt-2 text-sm">
+                  <div class="flex  text-sm">
                      <p class="mr-1">Sudah Memiliki Akun?</p>
                      <a href="{{ route('login') }}"><span class="text-blue-500 font-medium">login Akun</span></a>
                   </div>

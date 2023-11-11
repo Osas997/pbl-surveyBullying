@@ -70,7 +70,7 @@
                      value="{{old('username')}}" />
                </div>
                @error('username')
-               <div class="mt-2">
+               <div class="">
                   <p class="text-red-500 text-sm italic">{{ $message }}</p>
                </div>
                @enderror
@@ -83,7 +83,7 @@
                         @enderror " />
                </div>
                @error('password')
-               <div class="mt-2">
+               <div class="">
                   <span class="text-red-500 align-start italic text-sm">{{ $message }}</span>
                </div>
                @enderror
