@@ -3,6 +3,7 @@
    aria-label="Sidebar">
    <div class="h-full px-3 pb-4 overflow-y-auto bg-white ">
       <ul class="space-y-2 font-medium">
+         @if (auth('admin')->check())
          <li>
             <a href="{{ route('admin.dashboard') }}" class="
             @if (Request::is('admin/dashboard')) bg-gray-200 @endif
@@ -21,9 +22,50 @@
                <span class="ml-3">Dashboard</span>
             </a>
          </li>
+
          <li>
-            <a href="{{ route('sekolah.murid') }}" class="
-               @if (Request::is('sekolah/murid*')) bg-gray-200 @endif
+            <a href="{{ route('pertanyaan.index') }}" class="
+            @if (Request::is('admin/pertanyaan*')) bg-gray-200 @endif
+            flex items-center p-2 text-gray-900 rounded-lg duration-300 ease-in-out hover:bg-gray-100  group">
+               <div class="w-8 h-8">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                     <g id="SVGRepo_iconCarrier">
+                        <path
+                           d="M8 8H13M8 12H16M8 16H11M7.2 4H16.8C17.9201 4 18.4802 4 18.908 4.21799C19.2843 4.40973 19.5903 4.71569 19.782 5.09202C20 5.51984 20 6.0799 20 7.2V16.8C20 17.9201 20 18.4802 19.782 18.908C19.5903 19.2843 19.2843 19.5903 18.908 19.782C18.4802 20 17.9201 20 16.8 20H7.2C6.0799 20 5.51984 20 5.09202 19.782C4.71569 19.5903 4.40973 19.2843 4.21799 18.908C4 18.4802 4 17.9201 4 16.8V7.2C4 6.0799 4 5.51984 4.21799 5.09202C4.40973 4.71569 4.71569 4.40973 5.09202 4.21799C5.51984 4 6.0799 4 7.2 4Z"
+                           stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                     </g>
+                  </svg>
+               </div>
+               <span class="flex-1 ml-3 whitespace-nowrap">Pertanyaan</span>
+            </a>
+         </li>
+         <li>
+            @endif
+
+            @if (auth('sekolah')->check())
+         <li>
+            <a href="{{ route('guru.dashboard') }}" class="
+            @if (Request::is('guru/dashboard*')) bg-gray-200 @endif
+            flex items-center p-2 text-gray-900 rounded-lg duration-300 ease-in-out   hover:bg-gray-100 group">
+               <div class="w-8 h-8">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                     <g id="SVGRepo_iconCarrier">
+                        <path
+                           d="M9 18V21M15 18V21M7 21H17M3 12H21M12 15H12.01M6.2 18H17.8C18.9201 18 19.4802 18 19.908 17.782C20.2843 17.5903 20.5903 17.2843 20.782 16.908C21 16.4802 21 15.9201 21 14.8V6.2C21 5.0799 21 4.51984 20.782 4.09202C20.5903 3.71569 20.2843 3.40973 19.908 3.21799C19.4802 3 18.9201 3 17.8 3H6.2C5.0799 3 4.51984 3 4.09202 3.21799C3.71569 3.40973 3.40973 3.71569 3.21799 4.09202C3 4.51984 3 5.07989 3 6.2V14.8C3 15.9201 3 16.4802 3.21799 16.908C3.40973 17.2843 3.71569 17.5903 4.09202 17.782C4.51984 18 5.07989 18 6.2 18Z"
+                           stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                     </g>
+                  </svg>
+               </div>
+               <span class="ml-3">Dashboard</span>
+            </a>
+         </li>
+         <li>
+            <a href="{{ route('guru.murid') }}" class="
+               @if (Request::is('guru/murid*')) bg-gray-200 @endif
                flex items-center p-2 text-gray-900 rounded-lg duration-300 ease-in-out hover:bg-gray-100  group">
                <div class="w-8 h-8">
                   <svg fill="#000000" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
@@ -41,8 +83,8 @@
          </li>
          {{-- laporan --}}
          <li>
-            <a href="{{ route('admin.laporan') }}" class="
-            @if (Request::is('admin/laporan*')) bg-gray-200 @endif
+            <a href="{{ route('guru.laporan') }}" class="
+            @if (Request::is('guru/laporan*')) bg-gray-200 @endif
             flex items-center p-2 text-gray-900 rounded-lg duration-300 ease-in-out hover:bg-gray-100  group">
                <div class="w-8 h-8">
                   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -58,6 +100,7 @@
                <span class="flex-1 ml-3 whitespace-nowrap">Laporan</span>
             </a>
          </li>
+         @endif
       </ul>
    </div>
 </aside>

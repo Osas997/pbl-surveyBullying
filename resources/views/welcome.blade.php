@@ -84,7 +84,8 @@
                             </div>
                         </a>
                         <h1 class="text-lg text-white font-normal mt-4">Responded</h1>
-                        <p class=" text-3xl font-semibold text-white">22<span class="text-2xl font-normal">Siswa</span>
+                        <p class=" text-3xl font-semibold text-white">{{ $responden }}+<span
+                                class="text-2xl font-normal"> Siswa</span>
                         </p>
 
                     </div>

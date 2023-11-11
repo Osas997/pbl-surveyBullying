@@ -10,10 +10,18 @@ class MuridController extends Controller
 
     public function index()
     {
+        $daftarMurid = Murid::where("id_sekolah", auth('sekolah')->user()->id)->search(request('search'))->abjad()->paginate(20);
+        $namaSekolah = auth('sekolah')->user()->nama_sekolah;
+        $title =  "Murid Sekolah | " .  $namaSekolah;
+
+        return view("sekolah.guru.murid", compact('daftarMurid', 'title', 'namaSekolah'));
+    }
+    public function signup()
+    {
         return view("sekolah.murid.signup");
     }
 
-    public function dashboard()
+    public function welcome()
     {
         return "h3h3";
         // return view("sekolah.murid.dashboard");

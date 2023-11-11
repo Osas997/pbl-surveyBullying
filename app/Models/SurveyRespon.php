@@ -16,10 +16,6 @@ class SurveyRespon extends Model
         return $this->belongsTo(Murid::class, "id_murid", "id");
     }
 
-    public function sekolah()
-    {
-        return $this->hasMany(Sekolah::class, "id_sekolah", "id");
-    }
     public function jawaban()
     {
         return $this->hasMany(Jawaban::class, "id_survey_respon", "id");
@@ -27,23 +23,10 @@ class SurveyRespon extends Model
 
     public function scopeSekolah($query)
     {
-        $query->where('id_sekolah', auth('sekolah')->user()->id);
+        $query->whereHas("murid", function ($query) {
+            $query->where("id_sekolah", auth("sekolah")->user()->id);
+        });
     }
-
-    public function scopeGuruSekolah($query)
-    {
-        $query->where('id_sekolah', auth('guru')->user()->id_sekolah);
-    }
-
-    // public function scopeSekolah($query, $sekolah)
-    // {
-    //     if ($sekolah) {
-    //         $query->whereHas(
-    //             "sekolah",
-    //             fn ($query) => $query->where("nama_sekolah", $sekolah)
-    //         );
-    //     }
-    // }
 
     public function scopeKorbanRendah($query)
     {

@@ -6,7 +6,7 @@
         <div class="w-full mx-auto bg-white p-8 rounded shadow-md">
             <div class="flex justify-start items-center gap-4">
                 <div class="w-6 h-6 md:w-8 md:h-8">
-                    <a href="">
+                    <a href="{{ route('murid.signup') }}">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
