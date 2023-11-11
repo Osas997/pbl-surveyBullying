@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class Sekolah
+class OnlyAdmin
 {
     /**
      * Handle an incoming request.
@@ -16,9 +16,9 @@ class Sekolah
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::guard("sekolah")->check()) {
+        if (Auth::guard("admin")->check()) {
             return $next($request);
-        } else if (Auth::guard("admin")->check()) {
+        } else if (Auth::guard("sekolah")->check()) {
             return abort(404);
         } else {
             return redirect("/login");

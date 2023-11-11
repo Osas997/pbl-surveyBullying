@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('content')
-<div class="relative bg-indigo-200 w-full  p-4 sm:p-6 rounded-sm overflow-hidden mb-8 ">
+<div class="relative bg-indigo-200 w-full py-8  p-4 sm:p-6 rounded-xl overflow-hidden mb-8 ">
    <!-- Background illustration -->
    <div class="absolute right-0 top-0 -mt-4 mr-16 pointer-events-none hidden xl:block" aria-hidden="true">
       <svg width="319" height="198" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -45,17 +45,15 @@
 
    <!-- Content -->
    <div class="relative">
-      <h1 class="text-2xl md:text-3xl text-slate-800 font-bold mb-1">Welcome Back Guru {{
-         auth('sekolah')->user()->nama_sekolah }} 👋
-      </h1>
-      <p class="lg:w-8/12 text-slate-800 ">Kami sangat senang melihat Anda kembali ke dashboard admin kami. Dengan tekad
-         bersama, kita akan terus berjuang untuk mengatasi permasalahan serius tentang bullying</p>
+      <h1 class="text-2xl md:text-3xl text-slate-800 font-bold mb-1">Welcome Back
+         {{ auth('admin')->user()->username }} 👋</h1>
+      <p class="lg:w-8/12 text-slate-800 ">Kami sangat senang melihat Anda kembali ke dashboard admin kami. Dengan
+         tekad bersama, kita akan terus berjuang untuk mengatasi permasalahan serius tentang bullying</p>
    </div>
 
 </div>
-
 <div class="grid grid-cols-1 justify-center items-center gap-4">
-   <div class="grid grid-cols-1  gap-4">
+   <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
       <div class="bg-blue-400 w-full rounded-xl px-4 py-4 shadow-md flex justify-start items-center">
          <div class="flex justify-start items-center gap-2">
             <div class="w-24 h-24">
@@ -96,188 +94,58 @@
                </svg>
             </div>
             <div class="">
-               <p class="text-white text-lg">Jumlah Aktif Murid <span class="uppercase">{{
-                     $jumlahMurid }} </span></p>
+               <p class="text-white text-lg">Jumlah Aktif Murid</p>
                <h1 class="text-white font-bold text-3xl lg:text-4xl">{{ $jumlahMurid }}</h1>
             </div>
          </div>
       </div>
-
-   </div>
-
-   <div class="grid grid-cols-1 gap-4">
-      {{-- card --}}
-      {{-- korban --}}
-      <div class="grid grid-cols-1 gap-6">
-
-         <div class="bg-blue-100 rounded-xl  py-4 px-4 shadow-md">
-            <h1 class="text-gray-900 font-bold text-lg mb-2">Korban Perundungan</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-               <div class="bg-red-400 w-full rounded-xl px-4 py-6 shadow-md">
-                  <p class="text-white">Jumlah Korban Sangat Tinggi</p>
-                  <h1 class="text-white font-bold text-4xl lg:text-5xl">{{ $korbanSangatTinggi }}</h1>
-               </div>
-               <div class="bg-orange-400 w-full rounded-xl px-4 py-6 shadow-md">
-                  <p class="text-white">Jumlah Korban Tinggi</p>
-                  <h1 class="text-white font-bold text-4xl lg:text-5xl"> {{ $korbanTinggi }} </h1>
-               </div>
-               <div class="bg-amber-400 w-full rounded-xl px-4 py-6 shadow-md">
-                  <p class="text-white">Jumlah Korban Sedang</p>
-                  <h1 class="text-white font-bold text-4xl lg:text-5xl">{{ $korbanSedang }}</h1>
-               </div>
-               <div class="bg-green-400 w-full rounded-xl px-4 py-6 shadow-md">
-                  <p class="text-white">Jumlah Korban Rendah</p>
-                  <h1 class="text-white font-bold text-4xl lg:text-5xl">{{ $korbanRendah }}</h1>
-               </div>
+      <div class="bg-blue-400 w-full rounded-xl px-4 py-6 shadow-md flex justify-start items-center">
+         <div class="flex justify-start items-center gap-2">
+            <div class="w-24 h-24">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512"
+                  xml:space="preserve">
+                  <path style="fill:#00b3e3"
+                     d="M463.54 176.842c-2.929-4.917-10.004-8.938-15.724-8.938H64.186c-5.722 0-12.799 4.022-15.726 8.938l-29.991 50.363c-2.928 4.916-.642 8.938 5.079 8.938h464.904c5.721 0 8.007-4.022 5.081-8.938l-29.993-50.363z" />
+                  <path style="opacity:.1;enable-background:new"
+                     d="M31.141 205.922h187.752v-15.877H40.597l-9.456 15.877zm440.262-15.877H290.971v15.877h189.887l-9.455-15.877z" />
+                  <path style="fill:#d1d3d3"
+                     d="m308.986 233.601-54.057-86.762-54.056 86.762H19.425V443.53h471.006V233.601z" />
+                  <path style="opacity:.1;enable-background:new"
+                     d="M325.892 244.88c-3.927 0-8.847-2.723-10.93-6.05l-3.277-5.228h-2.7L258.61 152.75c-2.403-1.085-4.962-1.083-7.365.002l-50.373 80.85h-2.694l-3.277 5.228c-2.085 3.328-7.004 6.05-10.931 6.05H19.425v27.897h173.408c3.927 0 8.754-2.777 10.728-6.173l42.345-64.836c4.963-8.468 13.088-8.468 18.051 0l42.345 64.836c1.974 3.396 6.801 6.173 10.728 6.173h173.401V244.88H325.892z" />
+                  <path style="fill:#a4a9ad"
+                     d="M444.685 277.775h45.747v22.015h-45.747zM307.465 323.353h45.747v22.013h-45.747zM390.312 401.5h45.747v22.013h-45.747zM152.865 407.343h45.747v22.014h-45.747zM19.425 298.913h45.747v22.014H19.425zM129.991 253.346h45.747v22.013h-45.747z" />
+                  <path style="fill:#333e48" d="M215.643 335.441h78.581v108.091h-78.581z" />
+                  <path style="opacity:.1;enable-background:new" d="M215.643 335.441h78.581v13.662h-78.581z" />
+                  <path style="fill:#fff"
+                     d="M230.631 360.453h15.877v29.912h-15.877zM263.348 360.453h15.877v29.912h-15.877zM133.484 317.214h46.184v63.54h-46.184z" />
+                  <path style="opacity:.2;enable-background:new" d="M133.484 317.214h46.184v14.012h-46.184z" />
+                  <path style="fill:#fff" d="M43.863 317.214h46.184v63.54H43.863z" />
+                  <path style="opacity:.2;enable-background:new" d="M43.863 317.214h46.184v14.012H43.863z" />
+                  <path style="fill:#fff" d="M330.19 317.214h46.184v63.54H330.19z" />
+                  <path style="opacity:.2;enable-background:new" d="M330.19 317.214h46.184v14.012H330.19z" />
+                  <path style="fill:#fff" d="M419.811 317.214h46.184v63.54h-46.184z" />
+                  <path style="opacity:.2;enable-background:new" d="M419.811 317.214h46.184v14.012h-46.184z" />
+                  <path style="fill:#ffb819" d="M254.933 51.908h91.695v52.554h-91.695z" />
+                  <path style="opacity:.1;enable-background:new" d="M254.933 51.908h24.006v52.554h-24.006z" />
+                  <path style="fill:#0071ce"
+                     d="M264.411 138.744c-5.213-8.317-13.744-8.317-18.957 0l-50.552 80.665c-2.085 3.327-7.004 6.05-10.931 6.05H15.078c-3.926 0-7.139 3.212-7.139 7.138v13.618c0 3.926 3.214 7.139 7.139 7.139h177.756c3.927 0 8.754-2.777 10.728-6.172l42.345-64.837c4.963-8.469 13.088-8.469 18.051 0l42.345 64.837c1.974 3.395 6.801 6.172 10.728 6.172h177.752c3.927 0 7.14-3.214 7.14-7.139v-13.618c0-3.926-3.214-7.138-7.14-7.138h-168.89c-3.927 0-8.847-2.722-10.93-6.05l-50.552-80.665z" />
+                  <circle style="fill:#fff" cx="254.933" cy="277.775" r="36.041" />
+                  <path style="fill:#00ad68"
+                     d="M504.061 463.109a4.287 4.287 0 0 1-4.275 4.276H12.215a4.288 4.288 0 0 1-4.276-4.276v-15.302a4.288 4.288 0 0 1 4.276-4.276h487.571a4.287 4.287 0 0 1 4.275 4.276v15.302z" />
+                  <path style="fill:#a4a9ad" d="M191.965 443.532H320.03v23.855H191.965z" />
+                  <path style="fill:#218649"
+                     d="M479.093 443.53c0-19.984-16.2-36.184-36.184-36.184-19.984 0-36.184 16.2-36.184 36.184h72.368zM126.231 443.53c0-19.984-16.2-36.184-36.184-36.184s-36.184 16.2-36.184 36.184h72.368z" />
+                  <path style="fill:#1e252b"
+                     d="M376.376 309.281h-46.184a7.94 7.94 0 0 0-7.939 7.939v63.543a7.94 7.94 0 0 0 7.939 7.939h46.184a7.94 7.94 0 0 0 7.939-7.939V317.22a7.94 7.94 0 0 0-7.939-7.939zm-7.939 63.543H338.13V356.93h30.307v15.894zm0-31.771H338.13v-15.895h30.307v15.895zm105.503-23.834a7.94 7.94 0 0 0-7.939-7.939h-46.184a7.94 7.94 0 0 0-7.939 7.939v63.543a7.94 7.94 0 0 0 7.939 7.939h46.184a7.94 7.94 0 0 0 7.939-7.939v-63.543zm-15.877 55.605h-30.307V356.93h30.307v15.894zm0-31.771h-30.307v-15.895h30.307v15.895zM90.047 309.281H43.862a7.94 7.94 0 0 0-7.939 7.939v63.543a7.94 7.94 0 0 0 7.939 7.939h46.184a7.94 7.94 0 0 0 7.939-7.939V317.22a7.937 7.937 0 0 0-7.938-7.939zm-7.938 63.543H51.801V356.93h30.307v15.894h.001zm0-31.771H51.801v-15.895h30.307v15.895h.001zm417.677 94.539h-1.408v-174.75c6.582-1.618 11.483-7.553 11.483-14.626v-13.618c0-7.515-5.534-13.745-12.738-14.877l-26.765-44.942c-4.351-7.305-14.044-12.814-22.544-12.814H287.078l-15.942-25.437c-2.232-3.562-5.077-6.268-8.268-7.954v-14.17h83.76a7.94 7.94 0 0 0 7.939-7.939V51.91a7.94 7.94 0 0 0-7.939-7.939h-83.792c-.329-4.083-3.74-7.295-7.906-7.295a7.94 7.94 0 0 0-7.939 7.939v81.958c-3.189 1.687-6.034 4.394-8.266 7.954l-15.941 25.437h-158.6c-8.504 0-18.197 5.509-22.547 12.815l-26.645 44.745C6.718 217.571 0 224.312 0 232.597v13.618c0 7.075 4.904 13.01 11.487 14.627v174.786C5.09 436.009 0 441.318 0 447.806v15.302c0 6.735 5.48 12.215 12.215 12.215h487.571c6.735 0 12.214-5.48 12.214-12.215v-15.302c0-6.735-5.48-12.214-12.214-12.214zM262.869 59.849h75.822v36.677H262.87l-.001-36.677zm184.947 115.992c2.916 0 7.41 2.555 8.904 5.062l21.807 36.617H325.892c-1.18 0-3.577-1.325-4.203-2.327l-24.661-39.352h150.788zm-392.535 5.062c1.492-2.506 5.987-5.061 8.905-5.061h148.651l-24.66 39.351c-.627 1-3.023 2.328-4.204 2.328H33.475l21.806-36.618zm-39.404 52.494h168.095c6.682 0 14.108-4.11 17.657-9.773l50.552-80.665c1.157-1.846 2.279-2.515 2.752-2.515.472 0 1.595.67 2.752 2.515l50.551 80.663c3.548 5.664 10.974 9.775 17.659 9.775h168.093v12.019H317.03c-1.105 0-3.309-1.268-3.864-2.224l-42.465-65.039c-3.829-6.421-9.565-10.097-15.769-10.097-6.204 0-11.941 3.677-15.769 10.096l-42.249 64.691-.216.349c-.556.956-2.76 2.225-3.866 2.225H15.877v-12.02zm427.032 166.011c-21.618 0-39.642 15.632-43.393 36.184h-97.36V327.504h-94.454v108.089H133.44c-3.751-20.552-21.775-36.184-43.393-36.184s-39.642 15.632-43.393 36.184h-19.29V261.294h165.47c6.701 0 14.005-4.156 17.467-9.912l42.253-64.695.202-.327c1.063-1.814 1.989-2.378 2.124-2.432.24.054 1.166.618 2.229 2.432l42.453 65.019c3.461 5.757 10.766 9.914 17.468 9.914h165.471v162.788c-7.203-14.601-22.24-24.673-39.592-24.673zm27.101 36.184h-54.203c3.439-11.722 14.283-20.307 27.101-20.307 12.819 0 23.663 8.586 27.102 20.307zm-183.731-92.211v92.212h-62.7v-92.212h62.7zm-169.13 92.211H62.945c3.439-11.722 14.283-20.307 27.101-20.307 12.82 0 23.664 8.586 27.103 20.307zm66.879 23.854H15.877v-7.978h168.151v7.978zm128.066 0H199.905v-7.978h112.189v7.978zm184.029 0H327.971v-7.978h168.151v7.978h.001zM254.932 233.799c-24.25 0-43.977 19.728-43.977 43.976 0 24.25 19.728 43.977 43.977 43.977 24.249 0 43.976-19.728 43.976-43.977 0-24.248-19.727-43.976-43.976-43.976zm0 72.077c-15.495 0-28.1-12.605-28.1-28.1 0-15.494 12.605-28.099 28.1-28.099 15.494 0 28.099 12.605 28.099 28.099s-12.605 28.1-28.099 28.1zm13.805-36.039h-5.866v-5.866a7.94 7.94 0 0 0-15.878 0v13.805a7.94 7.94 0 0 0 7.939 7.939h13.805a7.94 7.94 0 0 0 0-15.878zm-89.065 39.444h-46.184a7.94 7.94 0 0 0-7.939 7.939v63.543a7.94 7.94 0 0 0 7.939 7.939h46.184a7.94 7.94 0 0 0 7.939-7.939V317.22a7.938 7.938 0 0 0-7.939-7.939zm-7.938 63.543h-30.307V356.93h30.307v15.894zm0-31.771h-30.307v-15.895h30.307v15.895z" />
+               </svg>
             </div>
-         </div>
-
-
-         {{-- Pelaku --}}
-         <div class="bg-blue-100 rounded-xl  py-4 px-4 shadow-md">
-            <h1 class="text-gray-900 font-bold text-lg mb-2">Pelaku Perundungan</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-               <div class="bg-red-400 w-full rounded-xl px-4 py-6 shadow-md">
-                  <p class="text-white">Jumlah Pelaku Sangat Tinggi</p>
-                  <h1 class="text-white font-bold text-4xl lg:text-5xl">{{ $pelakuSangatTinggi }}</h1>
-               </div>
-               <div class="bg-orange-400 w-full rounded-xl px-4 py-6 shadow-md">
-                  <p class="text-white">Jumlah Pelaku Tinggi</p>
-                  <h1 class="text-white font-bold text-4xl lg:text-5xl">{{ $pelakuTinggi }}</h1>
-               </div>
-               <div class="bg-amber-400 w-full rounded-xl px-4 py-6 shadow-md">
-                  <p class="text-white">Jumlah Pelaku Sedang</p>
-                  <h1 class="text-white font-bold text-4xl lg:text-5xl">{{ $pelakuSedang }}</h1>
-               </div>
-               <div class="bg-green-400 w-full rounded-xl px-4 py-6 shadow-md">
-                  <p class="text-white">Jumlah Pelaku Rendah</p>
-                  <h1 class="text-white font-bold text-4xl lg:text-5xl">{{ $pelakuRendah }}</h1>
-               </div>
+            <div class="">
+               <p class="text-white text-lg">Jumlah Sekolah</p>
+               <h1 class="text-white font-bold text-3xl lg:text-4xl">{{ $jumlahSekolah }}</h1>
             </div>
          </div>
       </div>
    </div>
 
-   {{-- pie chart --}}
-   <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <div class=" max-w-full bg-white rounded-lg dark:bg-gray-800 p-4 md:p-6 shadow-lg">
-         <div class="flex justify-between items-start w-full">
-            <div class="flex-col items-center">
-               <div class="flex items-center mb-1">
-                  <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white mr-1">Korban</h5>
-                  <div data-popover id="chart-info" role="tooltip"
-                     class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
-                     <div data-popper-arrow></div>
-                  </div>
-               </div>
-
-            </div>
-         </div>
-         {{-- Chart pie --}}
-         <div class="py-6" id="pie-chart"></div>
-
-      </div>
-
-      <div class=" max-w-full bg-white rounded-lg  dark:bg-gray-800 p-4 md:p-6 shadow-lg">
-         <div class="flex justify-between items-start w-full">
-            <div class="flex-col items-center">
-               <div class="flex items-center mb-1">
-                  <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white mr-1">Pelaku</h5>
-                  <div data-popover id="chart-info" role="tooltip"
-                     class="absolute z-10 invisible inline-block text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-72 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400">
-                     <div data-popper-arrow></div>
-                  </div>
-               </div>
-
-            </div>
-         </div>
-         {{-- Chart pie --}}
-         <div class="py-6" id="pie-chart1"></div>
-
-      </div>
-   </div>
-   <div class="max-w-full w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
-      <div class="flex justify-between pb-4 mb-4 border-b border-gray-200 dark:border-gray-700">
-         <div class="flex items-center">
-            <div>
-               <h5 class="leading-none text-2xl font-bold text-gray-900 dark:text-white pb-1">Persentase Perilaku
-                  Perundungan</h5>
-               <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Persentase Perilaku Perundungan
-                  Berdasarkan Soal Yang Dipilih Saat Survey</p>
-            </div>
-         </div>
-         <div>
-         </div>
-      </div>
-
-
-      <div id="column-chart"></div>
-      <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
-
-      </div>
-      <div class="mt-8 w-full  overflow-x-auto overflow-y-auto rounded-lg">
-         <p class="text-sm font-normal text-gray-500 dark:text-gray-400">
-            Berdasarkan Jumlah Jawaban Yang Dipilih Saat Survey</p>
-         <table class="w-full text-sm text-left text-gray-500 ">
-            <thead class="text-xs text-white uppercase  bg-blue-500  ">
-               <tr>
-                  <th scope="col" class="px-6 py-3">
-                     Soal
-                  </th>
-                  <th scope="col" class="px-6 py-3">
-                     Pertanyaan
-                  </th>
-                  <th scope="col" class="px-6 py-3">
-                     <span>Tipe Perilaku</span>
-                  </th>
-                  <th scope="col" class="px-6 py-3">
-                     <span>Banyak Jawaban</span>
-
-                  </th>
-               </tr>
-            </thead>
-            <tbody>
-               @foreach ($tipePelaku as $tipe)
-               <tr class="bg-white border-b  hover:bg-gray-50 ">
-                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                     <span>{{ $loop->iteration }}</span>
-                  </th>
-                  <td class="px-6 py-4">
-                     <span class="sm:text-sm md:text-md text-center">{{ $tipe->pertanyaan }}</span>
-                  </td>
-                  <td class="px-6 py-4">
-                     <span class="sm:text-sm md:text-md text-center">{{ $tipe->tipe_perilaku }}</span>
-                  </td>
-                  <td class="px-6 py-4">
-                     <span class="sm:text-sm md:text-md text-center">{{ $tipe->jawaban_skor_lebih_dari_2_count }}
-                        Jawaban</span>
-                  </td>
-               </tr>
-               @endforeach
-            </tbody>
-         </table>
-      </div>
-
-   </div>
 </div>
-@endsection
-
-@section('script')
-<script>
-   const korbanSangatTinggi = @json($korbanSangatTinggi);
-        const korbanTinggi = @json($korbanTinggi);
-        const korbanSedang = @json($korbanSedang);
-        const korbanRendah = @json($korbanRendah);
-
-        const pelakuSangatTinggi = @json($pelakuSangatTinggi);
-        const pelakuTinggi = @json($pelakuTinggi);
-        const pelakuSedang = @json($pelakuSedang);
-        const pelakuRendah = @json($pelakuRendah);
-
-        const tipePelaku = @json($tipePelaku);
-
-        const totalResponKorban = korbanSangatTinggi + korbanTinggi + korbanSedang + korbanRendah;
-        const totalResponPelaku = pelakuSangatTinggi + pelakuTinggi + pelakuSedang + pelakuRendah;
-</script>
-<script src="{{ asset('js/chart.js') }}"></script>
 @endsection
