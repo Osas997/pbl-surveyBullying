@@ -26,10 +26,9 @@
       </div>
    </form>
 </div>
-
 <div class="">
-   <a href="" target="_blank"
-      class="bg-[#0062CE] btn rounded-lg text-white flex justify-center items-center  w-fit px-8 h-10 hover:bg-blue-600 duration-300 ease-in-out mt-4">
+   <a href="kumis" target="_blank"
+      class="bg-[#0062CE] btn rounded-lg text-white flex justify-center items-center w-fit px-8 h-10 hover:bg-blue-600 duration-300 ease-in-out mt-4">
       <span>Print</span>
    </a>
 </div>
@@ -139,4 +138,5 @@
       <h1 class="text-center text-2xl font-bold text-red-600 mt-20">Daftar Murid Tidak ditemukan</h1>
       @endif
    </div>
-   @endsection
+</div>
+@endsection
