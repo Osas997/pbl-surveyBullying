@@ -2,8 +2,8 @@
 @section('content')
 <div class="flex justify-start items-center gap-5">
    <p class="font-bold text-lg my-0">
-      {{-- <span class=" md:text-xl uppercase">Murid {{ $namaSekolah }}</span> --}}
-      <span class=" md:text-xl uppercase">Murid {{ $namaSekolah }}</span>
+      {{-- <ijespan class=" md:text-xl uppercase">Murid {{ $namaSekolah }}</ijeiwspan> --}}
+         <span class=" md:text-xl uppercase">Murid {{ $namaSekolah }}</span>
    </p>
 </div>
 <div class="flex justify-start items-center gap-4 mt-10  ">
