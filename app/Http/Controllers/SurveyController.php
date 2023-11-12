@@ -7,6 +7,7 @@ use App\Models\Murid;
 use App\Models\Pertanyaan;
 use App\Models\SurveyRespon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
 
 class SurveyController extends Controller
@@ -21,8 +22,6 @@ class SurveyController extends Controller
         ]);
     }
 
-
-
     public function store(Request $request)
     {
         $request->validate([
@@ -35,6 +34,8 @@ class SurveyController extends Controller
 
             $dataMurid = request()->session()->get('murid');
             $murid = Murid::create($dataMurid);
+
+            $cookieMurid = Cookie::make('survey_murid', $murid->id, 60);
 
             $surveyRespon = SurveyRespon::create([
                 "id_murid" =>  $murid->id,
@@ -68,7 +69,7 @@ class SurveyController extends Controller
             $request->session()->forget('murid');
 
             DB::commit();
-            return redirect(route('murid.dashboard'))->with("success", "Berhasil Menjawab Survey Lihat Skor Di Hasil Survey");
+            return redirect()->route('murid.hasilkorban')->withCookie($cookieMurid)->with("success", "Berhasil Menjawab Survey Lihat Skor Di Hasil Survey");
         } catch (\Exception $e) {
             DB::rollback();
             // Anda dapat menambahkan log error atau menampilkan pesan error ke pengguna

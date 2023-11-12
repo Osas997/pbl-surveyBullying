@@ -5,6 +5,7 @@
 <div class="w-full bg-[#0090D4] min-h-screen overflow-x-hidden scroll-smooth ">
     <div class="w-full  md:w-8/12 mx-auto px-10 mt-10">
         <div class="w-full bg-white mx-auto p-8 rounded shadow-md">
+            @if ($murid)
             <div class="px-20">
                 <div class="flex justify-between">
 
@@ -33,20 +34,22 @@
             <div class="flex gap-10">
                 <div class="left">
                     <p>Nama</p>
+                    <p>NISN</p>
                     <p>Kelas</p>
+                    <p>Jenis Kelamin</p>
                     <p>Sekolah</p>
-                    <p>Tanggal Lahir</p>
                 </div>
                 <div class="right">
-                    <p>: Paijo</p>
-                    <p>: XII B</p>
-                    <p>: SMP 1 Banyuwangi</p>
-                    <p>: 12 September 2005</p>
+                    <p class="uppercase">: {{ $murid->murid->nama_murid }}</p>
+                    <p class="uppercase">: {{ $murid->murid->nisn }}</p>
+                    <p class="uppercase">: {{ $murid->murid->kelas }}</p>
+                    <p class="uppercase">: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' : 'Perempuan' }}</p>
+                    <p class="uppercase">: {{ $murid->murid->sekolah->nama_sekolah }}</p>
                 </div>
             </div>
             <div class="flex justify-center items-center flex-col gap-2 mt-4">
                 <p class="text-center font-medium text-base">Nilai Anda</p>
-                <h2 class="text-center font-semibold text-4xl">30</h2>
+                <h2 class="text-center font-semibold text-4xl">{{ $murid->skor_total_pelaku }}</h2>
             </div>
             <h1>Rentang Nilai : </h1>
             <div class="flex gap-4">
@@ -84,6 +87,9 @@
                     </div>
                 </a>
             </div>
+            @else
+            <h1 class="text-center text-2xl">Silahkan Mengisi Angket Terlebih Dahulu</h1>
+            @endif
         </div>
     </div>
 

@@ -4,7 +4,7 @@
 <div class="w-full bg-[#0090D4] min-h-screen overflow-x-hidden scroll-smooth ">
     <div class="w-full  md:w-8/12 mx-auto px-10 mt-10">
         <div class="w-full bg-white mx-auto p-8 rounded shadow-md">
-            {{-- link --}}
+            @if ($murid)
             <div class="px-20">
                 <div class="flex justify-between">
 
@@ -34,20 +34,22 @@
             <div class="flex gap-10">
                 <div class="left">
                     <p>Nama</p>
+                    <p>NISN</p>
                     <p>Kelas</p>
+                    <p>Jenis Kelamin</p>
                     <p>Sekolah</p>
-                    <p>Tanggal Lahir</p>
                 </div>
                 <div class="right">
-                    <p>: Paijo</p>
-                    <p>: XII B</p>
-                    <p>: SMP 1 Banyuwangi</p>
-                    <p>: 12 September 2005</p>
+                    <p class="uppercase">: {{ $murid->murid->nama_murid }}</p>
+                    <p class="uppercase">: {{ $murid->murid->nisn }}</p>
+                    <p class="uppercase">: {{ $murid->murid->kelas }}</p>
+                    <p class="uppercase">: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' : 'Perempuan' }}</p>
+                    <p class="uppercase">: {{ $murid->murid->sekolah->nama_sekolah }}</p>
                 </div>
             </div>
             <div class="flex justify-center items-center flex-col gap-2 mt-4">
                 <p class="text-center font-medium text-base">Nilai Anda</p>
-                <h2 class="text-center font-semibold text-4xl">80</h2>
+                <h2 class="text-center font-semibold text-4xl">{{ $murid->skor_total_korban }}</h2>
             </div>
             <h1>Rentang Nilai : </h1>
             <div class="flex gap-4">
@@ -66,11 +68,26 @@
             </div>
 
             <h1 class="mt-4">Interpretasi :</h1>
-            <p class="font-medium">Anda Termasuk dalam kategory siswa yang berpotensi rendah menjadi pelaku bully <br>
-                Sebagian tindakan anda mencerminkan pelaku bully, tetapi masih dalam taraf rendah</p>
-
+            <p class="text-base sm:text-1xl mb-1"> {{ $murid->murid->nama_murid }} memiliki
+                kecenderungan menjadi Korban bullying yang
+                @if ($murid->skor_total_korban >= 46)
+                <span class="text-red-400">Sangat Tinggi</span>. Hal ini dapat disebabkan oleh beberapa faktor,
+                seperti kepercayaan diri, kemampuan sosial, atau dukungan dari orang-orang terdekat.
+                @elseif ($murid->skor_total_korban >= 35 && $murid->skor_total_korban < 46) <span
+                    class="text-yellow-400">
+                    Tinggi</span>. Hal ini dapat disebabkan oleh beberapa faktor, seperti
+                    kepercayaan diri, kemampuan sosial, atau dukungan dari orang-orang terdekat.
+                    @elseif ($murid->skor_total_korban >= 24 && $murid->skor_total_korban < 35) <span
+                        class="text-teal-400">Sedang</span>. Hal ini dapat disebabkan oleh beberapa faktor,
+                        seperti kepercayaan diri, kemampuan sosial, atau dukungan dari orang-orang terdekat.
+                        @else
+                        <span class="text-green-400">Rendah</span>. Hal ini dapat disebabkan oleh beberapa faktor,
+                        seperti kepercayaan diri, kemampuan sosial, atau dukungan dari orang-orang terdekat.
+                        @endif
+            </p>
             <h1 class="mt-4">Rekomendasi : </h1>
-            <p class="font-medium">Karena Anda termasuk dalam kategori potensi rendah, untuk lebih jelasnya silahkan
+            <p class="font-medium">Karena Anda termasuk dalam kategori potensi rendah, untuk lebih jelasnya
+                silahkan
                 temui dan konsultasi
                 hal ini dengan konselor anda</p>
             {{-- print --}}
@@ -84,7 +101,10 @@
                     </div>
                 </a>
             </div>
-            
+            @else
+            <h1 class="text-center text-2xl">Silahkan Mengisi Angket Terlebih Dahulu</h1>
+            @endif
+            {{-- link --}}
         </div>
     </div>
 
