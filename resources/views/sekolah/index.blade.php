@@ -32,9 +32,6 @@
                         </div>
                     </div>
                 </a>
-               
-                
-
             </div>
          </div>
       </div>

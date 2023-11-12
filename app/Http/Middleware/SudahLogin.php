@@ -16,11 +16,11 @@ class SudahLogin
      */
     public function handle(Request $request, Closure $next): Response
     {
+
         if (auth("sekolah")->check()) {
             return redirect("/sekolah/masuk");
-        } else if (auth("admin")->check()) {
-            return redirect("/admin/dashboard");
         }
+
         return $next($request);
     }
 }

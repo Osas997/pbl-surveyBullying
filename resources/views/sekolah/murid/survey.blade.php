@@ -2,11 +2,12 @@
 @section('title','Isi Survey')
 @section('content')
 <div class="w-full min-h-screen overflow-x-hidden scroll-smooth ">
+    {{-- @include('sekolah.murid.navbar') --}}
     <div class="w-full md:w-8/12 mx-auto px-10 mt-10">
         <div class="w-full mx-auto bg-white p-8 rounded shadow-md">
             <div class="flex justify-start items-center gap-4">
                 <div class="w-6 h-6 md:w-8 md:h-8">
-                    <a href="{{ route('murid.signup') }}">
+                    <a href="">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -22,7 +23,7 @@
                     <span class=" md:text-lg uppercase">Isi Survey</span>
                 </p>
             </div>
-            <form action="{{ route('survey') }}" method="POST">
+            <form action="" method="POST">
                 @csrf
                 @foreach ($dataPertanyaan as $data)
                 <span class="text-md font-bold my-4 block">
@@ -36,8 +37,7 @@
                     </div>
                     @endif
                     <input type="hidden" value="{{ $data->id }}" name="survey[{{ $data->id }}][id_pertanyaan]">
-                    <input type="hidden" value="{{ $data->tipe_pertanyaan }}"
-                        name="survey[{{ $data->id }}][tipe_pertanyaan]">
+                    <input type="hidden" value="{{ $data->tipe }}" name="survey[{{ $data->id }}][tipe_pertanyaan]">
                 </span>
                 <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4">
                     <label class="cursor-pointer">

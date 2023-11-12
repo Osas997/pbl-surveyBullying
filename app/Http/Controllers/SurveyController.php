@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Jawaban;
-use App\Models\Murid;
 use App\Models\Pertanyaan;
 use App\Models\SurveyRespon;
 use Illuminate\Http\Request;
@@ -32,12 +31,8 @@ class SurveyController extends Controller
 
         try {
             DB::beginTransaction();
-
-            $dataMurid = request()->session()->get('murid');
-            $murid = Murid::create($dataMurid);
-
             $surveyRespon = SurveyRespon::create([
-                "id_murid" =>  $murid->id,
+                "id_murid" =>  request()->session()->get('murid'),
                 "id_sekolah" => auth("sekolah")->user()->id,
                 "skor_total_korban" => 0,
                 "skor_total_pelaku" => 0
@@ -64,8 +59,6 @@ class SurveyController extends Controller
                 'skor_total_pelaku' => $skorTotalPelaku,
                 'skor_total_korban' => $skorTotalKorban
             ]);
-
-            $request->session()->forget('murid');
 
             DB::commit();
             return redirect(route('murid.dashboard'))->with("success", "Berhasil Menjawab Survey Lihat Skor Di Hasil Survey");

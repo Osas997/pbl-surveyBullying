@@ -6,4 +6,8 @@ use Illuminate\Http\Request;
 
 class GuruController extends Controller
 {
+    public function dashboard()
+    {
+        return view('sekolah.guru.dashboard');
+    }
 }

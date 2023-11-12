@@ -46,11 +46,6 @@ return [
             'provider' => 'sekolah',
         ],
 
-        "admin" => [
-            'driver' => 'session',
-            'provider' => 'admin',
-        ],
-
     ],
 
     /*
@@ -79,11 +74,6 @@ return [
         'sekolah' => [
             'driver' => 'eloquent',
             'model' => App\Models\Sekolah::class,
-        ],
-
-        'admin' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Admin::class,
         ],
     ],
 

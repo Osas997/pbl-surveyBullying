@@ -20,7 +20,7 @@ class Pertanyaan extends Model
     public function scopeSearch($query, $search)
     {
         if ($search) {
-            $query->where('pertanyaan', 'like', '%' . $search . '%')->orWhere('tipe_pertanyaan', 'like', '%' . $search . '%')->orWhere('tipe_perilaku', 'like', '%' . $search . '%');
+            $query->where('pertanyaan', 'like', '%' . $search . '%')->orWhere('tipe', 'like', '%' . $search . '%');
         }
     }
 }

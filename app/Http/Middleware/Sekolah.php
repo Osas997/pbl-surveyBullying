@@ -18,8 +18,6 @@ class Sekolah
     {
         if (Auth::guard("sekolah")->check()) {
             return $next($request);
-        } else if (Auth::guard("admin")->check()) {
-            return abort(404);
         } else {
             return redirect("/login");
         }

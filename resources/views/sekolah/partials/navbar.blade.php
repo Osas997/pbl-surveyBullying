@@ -15,8 +15,7 @@
             </button>
             <a href="{{ route('index') }}" class="flex ml-2 md:mr-24">
                <img src="{{asset('assets/img/blue-logo.png')}}" class="h-8 mr-3" alt="FlowBite Logo" />
-               <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Safe
-                  Schools</span>
+               <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Safe Schools</span>
             </a>
          </div>
          <div class="flex items-center">
@@ -32,6 +31,8 @@
                         <span class="uppercase">{{ substr(auth('admin')->user()->username, 0, 1) }}</span>
                         @elseif (auth('sekolah')->check())
                         <span class="uppercase">{{ substr(auth('sekolah')->user()->nama_sekolah, 0, 1) }}</span>
+                        @elseif (auth('guru')->check())
+                        <span class="uppercase">{{ substr(auth('guru')->user()->nama, 0, 1) }}</span>
                         @endif
                      </div>
                   </button>
@@ -48,6 +49,8 @@
                         {{auth('admin')->user()->username}}
                         @elseif (auth('sekolah')->check())
                         {{auth('sekolah')->user()->nama_sekolah}}
+                        @elseif (auth('guru')->check())
+                        {{auth('guru')->user()->nama}}
                         @endif
                      </p>
                   </div>
@@ -56,10 +59,11 @@
                         <a @if (auth('admin')->check())
                            href="{{ route('admin.dashboard') }}"
                            @elseif (auth('sekolah')->check())
+                           href="{{ route('sekolah.dashboard') }}"
+                           @elseif (auth('guru')->check())
                            href="{{ route('guru.dashboard') }}"
                            @endif
-                           class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300
-                           dark:hover:bg-gray-600 dark:hover:text-white"
+                           class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white"
                            role="menuitem">Dashboard</a>
                      </li>
                      <li>

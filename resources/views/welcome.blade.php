@@ -61,7 +61,7 @@
                             xl:text-lg">"Mari bersama-sama menciptakan lingkungan yang aman dan bebas dari
                                 perundungan."</p>
                         </div>
-                        <a href="{{route('murid.dashboard')}}">
+                        <a href="">
                             <div class=" w-1/2 flex justify-center items-center gap-2 text-white cursor-pointer duration-300 ease-in-out bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2 text-center sm:text-lg sm:px-4 sm:py-1 mt-4
                             sm:w-4/12 
                             md:w-5/12
@@ -84,14 +84,13 @@
                             </div>
                         </a>
                         <h1 class="text-lg text-white font-normal mt-4">Responded</h1>
-                        <p class=" text-3xl font-semibold text-white">{{ $responden }}+<span
-                                class="text-2xl font-normal"> Siswa</span>
-                        </p>
+                        <p class=" text-3xl font-semibold text-white"> 164+ <span
+                                class="text-2xl font-normal">Siswa</span></p>
 
                     </div>
                     <div class="hidden md:flex justify-center items-center flex-1 ">
-                        <img src="{{asset('assets/img/hero_image.png')}}" alt="" srcset=""
-                            class="lg:w-[400px] xl:w-[500px]">
+                        <img src="{{asset('assets/img/smp.jpg')}}" alt="" srcset=""
+                            class="lg:w-[450px] xl:w-[550px] rounded-2xl ">
                     </div>
                 </div>
             </div>
