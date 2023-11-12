@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     // $responden = S::count();
     // return view('index', compact('responden'));
-    return "hello";
+    return view('welcome');
 })->name('index');
 
 // ! duumy route hasil 
