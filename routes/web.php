@@ -27,19 +27,18 @@ Route::get('/', function () {
 })->name('index');
 
 // ! duumy route hasil 
-Route::get('/hasil-pelaku', function () {
+Route::get('/hasil-pelaku',function(){
     return view('sekolah.murid.hasilPelaku');
 })->name('murid.hasilpelaku');
-
-Route::get('/hasil-korban', function () {
+Route::get('/hasil-korban',function(){
     return view('sekolah.murid.hasilKorban');
 })->name('murid.hasilkorban');
 
-Route::get('/hasil-pelaku/print', function () {
+Route::get('/hasil-pelaku/print',function(){
     return view('sekolah.murid.printPelaku');
 })->name('murid.hasilpelaku.print');
 
-Route::get('/hasil-korban/print', function () {
+Route::get('/hasil-korban/print',function(){
     return view('sekolah.murid.printKorban');
 })->name('murid.hasilkorban.print');
 

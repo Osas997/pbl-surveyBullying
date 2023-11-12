@@ -1,7 +1,6 @@
 @extends('layout.pages')
 @section('title','Hasil Survey Pelaku')
 @section('content')
-
 <div class="w-full bg-[#0090D4] min-h-screen overflow-x-hidden scroll-smooth ">
     <div class="w-full  md:w-8/12 mx-auto px-10 mt-10">
         <div class="w-full bg-white mx-auto p-8 rounded shadow-md">
@@ -9,23 +8,21 @@
                 <div class="flex justify-between">
 
                     <a href="{{route('murid.hasilpelaku')}}">
-                        <div
-                            class="bg-blue-500 w-[120px] md:w-[240px] flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-white hover:underline">
+                        <div class="bg-blue-500 w-[120px] md:w-[240px] flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-white hover:underline">
                             <span>
                                 Pelaku
                             </span>
                         </div>
                     </a>
                     <a href="{{route('murid.hasilkorban')}}">
-
-                        <div
-                            class=" w-[120px] md:w-[240px]  flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-black hover:underline">
+                        
+                        <div class=" w-[120px] md:w-[240px]  flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-black hover:underline">
                             <span>
                                 Korban
                             </span>
                         </div>
                     </a>
-
+                    
                 </div>
             </div>
             {{-- <h1 class="font-semibold text-lg md:text-xl mb-6">Pelaku</h1> --}}
@@ -52,7 +49,7 @@
             <div class="flex gap-4">
                 <div class="left">
                     <p class="font-medium">Skor 30 - 74,5</p>
-                    <p class="font-medium">Skor 75 - 120</p>
+                    <p class="font-medium" >Skor 75 - 120</p>
                 </div>
                 <div class="right">
                     <p class="font-medium text-green-400"> : Berpontesi Rendah</p>
@@ -63,16 +60,15 @@
                     <p class="font-medium"> : Berpotensi Tinggi</p>
                 </div>
             </div>
-
+         
             <h1 class="mt-4">Interpretasi :</h1>
             <p class="font-medium">Anda Termasuk dalam kategory siswa yang berpotensi rendah menjadi pelaku bully <br>
                 Sebagian tindakan anda mencerminkan pelaku bully, tetapi masih dalam taraf rendah</p>
 
             <h1 class="mt-4">Rekomendasi : </h1>
-            <p class="font-medium">Karena Anda termasuk dalam kategori potensi rendah, untuk lebih jelasnya silahkan
-                temui dan konsultasi
+            <p class="font-medium">Karena Anda termasuk dalam kategori potensi rendah, untuk lebih jelasnya silahkan temui dan konsultasi
                 hal ini dengan konselor anda</p>
-
+            
             {{-- print --}}
             <div class="flex justify-center items-center">
                 <a href="{{route('murid.hasilpelaku.print')}}">
