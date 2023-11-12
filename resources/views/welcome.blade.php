@@ -90,8 +90,8 @@
 
                     </div>
                     <div class="hidden md:flex justify-center items-center flex-1 ">
-                        <img src="{{asset('assets/img/hero_image.png')}}" alt="" srcset=""
-                            class="lg:w-[400px] xl:w-[500px]">
+                        <img src="{{asset('assets/img/smp.jpg')}}" alt="" srcset=""
+                            class="lg:w-[450px] xl:w-[550px] rounded-3xl">
                     </div>
                 </div>
             </div>
