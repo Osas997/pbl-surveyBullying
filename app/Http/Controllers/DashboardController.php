@@ -36,22 +36,26 @@ class DashboardController extends Controller
 
         $tipePelaku = Pertanyaan::where('tipe_pertanyaan', 'pelaku')
             ->withCount([
-                'jawaban as jawaban_skor_lebih_dari_2_count' => function ($query) {
+                'jawaban' => function ($query) {
                     $query->where('skor', '>', 2)->whereHas('surveyRespon', function ($query) {
                         $query->whereHas("murid", function ($query) {
                             $query->where("id_sekolah", auth("sekolah")->user()->id);
                         });
                     });
                 },
-                'jawaban as jawaban_skor_kurang_dari_3_count' => function ($query) {
-                    $query->where('skor', '<', 3)->whereHas('surveyRespon', function ($query) {
+            ])->get();
+
+        $pertanyaanTerbanyak = Pertanyaan::where('tipe_pertanyaan', 'pelaku')
+            ->withCount([
+                'jawaban' => function ($query) {
+                    $query->where('skor', '>', 2)->whereHas('surveyRespon', function ($query) {
                         $query->whereHas("murid", function ($query) {
                             $query->where("id_sekolah", auth("sekolah")->user()->id);
                         });
                     });
                 }
-            ])->get();
+            ])->orderByDesc('jawaban_count')->first();
 
-        return view('sekolah.guru.dashboard', compact('title', 'jumlahMurid', 'korbanRendah', 'korbanSedang', 'korbanTinggi', 'korbanSangatTinggi', 'pelakuRendah', 'pelakuSedang', 'pelakuTinggi', 'pelakuSangatTinggi', 'tipePelaku'));
+        return view('sekolah.guru.dashboard', compact('title', 'jumlahMurid', 'korbanRendah', 'korbanSedang', 'korbanTinggi', 'korbanSangatTinggi', 'pelakuRendah', 'pelakuSedang', 'pelakuTinggi', 'pelakuSangatTinggi', 'tipePelaku', 'pertanyaanTerbanyak'));
     }
 }

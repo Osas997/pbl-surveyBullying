@@ -129,7 +129,7 @@
                   @enderror
 
 
-                  <div class="flex  text-sm">
+                  <div class="flex  text-sm mt-2">
                      <p class="mr-1">Sudah Memiliki Akun?</p>
                      <a href="{{ route('login') }}"><span class="text-blue-500 font-medium">login Akun</span></a>
                   </div>

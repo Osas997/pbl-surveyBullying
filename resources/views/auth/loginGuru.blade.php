@@ -41,7 +41,7 @@
                @csrf
                <div class="form-group min-w-[280px] sm:min-w-[330px]">
                   <p class="font-semibold text-black mb-2">Enter PIN</p>
-                  <input autocomplete="off" type="text" placeholder="Masukan Username" name="pin_guru" class="input input-bordered bg-transparent rounded-md
+                  <input autocomplete="off" type="password" placeholder="Masukan PIN" name="pin_guru" class="input input-bordered bg-transparent rounded-md
                             @error('pin_guru')
                             border-red-600 @else border-[#0090D4]
                             @enderror 

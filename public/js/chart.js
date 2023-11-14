@@ -163,23 +163,13 @@ if (totalResponKorban != 0 || totalResponPelaku != 0) {
     });
 
     window.addEventListener("load", function () {
-        let dataRendah = [];
         let dataTinggi = [];
         tipePelaku.forEach((element) => {
-            dataRendah.push(element.jawaban_skor_kurang_dari_3_count);
-            dataTinggi.push(element.jawaban_skor_lebih_dari_2_count);
+            dataTinggi.push(element.jawaban_count);
         });
         const options = {
-            colors: ["#1A56DB", "#FDBA8C"],
+            colors: ["#FDBA8C"],
             series: [
-                {
-                    name: "Rendah",
-                    color: "#4ade80",
-                    data: dataRendah.map((value, index) => ({
-                        x: `Soal ${index + 1}`, // Menggunakan data soal yang sesuai
-                        y: value,
-                    })),
-                },
                 {
                     name: "Tinggi",
                     color: "#f87171",
