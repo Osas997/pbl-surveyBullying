@@ -34,7 +34,7 @@ Route::middleware("sudahLogin")->group(function () {
     Route::post("/register", [AuthContoller::class, "register"])->name("register");
 });
 
-Route::get("/logout", [AuthContoller::class, "logout"])->name("logout")->middleware("auth:sekolah,admin");
+Route::post("/logout", [AuthContoller::class, "logout"])->name("logout")->middleware("auth:sekolah,admin");
 
 Route::middleware("admin")->prefix("admin")->group(function () {
     Route::get("/dashboard", [DashboardController::class, "admin"])->name("admin.dashboard");
@@ -51,6 +51,8 @@ Route::middleware('sekolah')->group(function () {
         Route::get("/guru/dashboard", [DashboardController::class, "guru"])->name("guru.dashboard");
         Route::get("/guru/murid", [MuridController::class, "index"])->name("guru.murid");
         Route::get("/guru/laporan", [LaporanSurvey::class, "index"])->name("guru.laporan");
+        Route::get("/guru/hasil-korban/{murid}", [HasilSurveyController::class, "guruKorban"])->name("guru.hasilKorban");
+        Route::get("/guru/hasil-pelaku/{murid}", [HasilSurveyController::class, "guruPelaku"])->name("guru.hasilPelaku");
     });
 
     Route::prefix("murid")->group(function () {
@@ -67,10 +69,4 @@ Route::middleware('sekolah')->group(function () {
         Route::get("/murid/survey", [SurveyController::class, "index"])->name("viewSurvey");
         Route::post("/murid/survey", [SurveyController::class, "store"])->name("survey");
     });
-});
-
-
-// ! duumy route
-Route::get("/murid/index",function(){
-    return view('sekolah.murid.index');
 });

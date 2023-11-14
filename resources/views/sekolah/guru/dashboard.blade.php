@@ -261,11 +261,15 @@
             Perilaku Bullying Yang Sering Dipilih Siswa
          </h1>
          <ul>
+            @if ($pertanyaanTerbanyak->jawaban_count == 0)
+            <p class="text-center">Tidak Ada Jawaban Dipilih</p>
+            @else
             @foreach ($tipePelaku as $tipe)
             @if ($tipe->jawaban_count == $pertanyaanTerbanyak->jawaban_count)
             <li>{{ $tipe->pertanyaan }} Dengan {{ $tipe->jawaban_count }} Jawaban </li>
             @endif
             @endforeach
+            @endif
          </ul>
       </div>
 
@@ -275,9 +279,6 @@
 
 @section('script')
 <script>
-   setTimeout(() => {
-      window.print()
-   }, 2000);
    const korbanSangatTinggi = @json($korbanSangatTinggi);
         const korbanTinggi = @json($korbanTinggi);
         const korbanSedang = @json($korbanSedang);
@@ -288,10 +289,7 @@
         const pelakuSedang = @json($pelakuSedang);
         const pelakuRendah = @json($pelakuRendah);
 
-        const tipePelaku = @json($tipePelaku);
-
-        const totalResponKorban = korbanSangatTinggi + korbanTinggi + korbanSedang + korbanRendah;
-        const totalResponPelaku = pelakuSangatTinggi + pelakuTinggi + pelakuSedang + pelakuRendah;
+        const tipePelaku = @json($tipePelaku);  
 </script>
 <script src="{{ asset('js/chart.js') }}"></script>
 @endsection
