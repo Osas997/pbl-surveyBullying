@@ -7,7 +7,7 @@
         <div class="w-full bg-white mx-auto p-8 rounded shadow-md">
             @if ($murid)
             <div class="px-20">
-                <div class="flex justify-between">
+                <div class="flex justify-around">
 
                     <a href="{{route('murid.hasilpelaku')}}">
                         <div
@@ -20,7 +20,7 @@
                     <a href="{{route('murid.hasilkorban')}}">
 
                         <div
-                            class=" w-[120px] md:w-[240px]  flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-black hover:underline">
+                            class=" w-[120px] md:w-[240px]  flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-black hover:text-white hover:bg-blue-500 duration-300 ease-in-out">
                             <span>
                                 Korban
                             </span>
@@ -96,13 +96,11 @@
 
             {{-- print --}}
             <div class="flex justify-center items-center">
-                <a href="{{route('murid.hasilpelaku.print')}}">
-                    <div
-                        class="bg-blue-500 w-[60px] md:w-[180px]  flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
+                <a href="{{route('murid.hasilpelaku.print')}}" class="bg-blue-500 w-[60px] md:w-[180px]  flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
+          
                         <span>
                             Print
                         </span>
-                    </div>
                 </a>
             </div>
             @else

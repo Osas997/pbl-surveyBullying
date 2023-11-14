@@ -10,7 +10,7 @@
 
                     <a href="{{route('murid.hasilpelaku')}}">
                         <div
-                            class="page-link hover:text-white w-[120px] md:w-[240px] flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-black hover:bg-blue-500 duration-300 ease-in-out">
+                            class=" hover:text-white w-[120px] md:w-[240px] flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-black hover:bg-blue-500 duration-300 ease-in-out">
                             <span>
                                 Pelaku
                             </span>
@@ -19,7 +19,7 @@
 
                     <a href="{{route('murid.hasilkorban')}}">
                         <div
-                            class="page-link bg-blue-500 w-[120px] md:w-[240px] flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
+                            class=" bg-blue-500 w-[120px] md:w-[240px] flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
                             <span>
                                 Korban
                             </span>
@@ -92,13 +92,10 @@
                 hal ini dengan konselor anda</p>
             {{-- print --}}
             <div class="flex justify-center items-center">
-                <a href="{{route('murid.hasilkorban.print')}}">
-                    <div
-                        class="bg-blue-500 w-[60px] md:w-[180px]  flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
+                <a href="{{route('murid.hasilkorban.print')}}" class="bg-blue-500 w-[60px] md:w-[180px]  flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
                         <span>
                             Print
                         </span>
-                    </div>
                 </a>
             </div>
             @else

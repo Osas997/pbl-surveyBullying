@@ -9,8 +9,7 @@
 
 
             <h1 class="text-1xl text-slate-100 mb-4 ">Silahkan Pilih Login Sebagai</h1>
-            
-            <div class="flex justify-center items-center gap-10">
+            <div class="flex justify-center items-center gap-10 flex-col md:flex-row">
                 <a href="{{route('viewLoginGuru')}}">
                     <div class="group bg-white w-[200px] h-[200px] md:w-[240px] md:h-[240px] rounded-2xl p-4 flex justify-center items-center hover:bg-gray-200 transition duration-300 ease-in-out cursor-pointer hover:scale-105">
                         <div class="flex justify-center items-center flex-col">
