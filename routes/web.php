@@ -56,7 +56,7 @@ Route::middleware('sekolah')->group(function () {
     });
 
     Route::prefix("murid")->group(function () {
-        Route::get("/welcome", [MuridController::class, "welcome"])->name("murid.dashboard");
+        Route::get("/welcome", [MuridController::class, "welcome"])->name("murid.welcome");
         Route::get("/signup", [MuridController::class, "signup"])->name("murid.viewSignup");
         Route::post("/signup", [MuridController::class, "store"])->name("murid.signup");
         Route::get('/hasil-korban', [HasilSurveyController::class, 'korban'])->name('murid.hasilkorban');

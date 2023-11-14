@@ -176,7 +176,7 @@ if (totalResponKorban != 0 || totalResponPelaku != 0) {
             colors: ["#FDBA8C"],
             series: [
                 {
-                    name: "Tinggi",
+                    name: "Jawaban",
                     color: "#f87171",
                     data: dataTinggi.map((value, index) => ({
                         x: `Soal ${index + 1}`, // Menggunakan data soal yang sesuai
@@ -189,13 +189,13 @@ if (totalResponKorban != 0 || totalResponPelaku != 0) {
                 height: "320px",
                 fontFamily: "Inter, sans-serif",
                 toolbar: {
-                    show: false,
+                    show: true,
                 },
             },
             plotOptions: {
                 bar: {
                     horizontal: false,
-                    columnWidth: "70%",
+                    columnWidth: "50%",
                     borderRadiusApplication: "end",
                     borderRadius: 8,
                 },
