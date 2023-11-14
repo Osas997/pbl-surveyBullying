@@ -29,55 +29,59 @@
 <div class="mt-8 w-full  overflow-x-auto overflow-y-auto">
     @if ($daftarMurid->isNotEmpty())
     <div class="overflow-x-auto shadow-md rounded-lg">
-        <table class="w-full text-sm text-left text-gray-500 ">
-            <thead class="text-xs text-white uppercase bg-blue-500 dark:bg-gray-700 ">
-                <tr>
-                    <th scope="col" class="px-6 py-3">
-                        Nama Murid
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        NISN
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Kelas
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Jenis kelamin
-                    </th>
-                    <th scope="col" class="px-6 py-3 text-center">
-                        Aksi
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($daftarMurid as $murid)
-                <tr class="bg-white border-b  hover:bg-gray-50 ">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                        <span class="sm:text-sm md:text-md uppercase">{{ $murid->nama_murid }}</span>
-                    </th>
-                    <td class="px-6 py-4">
-                        <span class="sm:text-sm md:text-md">{{ $murid->nisn }}</span>
-                    </td>
-                    <td class="px-6 py-4">
-                        <span class="sm:text-sm md:text-md">{{ $murid->kelas }}</span>
-                    </td>
-                    <td class="px-6 py-4">
-                        <span class="sm:text-sm md:text-md">{{ $murid->jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan'
-                            }}</span>
-                    </td>
-                    <td class="px-6 py-4 text-center">
-                        <a class="sm:text-sm md:text-md text-teal-400" href="">Lihat Survey Respon</a>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <div class="text-slate-400 text-sm">Total Siswa {{ $totalSiswa }}</span>
+            <table class="w-full text-sm text-left text-gray-500 ">
+                <thead class="text-xs text-white uppercase bg-blue-500 dark:bg-gray-700 ">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                            Nama Murid
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            NISN
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Kelas
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Jenis kelamin
+                        </th>
+                        <th scope="col" class="px-6 py-3 text-center">
+                            Aksi
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($daftarMurid as $murid)
+                    <tr class="bg-white border-b  hover:bg-gray-50 ">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
+                            <span class="sm:text-sm md:text-md uppercase">{{ $murid->nama_murid }}</span>
+                        </th>
+                        <td class="px-6 py-4">
+                            <span class="sm:text-sm md:text-md">{{ $murid->nisn }}</span>
+                        </td>
+                        <td class="px-6 py-4">
+                            <span class="sm:text-sm md:text-md">{{ $murid->kelas }}</span>
+                        </td>
+                        <td class="px-6 py-4">
+                            <span class="sm:text-sm md:text-md">{{ $murid->jenis_kelamin == 'L' ? 'Laki-laki' :
+                                'Perempuan'
+                                }}</span>
+                        </td>
+                        <td class="px-6 py-4 text-center">
+                            <a class="sm:text-sm md:text-md text-teal-400"
+                                href="{{ route('guru.hasilKorban', $murid->id) }}">Lihat
+                                Survey Respon</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+        @else
+        <h1 class="text-center text-2xl font-bold text-red-600 mt-20">Murid Tidak ditemukan</h1>
+        @endif
+        <div class="flex justify-center items-center mt-6 paginate">
+            {{ $daftarMurid->links() }}
+        </div>
     </div>
-    @else
-    <h1 class="text-center text-2xl font-bold text-red-600 mt-20">Murid Tidak ditemukan</h1>
-    @endif
-    <div class="flex justify-center items-center mt-6 paginate">
-        {{ $daftarMurid->links() }}
-    </div>
-</div>
-@endsection
+    @endsection

@@ -1,3 +1,8 @@
+const totalResponKorban =
+    korbanSangatTinggi + korbanTinggi + korbanSedang + korbanRendah;
+const totalResponPelaku =
+    pelakuSangatTinggi + pelakuTinggi + pelakuSedang + pelakuRendah;
+
 if (totalResponKorban != 0 || totalResponPelaku != 0) {
     const persenKorbanSangatTinggi =
         (korbanSangatTinggi / totalResponKorban) * 100;
@@ -272,7 +277,7 @@ if (totalResponKorban != 0 || totalResponPelaku != 0) {
     const chart2 = document.getElementById("pie-chart1");
     const chart3 = document.getElementById("column-chart");
 
-    chart.innerHTML = "Tidak ada data";
-    chart2.innerHTML = "Tidak ada data";
-    chart3.innerHTML = "Tidak ada data";
+    chart.innerHTML = "Belum Ada Data";
+    chart2.innerHTML = "Belum Ada Data";
+    chart3.innerHTML = "Belum Ada Data";
 }
