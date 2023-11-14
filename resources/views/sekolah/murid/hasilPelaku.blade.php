@@ -54,22 +54,40 @@
             <h1>Rentang Nilai : </h1>
             <div class="flex gap-4">
                 <div class="left">
-                    <p class="font-medium">Skor 30 - 74,5</p>
-                    <p class="font-medium">Skor 75 - 120</p>
+                    <p class="font-medium">Skor 14 - 23</p>
+                    <p class="font-medium">Skor 24 - 34</p>
+                    <p class="font-medium">Skor 35 - 45</p>
+                    <p class="font-medium">Skor 46 - 56</p>
                 </div>
                 <div class="right">
                     <p class="font-medium text-green-400"> : Berpontesi Rendah</p>
+                    <p class="font-medium text-yellow-400"> : Berpotensi Sedang</p>
+                    <p class="font-medium text-red-800"> : Berpotensi Tinggi</p>
+                    <p class="font-medium text-red-800"> : Berpotensi Sangat Tinggi</p>
                     {{-- jika nilai sedang --}}
                     {{-- <p class="font-medium text-amber-400"> : Berpontesi Sedang</p> --}}
                     {{-- jika nilai tinggi --}}
                     {{-- <p class="font-medium text-red-500"> : Berpontesi Tinggi</p> --}}
-                    <p class="font-medium"> : Berpotensi Tinggi</p>
                 </div>
             </div>
 
             <h1 class="mt-4">Interpretasi :</h1>
-            <p class="font-medium">Anda Termasuk dalam kategory siswa yang berpotensi rendah menjadi pelaku bully <br>
-                Sebagian tindakan anda mencerminkan pelaku bully, tetapi masih dalam taraf rendah</p>
+            <p class="text-base sm:text-1xl mb-1"> {{ $murid->murid->nama_murid }} memiliki
+                kecenderungan menjadi pelaku bullying yang
+                @if ($murid->skor_total_pelaku >= 46)
+                <span class="text-red-500">Sangat Tinggi</span>. Hal ini dapat disebabkan oleh beberapa faktor,
+                seperti lingkungan, pertemanan, atau pengalaman pribadi.
+                @elseif ($murid->skor_total_pelaku >= 35 && $murid->skor_total_pelaku < 46) <span class="text-red-500">
+                    Tinggi</span>. Hal ini dapat disebabkan oleh beberapa faktor, seperti
+                    lingkungan, pertemanan, atau pengalaman pribadi.
+                    @elseif ($murid->skor_total_pelaku >= 24 && $murid->skor_total_pelaku < 35) <span
+                        class="text-yellow-300-400">Sedang</span>. Hal ini dapat disebabkan oleh beberapa faktor,
+                        seperti lingkungan, pertemanan, atau pengalaman pribadi.
+                        @else
+                        <span class="text-green-400">Rendah</span>. Hal ini dapat disebabkan oleh beberapa faktor,
+                        seperti lingkungan, pertemanan, atau pengalaman pribadi.
+                        @endif
+            </p>
 
             <h1 class="mt-4">Rekomendasi : </h1>
             <p class="font-medium">Karena Anda termasuk dalam kategori potensi rendah, untuk lebih jelasnya silahkan

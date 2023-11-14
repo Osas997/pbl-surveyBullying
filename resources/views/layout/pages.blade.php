@@ -10,7 +10,18 @@
     <link rel="shortcut icon" href="{{asset('assets/img/blue-logo.png')}}" type="image/x-icon">
 
     <title>@yield('title')</title>
+    <style>
+        .page-link {
+            transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+                opacity 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
 
+        .page-link:hover {
+            transform: translateX(10px);
+            opacity: 0.8;
+            /* Menambahkan efek transparansi saat hover */
+        }
+    </style>
 </head>
 
 <body>

@@ -1,9 +1,9 @@
-@extends('dashboard.layouts.main')
+@extends('layout.main')
 @section('content')
 
 <div class="flex justify-start items-center gap-5">
     <div class="w-10 h-10">
-        <a href="{{ route('admin.pertanyaan') }}">
+        <a href="{{ route('pertanyaan.index') }}">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -19,7 +19,7 @@
         <span class=" md:text-xl">Edit Pertanyaan</span>
     </p>
 </div>
-<form action="{{ route('admin.editPertanyaan', ['pertanyaan'=> $pertanyaan->id]) }}" method="post">
+<form action="{{ route('pertanyaan.update', ['pertanyaan'=> $pertanyaan->id]) }}" method="post">
     @method('put')
     @csrf
     <div class=" lg:grid lg:grid-cols-1 lg:place-items-center mt-10">
@@ -31,10 +31,22 @@
         </div>
         <div class="mb-6 lg:w-5/12">
             <label for="status" class="block mb-2 text-sm font-medium text-gray-900 ">Tipe Pertanyaan</label>
-            <select id="status" name="tipe" required
+            <select id="status" name="tipe_pertanyaan" required
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
-                <option @if ($pertanyaan->tipe == 'korban') selected @endif value="korban">Korban Bullying</option>
-                <option @if ($pertanyaan->tipe == 'pelaku') selected @endif value="pelaku">Pelaku Bullying</option>
+                <option @if ($pertanyaan->tipe_pertanyaan == 'korban') selected @endif value="korban">Korban Bullying
+                </option>
+                <option @if ($pertanyaan->tipe_pertanyaan == 'pelaku') selected @endif value="pelaku">Pelaku Bullying
+                </option>
+            </select>
+        </div>
+        <div class="mb-6 lg:w-5/12">
+            <label for="status" class="block mb-2 text-sm font-medium text-gray-900 ">Tipe Perilaku</label>
+            <select id="status" name="tipe_perilaku" required
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+                <option @if ($pertanyaan->tipe_perilaku == 'verbal') selected @endif value="verbal">Verbal</option>
+                <option @if ($pertanyaan->tipe_perilaku == 'fisik') selected @endif value="fisik">Fisik</option>
+                <option @if ($pertanyaan->tipe_perilaku == 'relational') selected @endif value="relational">Relational
+                </option>
             </select>
         </div>
     </div>

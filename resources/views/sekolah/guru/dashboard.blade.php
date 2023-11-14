@@ -249,13 +249,24 @@
                      <span class="sm:text-sm md:text-md text-center">{{ $tipe->tipe_perilaku }}</span>
                   </td>
                   <td class="px-6 py-4">
-                     <span class="sm:text-sm md:text-md text-center">{{ $tipe->jawaban_skor_lebih_dari_2_count }}
+                     <span class="sm:text-sm md:text-md text-center">{{ $tipe->jawaban_count }}
                         Jawaban</span>
                   </td>
                </tr>
                @endforeach
             </tbody>
          </table>
+
+         <h1 class="text-xl py-4 font-semibold text-center">
+            Perilaku Bullying Yang Sering Dipilih Siswa
+         </h1>
+         <ul>
+            @foreach ($tipePelaku as $tipe)
+            @if ($tipe->jawaban_count == $pertanyaanTerbanyak->jawaban_count)
+            <li>{{ $tipe->pertanyaan }} Dengan {{ $tipe->jawaban_count }} Jawaban </li>
+            @endif
+            @endforeach
+         </ul>
       </div>
 
    </div>
@@ -264,6 +275,9 @@
 
 @section('script')
 <script>
+   setTimeout(() => {
+      window.print()
+   }, 2000);
    const korbanSangatTinggi = @json($korbanSangatTinggi);
         const korbanTinggi = @json($korbanTinggi);
         const korbanSedang = @json($korbanSedang);

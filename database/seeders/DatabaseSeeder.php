@@ -43,7 +43,77 @@ class DatabaseSeeder extends Seeder
 
         Pertanyaan::create([
             "pertanyaan" => "Saya dipukul, ditendang, didorong, dipojokkan ke tembok, atau dikunci di dalam ruangan",
-            "tipe_pertanyaan" => "korban",
+            "tipe_pertanyaan" => "pelaku",
+            "tipe_perilaku" => "fisik",
+        ]);
+        Pertanyaan::create([
+            "pertanyaan" => "Saya dipukul, ditendang, didorong, dipojokkan ke tembok, atau dikunci di dalam ruangan",
+            "tipe_pertanyaan" => "pelaku",
+            "tipe_perilaku" => "fisik",
+        ]);
+        Pertanyaan::create([
+            "pertanyaan" => "Saya dipukul, ditendang, didorong, dipojokkan ke tembok, atau dikunci di dalam ruangan",
+            "tipe_pertanyaan" => "pelaku",
+            "tipe_perilaku" => "fisik",
+        ]);
+        Pertanyaan::create([
+            "pertanyaan" => "Saya dipukul, ditendang, didorong, dipojokkan ke tembok, atau dikunci di dalam ruangan",
+            "tipe_pertanyaan" => "pelaku",
+            "tipe_perilaku" => "fisik",
+        ]);
+        Pertanyaan::create([
+            "pertanyaan" => "Saya dipukul, ditendang, didorong, dipojokkan ke tembok, atau dikunci di dalam ruangan",
+            "tipe_pertanyaan" => "pelaku",
+            "tipe_perilaku" => "fisik",
+        ]);
+        Pertanyaan::create([
+            "pertanyaan" => "Saya dipukul, ditendang, didorong, dipojokkan ke tembok, atau dikunci di dalam ruangan",
+            "tipe_pertanyaan" => "pelaku",
+            "tipe_perilaku" => "fisik",
+        ]);
+        Pertanyaan::create([
+            "pertanyaan" => "Saya dipukul, ditendang, didorong, dipojokkan ke tembok, atau dikunci di dalam ruangan",
+            "tipe_pertanyaan" => "pelaku",
+            "tipe_perilaku" => "fisik",
+        ]);
+        Pertanyaan::create([
+            "pertanyaan" => "Saya dipukul, ditendang, didorong, dipojokkan ke tembok, atau dikunci di dalam ruangan",
+            "tipe_pertanyaan" => "pelaku",
+            "tipe_perilaku" => "fisik",
+        ]);
+        Pertanyaan::create([
+            "pertanyaan" => "Saya dipukul, ditendang, didorong, dipojokkan ke tembok, atau dikunci di dalam ruangan",
+            "tipe_pertanyaan" => "pelaku",
+            "tipe_perilaku" => "fisik",
+        ]);
+        Pertanyaan::create([
+            "pertanyaan" => "Saya dipukul, ditendang, didorong, dipojokkan ke tembok, atau dikunci di dalam ruangan",
+            "tipe_pertanyaan" => "pelaku",
+            "tipe_perilaku" => "fisik",
+        ]);
+        Pertanyaan::create([
+            "pertanyaan" => "Saya dipukul, ditendang, didorong, dipojokkan ke tembok, atau dikunci di dalam ruangan",
+            "tipe_pertanyaan" => "pelaku",
+            "tipe_perilaku" => "fisik",
+        ]);
+        Pertanyaan::create([
+            "pertanyaan" => "Saya dipukul, ditendang, didorong, dipojokkan ke tembok, atau dikunci di dalam ruangan",
+            "tipe_pertanyaan" => "pelaku",
+            "tipe_perilaku" => "fisik",
+        ]);
+        Pertanyaan::create([
+            "pertanyaan" => "Saya dipukul, ditendang, didorong, dipojokkan ke tembok, atau dikunci di dalam ruangan",
+            "tipe_pertanyaan" => "pelaku",
+            "tipe_perilaku" => "fisik",
+        ]);
+        Pertanyaan::create([
+            "pertanyaan" => "Saya dipukul, ditendang, didorong, dipojokkan ke tembok, atau dikunci di dalam ruangan",
+            "tipe_pertanyaan" => "pelaku",
+            "tipe_perilaku" => "fisik",
+        ]);
+        Pertanyaan::create([
+            "pertanyaan" => "Saya dipukul, ditendang, didorong, dipojokkan ke tembok, atau dikunci di dalam ruangan",
+            "tipe_pertanyaan" => "pelaku",
             "tipe_perilaku" => "fisik",
         ]);
     }
