@@ -68,3 +68,9 @@ Route::middleware('sekolah')->group(function () {
         Route::post("/murid/survey", [SurveyController::class, "store"])->name("survey");
     });
 });
+
+
+// ! duumy route
+Route::get("/murid/index",function(){
+    return view('sekolah.murid.index');
+});
