@@ -147,13 +147,10 @@
          </div>
          {{-- print --}}
          <div class="flex justify-center items-center">
-            <a href="{{route('murid.hasilpelaku.print')}}">
-               <div
-                  class="bg-blue-500 w-[60px] md:w-[180px]  flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
-                  <span>
-                     Print
-                  </span>
-               </div>
+            <a href="{{route('murid.hasilpelaku.print')}}" class="bg-blue-500 w-[60px] md:w-[180px]  flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
+               <span>
+                  Print
+               </span>
             </a>
          </div>
       </div>
