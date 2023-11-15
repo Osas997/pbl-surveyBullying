@@ -61,7 +61,7 @@
                             xl:text-lg">"Mari bersama-sama menciptakan lingkungan yang aman dan bebas dari
                                 perundungan."</p>
                         </div>
-                        <a href="{{route('murid.dashboard')}}">
+                        <a href="{{route('murid.welcome')}}">
                             <div class=" w-1/2 flex justify-center items-center gap-2 text-white cursor-pointer duration-300 ease-in-out bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2 text-center sm:text-lg sm:px-4 sm:py-1 mt-4
                             sm:w-4/12 
                             md:w-5/12

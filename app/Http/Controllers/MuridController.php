@@ -24,8 +24,8 @@ class MuridController extends Controller
 
     public function welcome()
     {
-        return "h3h3";
-        // return view("sekolah.murid.dashboard");
+        // return ;
+        return view("sekolah.murid.index");
     }
 
     public function store(Request $request)
