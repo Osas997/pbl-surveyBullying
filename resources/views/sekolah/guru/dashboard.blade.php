@@ -157,7 +157,11 @@
          </div>
       </div>
    </div>
-
+      <div class="flex justify-center items-center w-full lg:w-3/12">
+         <a href="{{route('guru.print-chart')}}" class="flex justify-center items-center font-semibold bg-blue-500 w-full py-4 mt-4 mb-4 rounded-xl text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out cursor-pointer">
+            <span>Print</span>
+         </a>
+      </div>
    {{-- pie chart --}}
    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div class=" max-w-full bg-white rounded-lg dark:bg-gray-800 p-4 md:p-6 shadow-lg">
@@ -257,16 +261,22 @@
             </tbody>
          </table>
 
-         <h1 class="text-xl py-4 font-semibold text-center">
+         <h1 class="text-xl mt-8 mb-4 font-semibold text-center">
             Perilaku Bullying Yang Sering Dipilih Siswa
          </h1>
          <ul>
+            @php
+               $indexiteration = 1;
+            @endphp
             @if ($pertanyaanTerbanyak->jawaban_count == 0)
             <p class="text-center">Tidak Ada Jawaban Dipilih</p>
             @else
             @foreach ($tipePelaku as $tipe)
             @if ($tipe->jawaban_count == $pertanyaanTerbanyak->jawaban_count)
-            <li>{{ $tipe->pertanyaan }} Dengan {{ $tipe->jawaban_count }} Jawaban </li>
+            <div class="flex items-center gap-4 ">
+               <li>{{$indexiteration++}}</li>
+               <li>{{ $tipe->pertanyaan }} Dengan {{ $tipe->jawaban_count }} Jawaban </li>
+            </div>
             @endif
             @endforeach
             @endif

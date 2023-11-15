@@ -36,10 +36,10 @@
             </div>
             <div class="flex justify-center items-cente px-4">
                 <div class="w-full md:w-1/4 ">
-                    <a href="{{ route('viewSurvey') }}" class="">
-                        <div class="flex justify-center items-center font-semibold bg-blue-500 w-full py-4 mt-8 mb-14 rounded-xl text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out cursor-pointer">
+                    <a href="{{ route('viewSurvey') }}" class="flex justify-center items-center font-semibold bg-blue-500 w-full py-4 mt-8 mb-14 rounded-xl text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out cursor-pointer">
+                        <span>
                             Mulai Survey 
-                        </div>
+                        </span>
                     </a>
                 </div>
             </div>
