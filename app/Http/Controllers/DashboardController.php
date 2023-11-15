@@ -58,4 +58,43 @@ class DashboardController extends Controller
 
         return view('sekolah.guru.dashboard', compact('title', 'jumlahMurid', 'korbanRendah', 'korbanSedang', 'korbanTinggi', 'korbanSangatTinggi', 'pelakuRendah', 'pelakuSedang', 'pelakuTinggi', 'pelakuSangatTinggi', 'tipePelaku', 'pertanyaanTerbanyak'));
     }
+
+    public function printChart()
+    {
+        // jumlahKorban
+        $korbanRendah = SurveyRespon::korbanRendah()->sekolah()->count();
+        $korbanSedang = SurveyRespon::korbanSedang()->sekolah()->count();
+        $korbanTinggi = SurveyRespon::korbanTinggi()->sekolah()->count();
+        $korbanSangatTinggi = SurveyRespon::korbanSangatTinggi()->sekolah()->count();
+
+        // jumlahPelaku
+        $pelakuRendah = SurveyRespon::pelakuRendah()->sekolah()->count();
+        $pelakuSedang = SurveyRespon::pelakuSedang()->sekolah()->count();
+        $pelakuTinggi = SurveyRespon::pelakuTinggi()->sekolah()->count();
+        $pelakuSangatTinggi = SurveyRespon::pelakuSangatTinggi()->sekolah()->count();
+
+        $tipePelaku = Pertanyaan::where('tipe_pertanyaan', 'pelaku')
+            ->withCount([
+                'jawaban' => function ($query) {
+                    $query->where('skor', '>', 2)->whereHas('surveyRespon', function ($query) {
+                        $query->whereHas("murid", function ($query) {
+                            $query->where("id_sekolah", auth("sekolah")->user()->id);
+                        });
+                    });
+                },
+            ])->get();
+
+        $pertanyaanTerbanyak = Pertanyaan::where('tipe_pertanyaan', 'pelaku')
+            ->withCount([
+                'jawaban' => function ($query) {
+                    $query->where('skor', '>', 2)->whereHas('surveyRespon', function ($query) {
+                        $query->whereHas("murid", function ($query) {
+                            $query->where("id_sekolah", auth("sekolah")->user()->id);
+                        });
+                    });
+                }
+            ])->orderByDesc('jawaban_count')->first();
+
+        return view('sekolah.guru.printchart', compact('korbanRendah', 'korbanSedang', 'korbanTinggi', 'korbanSangatTinggi', 'pelakuRendah', 'pelakuSedang', 'pelakuTinggi', 'pelakuSangatTinggi', 'tipePelaku', 'pertanyaanTerbanyak'));
+    }
 }

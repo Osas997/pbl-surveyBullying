@@ -53,12 +53,7 @@ Route::middleware('sekolah')->group(function () {
         Route::get("/guru/laporan", [LaporanSurvey::class, "index"])->name("guru.laporan");
         Route::get("/guru/hasil-korban/{murid}", [HasilSurveyController::class, "guruKorban"])->name("guru.hasilKorban");
         Route::get("/guru/hasil-pelaku/{murid}", [HasilSurveyController::class, "guruPelaku"])->name("guru.hasilPelaku");
-
-        // !duumy route
-        Route::get("/guru/print-chart",function(){
-            return view('sekolah.guru.printchart');
-        })->name('guru.print-chart');
-
+        Route::get("/guru/print-chart", [DashboardController::class, "printChart"])->name('guru.print-chart');
     });
 
     Route::prefix("murid")->group(function () {
@@ -76,5 +71,3 @@ Route::middleware('sekolah')->group(function () {
         Route::post("/murid/survey", [SurveyController::class, "store"])->name("survey");
     });
 });
-
-
