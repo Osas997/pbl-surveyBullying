@@ -96,8 +96,7 @@
                </svg>
             </div>
             <div class="">
-               <p class="text-white text-lg">Jumlah Aktif Murid <span class="uppercase">{{
-                     $jumlahMurid }} </span></p>
+               <p class="text-white text-lg">Jumlah Aktif Murid</p>
                <h1 class="text-white font-bold text-3xl lg:text-4xl">{{ $jumlahMurid }}</h1>
             </div>
          </div>
@@ -157,11 +156,12 @@
          </div>
       </div>
    </div>
-      <div class="flex justify-center items-center w-full lg:w-3/12">
-         <a href="{{route('guru.print-chart')}}" class="flex justify-center items-center font-semibold bg-blue-500 w-full py-4 mt-4 mb-4 rounded-xl text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out cursor-pointer">
-            <span>Print</span>
-         </a>
-      </div>
+   <div class="flex justify-center items-center w-full lg:w-3/12">
+      <a href="{{route('guru.print-chart')}}"
+         class="flex justify-center items-center font-semibold bg-blue-500 w-full py-4 mt-4 mb-4 rounded-xl text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out cursor-pointer">
+         <span>Print</span>
+      </a>
+   </div>
    {{-- pie chart --}}
    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div class=" max-w-full bg-white rounded-lg dark:bg-gray-800 p-4 md:p-6 shadow-lg">
@@ -266,7 +266,7 @@
          </h1>
          <ul>
             @php
-               $indexiteration = 1;
+            $indexiteration = 1;
             @endphp
             @if ($pertanyaanTerbanyak->jawaban_count == 0)
             <p class="text-center">Tidak Ada Jawaban Dipilih</p>
