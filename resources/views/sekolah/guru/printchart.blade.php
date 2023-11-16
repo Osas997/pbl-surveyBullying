@@ -1,9 +1,13 @@
 @extends('layout.pages')
 @section('title','Print Chart')
+
 @section('content')
-<div class="relative bg-indigo-200 w-full  p-4 sm:p-6 rounded-sm overflow-hidden mb-8 ">
+<div class="relative bg-blue-200 w-full flex justify-center items-center flex-col gap-10 p-4 sm:p-6 rounded-sm overflow-hidden mb-8 ">
+   <div class="flex justify-center items-center">
+      <button id="btn-print" class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 cursor-pointer rounded">Print</button>
+   </div>
    {{-- pie chart --}}
-   <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+   <div id="pie-chart-grid" class="grid md:grid-cols-2 gap-8">
       <div class=" max-w-full bg-white rounded-lg dark:bg-gray-800 p-4 md:p-6 shadow-lg">
          <div class="flex justify-between items-start w-full">
             <div class="flex-col items-center">
@@ -39,6 +43,7 @@
          <div class="py-6" id="pie-chart1"></div>
 
       </div>
+
    </div>
    <div class="max-w-full w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
       <div class="flex justify-between pb-4 mb-4 border-b border-gray-200 dark:border-gray-700">
@@ -54,8 +59,9 @@
          </div>
       </div>
 
-
-      <div id="column-chart"></div>
+      <div id="print-column-chart" class="">
+         <div id="column-chart"></div>
+      </div>
       <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
 
       </div>
@@ -129,9 +135,48 @@
 
 @section('script')
 <script>
-    setTimeout(function(){
-        window.print()
-    },2000) 
+   let piechart = document.getElementById('pie-chart-grid');
+   let columnchart = document.getElementById('print-column-chart');
+   let btn_print = document.getElementById('btn-print');
+   // Fungsi untuk menangani event setelah proses pencetakan selesai
+   function handleAfterPrint() {
+      // Tambahkan kembali kelas yang dihapus sebelum pencetakan
+      piechart.classList.add('md:grid-cols-2');
+      piechart.classList.remove('grid-cols-2');
+
+      columnchart.classList.remove('w-[640px]')
+      // Hapus kelas 'hidden' dari tombol cetak
+      btn_print.classList.remove('hidden');
+
+      // Hapus event listener afterprint agar tidak dijalankan secara berulang
+      window.removeEventListener('afterprint', handleAfterPrint);
+   }
+
+   btn_print.addEventListener('click', function () {
+      // Hapus kelas untuk tampilan cetak
+      piechart.classList.remove('md:grid-cols-2');
+      piechart.classList.add('grid-cols-2');
+
+      columnchart.classList.add('w-[640px]')
+      // Sembunyikan tombol cetak
+      btn_print.classList.add('hidden');
+
+      
+
+      // Tambahkan event listener untuk menangani event afterprint
+      window.addEventListener('afterprint', handleAfterPrint);
+
+      // Lakukan pencetakan
+      setTimeout(() => {
+         window.print();
+      }, 500);
+   });
+
+   //  setTimeout(function(){
+   //       // piechart.classList.remove('md:grid-cols-2')  
+   //       // piechart.classList.add('grid-cols-2')
+   //      window.print()
+   //  },2000) 
    const korbanSangatTinggi = @json($korbanSangatTinggi);
         const korbanTinggi = @json($korbanTinggi);
         const korbanSedang = @json($korbanSedang);
