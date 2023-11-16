@@ -27,6 +27,7 @@ class MuridController extends Controller
     {
         $cookieMurid = $request->cookie('survey_murid');
         $murid = SurveyRespon::where('id_murid', $cookieMurid)->first();
+
         return view("sekolah.murid.index", compact('murid'));
     }
 
