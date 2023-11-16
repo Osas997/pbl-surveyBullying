@@ -187,6 +187,7 @@ if (totalResponKorban != 0 || totalResponPelaku != 0) {
             chart: {
                 type: "bar",
                 height: "320px",
+                width : "100%",
                 fontFamily: "Inter, sans-serif",
                 toolbar: {
                     show: true,
