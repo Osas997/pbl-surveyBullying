@@ -54,6 +54,8 @@ Route::middleware('sekolah')->group(function () {
         Route::get("/guru/print-laporan", [LaporanSurvey::class, "print"])->name("guru.printLaporan");
         Route::get("/guru/hasil-korban/{murid}", [HasilSurveyController::class, "guruKorban"])->name("guru.hasilKorban");
         Route::get("/guru/hasil-pelaku/{murid}", [HasilSurveyController::class, "guruPelaku"])->name("guru.hasilPelaku");
+        Route::get("/guru/print-hasil-korban/{murid}", [HasilSurveyController::class, "printGuruKorban"])->name("guru.printHasilKorban");
+        Route::get("/guru/print-hasil-pelaku/{murid}", [HasilSurveyController::class, "printGuruPelaku"])->name("guru.printHasilPelaku");
         Route::get("/guru/print-chart", [DashboardController::class, "printChart"])->name('guru.print-chart');
     });
 

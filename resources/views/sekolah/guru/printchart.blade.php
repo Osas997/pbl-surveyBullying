@@ -2,9 +2,11 @@
 @section('title','Print Chart')
 
 @section('content')
-<div class="relative bg-blue-200 w-full flex justify-center items-center flex-col gap-10 p-4 sm:p-6 rounded-sm overflow-hidden mb-8 ">
+<div
+   class="relative bg-blue-200 w-full flex justify-center items-center flex-col gap-10 p-4 sm:p-6 rounded-sm overflow-hidden mb-8 ">
    <div class="flex justify-center items-center">
-      <button id="btn-print" class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 cursor-pointer rounded">Print</button>
+      <button id="btn-print"
+         class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 cursor-pointer rounded">Print</button>
    </div>
    {{-- pie chart --}}
    <div id="pie-chart-grid" class="grid md:grid-cols-2 gap-8">
@@ -112,7 +114,7 @@
          </h1>
          <ul>
             @php
-               $indexiteration = 1;
+            $indexiteration = 1;
             @endphp
             @if ($pertanyaanTerbanyak->jawaban_count == 0)
             <p class="text-center">Tidak Ada Jawaban Dipilih</p>
@@ -172,11 +174,6 @@
       }, 500);
    });
 
-   //  setTimeout(function(){
-   //       // piechart.classList.remove('md:grid-cols-2')  
-   //       // piechart.classList.add('grid-cols-2')
-   //      window.print()
-   //  },2000) 
    const korbanSangatTinggi = @json($korbanSangatTinggi);
         const korbanTinggi = @json($korbanTinggi);
         const korbanSedang = @json($korbanSedang);
