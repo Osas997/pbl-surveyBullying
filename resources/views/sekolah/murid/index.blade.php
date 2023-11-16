@@ -34,11 +34,18 @@
             <div class="flex justify-center items-center">
                 <iframe class="lg:max-w-screen-md aspect-video rounded-xl mb-10 md:w-3/4" src="https://www.youtube.com/embed/QhNpc3S7nFg" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="flex justify-center items-cente px-4">
+            <div class="flex justify-center items-center px-4 gap-8">
                 <div class="w-full md:w-1/4 ">
                     <a href="{{ route('viewSurvey') }}" class="flex justify-center items-center font-semibold bg-blue-500 w-full py-4 mt-8 mb-14 rounded-xl text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out cursor-pointer">
                         <span>
                             Mulai Survey 
+                        </span>
+                    </a>
+                </div>
+                <div class="w-full md:w-1/4 ">
+                    <a href="{{ route('murid.hasilpelaku') }}" class="flex justify-center items-center font-semibold bg-blue-500 w-full py-4 mt-8 mb-14 rounded-xl text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out cursor-pointer">
+                        <span>
+                            Back to Hasil Survey
                         </span>
                     </a>
                 </div>
