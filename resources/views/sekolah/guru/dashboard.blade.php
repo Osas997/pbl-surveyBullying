@@ -220,6 +220,7 @@
 
       </div>
       <div class="mt-8 w-full  overflow-x-auto overflow-y-auto rounded-lg">
+         @if ($tipePelaku->isNotEmpty())
          <p class="text-sm font-normal text-gray-500 dark:text-gray-400">
             Berdasarkan Jumlah Jawaban Yang Dipilih Saat Survey</p>
          <table class="w-full text-sm text-left text-gray-500 ">
@@ -260,6 +261,9 @@
                @endforeach
             </tbody>
          </table>
+         @else
+         <h1 class="text-center">Tidak Ada Pertanyaan</h1>
+         @endif
 
          <h1 class="text-xl mt-8 mb-4 font-semibold text-center">
             Perilaku Bullying Yang Sering Dipilih Siswa
@@ -268,7 +272,7 @@
             @php
             $indexiteration = 1;
             @endphp
-            @if ($pertanyaanTerbanyak->jawaban_count == 0)
+            @if ( $pertanyaanTerbanyak == null || $pertanyaanTerbanyak->jawaban_count == 0)
             <p class="text-center">Tidak Ada Jawaban Dipilih</p>
             @else
             @foreach ($tipePelaku as $tipe)

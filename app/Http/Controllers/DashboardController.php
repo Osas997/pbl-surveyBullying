@@ -6,7 +6,6 @@ use App\Models\Murid;
 use App\Models\Pertanyaan;
 use App\Models\Sekolah;
 use App\Models\SurveyRespon;
-use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
