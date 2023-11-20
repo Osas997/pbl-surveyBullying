@@ -180,14 +180,14 @@ if (totalResponKorban != 0 || totalResponPelaku != 0) {
                     color: "#f87171",
                     data: dataTinggi.map((value, index) => ({
                         x: `Soal ${index + 1}`, // Menggunakan data soal yang sesuai
-                        y: value,
+                        y: Math.round(value), // Membulatkan nilai menjadi bilangan bulat
                     })),
                 },
             ],
             chart: {
                 type: "bar",
                 height: "320px",
-                width : "100%",
+                width: "100%",
                 fontFamily: "Inter, sans-serif",
                 toolbar: {
                     show: true,
@@ -231,7 +231,7 @@ if (totalResponKorban != 0 || totalResponPelaku != 0) {
                 },
             },
             dataLabels: {
-                enabled: false,
+                enabled: true,
             },
             legend: {
                 show: false,

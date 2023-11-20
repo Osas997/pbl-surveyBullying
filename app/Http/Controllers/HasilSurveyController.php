@@ -16,12 +16,28 @@ class HasilSurveyController extends Controller
 
         return view('sekolah.murid.hasilKorban', compact('murid'));
     }
+
     public function pelaku(Request $request)
     {
         $cookieMurid = $request->cookie('survey_murid');
         $murid = SurveyRespon::where('id_murid', $cookieMurid)->first();
 
         return view('sekolah.murid.hasilPelaku', compact('murid'));
+    }
+    public function printKorban(Request $request)
+    {
+        $cookieMurid = $request->cookie('survey_murid');
+        $murid = SurveyRespon::where('id_murid', $cookieMurid)->first();
+
+        return view('sekolah.murid.printKorban', compact('murid'));
+    }
+
+    public function printPelaku(Request $request)
+    {
+        $cookieMurid = $request->cookie('survey_murid');
+        $murid = SurveyRespon::where('id_murid', $cookieMurid)->first();
+
+        return view('sekolah.murid.printPelaku', compact('murid'));
     }
 
     public function guruKorban(Murid $murid)
@@ -36,6 +52,22 @@ class HasilSurveyController extends Controller
     {
         $dataLaporan = SurveyRespon::with(['jawaban', 'jawaban.pertanyaan'])->where("id_murid", $murid->id)->first();
         return view("sekolah.guru.hasil_pelaku_murid", [
+            "title" => "Hasil Survey Murid",
+            "murid" => $dataLaporan,
+        ]);
+    }
+    public function printGuruKorban(Murid $murid)
+    {
+        $dataLaporan = SurveyRespon::with(['jawaban', 'jawaban.pertanyaan'])->where("id_murid", $murid->id)->first();
+        return view("sekolah.guru.print_hasil_korban_murid", [
+            "title" => "Hasil Survey Murid",
+            "murid" => $dataLaporan,
+        ]);
+    }
+    public function printGuruPelaku(Murid $murid)
+    {
+        $dataLaporan = SurveyRespon::with(['jawaban', 'jawaban.pertanyaan'])->where("id_murid", $murid->id)->first();
+        return view("sekolah.guru.print_hasil_pelaku_murid", [
             "title" => "Hasil Survey Murid",
             "murid" => $dataLaporan,
         ]);

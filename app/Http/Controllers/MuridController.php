@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Murid;
+use App\Models\SurveyRespon;
 use Illuminate\Http\Request;
 
 class MuridController extends Controller
@@ -22,10 +23,12 @@ class MuridController extends Controller
         return view("sekolah.murid.signup");
     }
 
-    public function welcome()
+    public function welcome(Request $request)
     {
-        // return ;
-        return view("sekolah.murid.index");
+        $cookieMurid = $request->cookie('survey_murid');
+        $murid = SurveyRespon::where('id_murid', $cookieMurid)->first();
+
+        return view("sekolah.murid.index", compact('murid'));
     }
 
     public function store(Request $request)

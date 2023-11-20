@@ -26,7 +26,7 @@
    </form>
 </div>
 <div class="">
-   <a href="kumis" target="_blank"
+   <a href="{{ route('guru.printLaporan') }}" target="_blank"
       class="bg-[#0062CE] btn rounded-lg text-white flex justify-center items-center w-fit px-8 h-10 hover:bg-blue-600 duration-300 ease-in-out mt-4">
       <span>Print</span>
    </a>

@@ -103,7 +103,7 @@
                 </div>
                 @endforeach
                 <div class="flex justify-center items-center mt-10">
-                    <button id="btn" type="submit" class="bg-blue-500 w-full  text-white px-10 py-3 rounded-lg disabled:hidden
+                    <button id="submit" type="submit" class="bg-blue-500 w-full  text-white px-10 py-3 rounded-lg disabled:hidden
                         hover:bg-blue-400 duration-300 ease-in-out">Submit</button>
                 </div>
             </form>

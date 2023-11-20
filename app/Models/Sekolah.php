@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Model;
+use Laravel\Sanctum\HasApiTokens;
 
 class Sekolah extends Model
 {
-    use HasFactory;
+    use HasFactory, HasApiTokens;
     protected $table = "sekolah";
     protected $guarded = ["id"];
     protected $casts = [

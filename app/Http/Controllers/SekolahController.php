@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SurveyRespon;
 use Illuminate\Http\Request;
 
 class SekolahController extends Controller

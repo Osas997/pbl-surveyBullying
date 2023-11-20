@@ -23,4 +23,17 @@ class Pertanyaan extends Model
             $query->where('pertanyaan', 'like', '%' . $search . '%')->orWhere('tipe_pertanyaan', 'like', '%' . $search . '%')->orWhere('tipe_perilaku', 'like', '%' . $search . '%');
         }
     }
+
+    public function scopeCountPerilaku($query)
+    {
+        return $query->withCount([
+            'jawaban' => function ($query) {
+                $query->where('skor', '>', 2)->whereHas('surveyRespon', function ($query) {
+                    $query->whereHas("murid", function ($query) {
+                        $query->where("id_sekolah", auth("sekolah")->user()->id);
+                    });
+                });
+            },
+        ]);
+    }
 }

@@ -6,7 +6,6 @@ use App\Models\Murid;
 use App\Models\Pertanyaan;
 use App\Models\Sekolah;
 use App\Models\SurveyRespon;
-use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
@@ -34,27 +33,9 @@ class DashboardController extends Controller
         $pelakuTinggi = SurveyRespon::pelakuTinggi()->sekolah()->count();
         $pelakuSangatTinggi = SurveyRespon::pelakuSangatTinggi()->sekolah()->count();
 
-        $tipePelaku = Pertanyaan::where('tipe_pertanyaan', 'pelaku')
-            ->withCount([
-                'jawaban' => function ($query) {
-                    $query->where('skor', '>', 2)->whereHas('surveyRespon', function ($query) {
-                        $query->whereHas("murid", function ($query) {
-                            $query->where("id_sekolah", auth("sekolah")->user()->id);
-                        });
-                    });
-                },
-            ])->get();
+        $tipePelaku = Pertanyaan::where('tipe_pertanyaan', 'pelaku')->countPerilaku()->get();
 
-        $pertanyaanTerbanyak = Pertanyaan::where('tipe_pertanyaan', 'pelaku')
-            ->withCount([
-                'jawaban' => function ($query) {
-                    $query->where('skor', '>', 2)->whereHas('surveyRespon', function ($query) {
-                        $query->whereHas("murid", function ($query) {
-                            $query->where("id_sekolah", auth("sekolah")->user()->id);
-                        });
-                    });
-                }
-            ])->orderByDesc('jawaban_count')->first();
+        $pertanyaanTerbanyak = Pertanyaan::where('tipe_pertanyaan', 'pelaku')->countPerilaku()->orderByDesc('jawaban_count')->first();
 
         return view('sekolah.guru.dashboard', compact('title', 'jumlahMurid', 'korbanRendah', 'korbanSedang', 'korbanTinggi', 'korbanSangatTinggi', 'pelakuRendah', 'pelakuSedang', 'pelakuTinggi', 'pelakuSangatTinggi', 'tipePelaku', 'pertanyaanTerbanyak'));
     }
@@ -73,27 +54,9 @@ class DashboardController extends Controller
         $pelakuTinggi = SurveyRespon::pelakuTinggi()->sekolah()->count();
         $pelakuSangatTinggi = SurveyRespon::pelakuSangatTinggi()->sekolah()->count();
 
-        $tipePelaku = Pertanyaan::where('tipe_pertanyaan', 'pelaku')
-            ->withCount([
-                'jawaban' => function ($query) {
-                    $query->where('skor', '>', 2)->whereHas('surveyRespon', function ($query) {
-                        $query->whereHas("murid", function ($query) {
-                            $query->where("id_sekolah", auth("sekolah")->user()->id);
-                        });
-                    });
-                },
-            ])->get();
+        $tipePelaku = Pertanyaan::where('tipe_pertanyaan', 'pelaku')->countPerilaku()->get();
 
-        $pertanyaanTerbanyak = Pertanyaan::where('tipe_pertanyaan', 'pelaku')
-            ->withCount([
-                'jawaban' => function ($query) {
-                    $query->where('skor', '>', 2)->whereHas('surveyRespon', function ($query) {
-                        $query->whereHas("murid", function ($query) {
-                            $query->where("id_sekolah", auth("sekolah")->user()->id);
-                        });
-                    });
-                }
-            ])->orderByDesc('jawaban_count')->first();
+        $pertanyaanTerbanyak = Pertanyaan::where('tipe_pertanyaan', 'pelaku')->countPerilaku()->orderByDesc('jawaban_count')->first();
 
         return view('sekolah.guru.printchart', compact('korbanRendah', 'korbanSedang', 'korbanTinggi', 'korbanSangatTinggi', 'pelakuRendah', 'pelakuSedang', 'pelakuTinggi', 'pelakuSangatTinggi', 'tipePelaku', 'pertanyaanTerbanyak'));
     }

@@ -80,6 +80,9 @@ class AuthContoller extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        // Menghapus cookie 'survey_murid'
+        $cookie = cookie('survey_murid', null, -1);
+
+        return redirect('/')->withCookie($cookie);
     }
 }
