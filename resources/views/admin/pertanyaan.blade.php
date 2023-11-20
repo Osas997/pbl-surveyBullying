@@ -118,6 +118,7 @@
    <table class="w-full text-sm text-left text-gray-500">
       <thead class="text-xs text-white uppercase bg-blue-500">
          <tr>
+            <th>No</th>
             <th scope="col" class="px-6 py-3 w-2/3">
                Pertanyaan
             </th>
@@ -135,6 +136,7 @@
       <tbody>
          @foreach ($dataPertanyaan as $pertanyaan)
          <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+            <td class="px-2 py-4">{{ $loop->iteration }}</td>
             <td class="px-2 py-4">{{ $pertanyaan->pertanyaan }}</td>
             <td class="px-6 py-4"> {{ $pertanyaan->tipe_pertanyaan }}</td>
             <td class="px-6 py-4"> {{ $pertanyaan->tipe_perilaku }}</td>

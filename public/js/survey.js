@@ -18,14 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    const btn = document.getElementById("submit");
-    btn.addEventListener("click", () => {
-        for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
+    const submitButton = document.getElementById("submit");
+    submitButton.addEventListener("click", function () {
+        // Menghapus semua items local storage dengan nama yang dimulai dari "survey"
+        for (let key in localStorage) {
             if (key.startsWith("survey")) {
                 localStorage.removeItem(key);
-                // Karena kita menghapus item, kita perlu menyesuaikan indeks
-                i--;
             }
         }
     });

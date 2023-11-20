@@ -52,6 +52,7 @@ Route::middleware('sekolah')->group(function () {
         Route::get("/murid", [MuridController::class, "index"])->name("guru.murid");
         Route::get("/laporan", [LaporanSurvey::class, "index"])->name("guru.laporan");
         Route::get("/print-laporan", [LaporanSurvey::class, "print"])->name("guru.printLaporan");
+        // Route::get("/laporan-pdf", [LaporanSurvey::class, "downloadPdf"])->name("guru.downloadPdf");
         Route::get("/hasil-korban/{murid}", [HasilSurveyController::class, "guruKorban"])->name("guru.hasilKorban");
         Route::get("/hasil-pelaku/{murid}", [HasilSurveyController::class, "guruPelaku"])->name("guru.hasilPelaku");
         Route::get("/print-hasil-korban/{murid}", [HasilSurveyController::class, "printGuruKorban"])->name("guru.printHasilKorban");

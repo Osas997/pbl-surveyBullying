@@ -64,8 +64,7 @@
                   </select>
                </div>
                <button type="submit"
-                  class="block bg-blue-500 w-full py-4 mt-8 mb-14 rounded-full text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">Kirim</button>
-
+                  class="block bg-blue-500 w-full py-4 mt-8 mb-2 rounded-full text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">Kirim</button>
             </form>
          </div>
       </div>
