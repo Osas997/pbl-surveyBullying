@@ -46,10 +46,19 @@
     <div class="section-4 w-screen  mt-20 bg-blue-100 pt-6 md:pt-10">
         <h1 class="text-base text-center font-semibold whitespace-nowrap mb-5 md:text-lg">Perjalanan Melawan Bullying
             dalam Video Pendek</h1>
-        <div class="flex justify-center items-center">
-            <iframe class="lg:max-w-screen-md aspect-video rounded-xl mb-10 md:w-3/4"
-                src="https://www.youtube.com/embed/SeNfQDvTZbU" frameborder="0" allowfullscreen></iframe>
+        <div class="mx-auto max-w-screen-xl grid grid-cols-1 md:grid-cols-2 justify-center items-center md:gap-10">
+            <div class="flex justify-center md:justify-end items-center ">
+                <iframe class="lg:max-w-screen-md aspect-video rounded-xl mb-10 md:w-3/4"
+                        src="https://www.youtube.com/embed/r8tCRia5-pc" frameborder="0" allowfullscreen>
+                </iframe>
 
+            </div>
+            <div class="flex justify-center md:justify-start items-center ">
+                <iframe class="lg:max-w-screen-md aspect-video rounded-xl mb-10 md:w-3/4"
+                        src="https://www.youtube.com/embed/xe7DMppV-po" frameborder="0" allowfullscreen>
+                </iframe>
+
+            </div>
         </div>
         <div class="flex justify-center items-center px-4 gap-8">
             <div class="w-full md:w-1/4 ">

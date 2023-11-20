@@ -3,6 +3,7 @@
 @section('content')
 <div class="flex justify-center items-center h-screen bg-[#0090D4] overflow-x-hidden">
     <div class="flex flex-col items-center">
+        
         <h1 class="text-3xl font-semibold text-white text-center">Selamat Datang di Sekolah </h1>
         <h1 class="text-3xl font-semibold text-white text-center mb-6">{{
             strtoupper(auth('sekolah')->user()->nama_sekolah) }}</h1>
