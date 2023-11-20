@@ -7,7 +7,7 @@ function handleAfterPrint() {
     piechart.classList.add("md:grid-cols-2");
     piechart.classList.remove("grid-cols-2");
 
-    columnchart.classList.remove("w-[640px]");
+    columnchart.classList.remove("w-1/2");
     // Hapus kelas 'hidden' dari tombol cetak
     btn_print.classList.remove("hidden");
 
@@ -19,8 +19,8 @@ btn_print.addEventListener("click", function () {
     // Hapus kelas untuk tampilan cetak
     piechart.classList.remove("md:grid-cols-2");
     piechart.classList.add("grid-cols-2");
-
-    columnchart.classList.add("w-[640px]");
+    console.log(columnchart);
+    columnchart.classList.add("w-1/2");
     // Sembunyikan tombol cetak
     btn_print.classList.add("hidden");
 
@@ -30,5 +30,5 @@ btn_print.addEventListener("click", function () {
     // Lakukan pencetakan
     setTimeout(() => {
         window.print();
-    }, 500);
+    }, 1000);
 });
