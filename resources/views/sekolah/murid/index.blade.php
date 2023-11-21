@@ -1,10 +1,10 @@
 @extends('layout.pages')
-@section('title', 'Siswa Survey')
+@section('title', 'Siswa - Safe Schools')
 @section('content')
 <nav class="border-gray-200 dark:bg-gray-900 fixed w-screen z-10 transition-all ease">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="{{route('index')}}" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="{{asset('assets/img/blue-logo.png')}}" class="h-8" alt="Flowbite Logo" />
+            <img src="{{asset('assets/img/blue-logo.png')}}" class="h-8" alt="safe-schools" />
             <span class="self-center text-2xl font-semibold whitespace-nowrap text-slate-900">Safe Schools</span>
         </a>
         <button data-collapse-toggle="navbar-default" type="button"
@@ -24,10 +24,11 @@
                         class="block py-2 px-3 text-slate-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-600 duration-300 rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500">Home</a>
                 </li>
                 <li>
-                    <form method="POST" action="{{ route('logout') }}">
+                    <form method="POST" action="{{ route('logout') }}"
+                        class="block hover:bg-gray-100 md:hover:bg-transparent duration-300 rounded md:bg-transparent dark:text-white md:dark:text-blue-500">
                         @csrf
                         <button type="submit"
-                            class="block py-2 px-3 text-slate-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-600 duration-300 rounded md:bg-transparent md:p-0 dark:text-white md:dark:text-blue-500">Logout</button>
+                            class="block py-2 px-3 text-slate-900 md:p-0 md:hover:text-blue-600">Logout</button>
                     </form>
                 </li>
             </ul>

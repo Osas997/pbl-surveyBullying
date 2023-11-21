@@ -20,23 +20,16 @@
                <span class="font-semibold">Back</span>
             </div>
          </a>
-         {{-- <div class=" mt-10 mb-12">
-            <div class="flex justify-center items-center flex-col gap-4">
-               <a href="{{route('guru.hasilPelaku', $murid->murid->id )}}" class="@if(Request::is('guru/hasil-pelaku/*')) bg-blue-500 @endif text-white w-full md:w-[240px] flex justify-center items-center py-4 rounded-lg">
-                  Pelaku
-               </a>
-               <a href="{{route('guru.hasilKorban', $murid->murid->id )}}" class="hover:text-white  w-full md:w-[240px] flex justify-center items-center py-4 rounded-lg hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
-                  Korban
-               </a>
-            </div>
-         </div> --}}
+
          <div class="mt-10 mb-12">
             <div class="flex justify-center items-center flex-col md:flex-row gap-4">
-               <a href="{{route('guru.hasilPelaku', $murid->murid->id )}}" class="text-black w-full md:w-[240px] flex justify-center items-center py-4 rounded-lg hover:text-white hover:bg-blue-500 transition-colors duration-300 ease-in-out">
+               <a href="{{route('guru.hasilPelaku', $murid->murid->id )}}"
+                  class="text-black w-full md:w-[240px] flex justify-center items-center py-4 rounded-lg hover:text-white hover:bg-blue-500 transition-colors duration-300 ease-in-out">
                   Pelaku
                </a>
 
-               <a href="{{route('guru.hasilKorban', $murid->murid->id )}}" class="@if(Request::is('guru/hasil-korban/*')) bg-blue-500 @endif text-white w-full md:w-[240px] flex justify-center items-center py-4 rounded-lg">
+               <a href="{{route('guru.hasilKorban', $murid->murid->id )}}"
+                  class="@if(Request::is('guru/hasil-korban/*')) bg-blue-500 @endif text-white w-full md:w-[240px] flex justify-center items-center py-4 rounded-lg">
                   Korban
                </a>
 
@@ -65,23 +58,22 @@
             <p class="text-center font-medium text-base">Nilai Anda</p>
             <h2 class="text-center font-semibold text-4xl">
                @if ($murid->skor_total_korban >= 46)
-                   <span class="text-red-500">
-                       {{ $murid->skor_total_korban }}
-                   </span>
-               @elseif ($murid->skor_total_korban >= 35 && $murid->skor_total_korban < 46)
-                   <span class="text-red-500">
-                       {{ $murid->skor_total_korban }}
-                   </span>
-               @elseif ($murid->skor_total_korban >= 24 && $murid->skor_total_korban < 35)
-                   <span class="text-yellow-300-400">
-                       {{ $murid->skor_total_korban }}
-                   </span>
-               @else
-                   <span class="text-green-400">
-                       {{ $murid->skor_total_korban }}
-                   </span>
-               @endif
-           </h2>
+               <span class="text-red-500">
+                  {{ $murid->skor_total_korban }}
+               </span>
+               @elseif ($murid->skor_total_korban >= 35 && $murid->skor_total_korban < 46) <span class="text-red-500">
+                  {{ $murid->skor_total_korban }}
+                  </span>
+                  @elseif ($murid->skor_total_korban >= 24 && $murid->skor_total_korban < 35) <span
+                     class="text-yellow-400">
+                     {{ $murid->skor_total_korban }}
+                     </span>
+                     @else
+                     <span class="text-green-400">
+                        {{ $murid->skor_total_korban }}
+                     </span>
+                     @endif
+            </h2>
          </div>
          <h1>Rentang Nilai : </h1>
          <div class="flex gap-4">
@@ -100,22 +92,22 @@
          </div>
 
          <h1 class="mt-4">Interpretasi :</h1>
-                    <p class="text-base sm:text-1xl mb-1"> {{ $murid->murid->nama_murid }} memiliki
-                        kecenderungan menjadi pelaku bullying yang
-                        @if ($murid->skor_total_korban >= 35)
-                            <span class="text-red-500">Tinggi</span> Anda termasuk dalam kategori orang yang berpotensi
-                            tinggi menjadi korban Bullying. Anda cenderung mengalami tindakan-tindakan yang mengarah pada
-                            perilaku kekerasan dan membuat anda tersiksa.
-                        @elseif ($murid->skor_total_korban >= 24 && $murid->skor_total_korban < 35)
-                            <span class="text-yellow-300-400">Sedang</span> Anda termasuk dalam kategori orang yang
-                            berpotensi sedang menjadi korban Bullying. Anda cenderung mengalami tindakan-tindakan yang
-                            mengarah pada perilaku kekerasan dan membuat anda tersiksa
-                        @else
-                            <span class="text-green-400">Rendah</span> Anda termasuk dalam kategori orang yang berpotensi
-                            Rendah menjadi korban Bullying. Anda terkadang mengalami tindakan-tindakan yang membuat anda
-                            tersakiti.
-                        @endif
-                    </p>
+         <p class="text-base sm:text-1xl mb-1"> {{ $murid->murid->nama_murid }} memiliki
+            kecenderungan menjadi pelaku bullying yang
+            @if ($murid->skor_total_korban >= 35)
+            <span class="text-red-500">Tinggi</span> Anda termasuk dalam kategori orang yang berpotensi
+            tinggi menjadi korban Bullying. Anda cenderung mengalami tindakan-tindakan yang mengarah pada
+            perilaku kekerasan dan membuat anda tersiksa.
+            @elseif ($murid->skor_total_korban >= 24 && $murid->skor_total_korban < 35) <span class="text-yellow-400">
+               Sedang</span> Anda termasuk dalam kategori orang yang
+               berpotensi sedang menjadi korban Bullying. Anda cenderung mengalami tindakan-tindakan yang
+               mengarah pada perilaku kekerasan dan membuat anda tersiksa
+               @else
+               <span class="text-green-400">Rendah</span> Anda termasuk dalam kategori orang yang berpotensi
+               Rendah menjadi korban Bullying. Anda terkadang mengalami tindakan-tindakan yang membuat anda
+               tersakiti.
+               @endif
+         </p>
          <div class="mt-4 w-full  overflow-x-auto overflow-y-auto rounded-lg">
             <table class="w-full text-sm text-left text-gray-500 ">
                <thead class="text-xs text-white uppercase  bg-blue-500  ">
@@ -169,7 +161,7 @@
          </div>
          {{-- print --}}
          <div class="flex justify-center items-center">
-            <a href="{{route('guru.printHasilKorban',$murid->murid->id)}}" target="_blank"
+            <a href="{{route('guru.printHasil',$murid->murid->id)}}" target="_blank"
                class="bg-blue-500 w-[60px] md:w-[180px]  flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
                <span>
                   Print
@@ -178,6 +170,5 @@
          </div>
       </div>
    </div>
-
 </div>
 @endsection

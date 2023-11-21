@@ -62,7 +62,7 @@
       </div>
 
       <div id="print-column-chart" class="">
-         <div id="column-chart" ></div>
+         <div id="column-chart"></div>
       </div>
       <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
 
@@ -114,45 +114,38 @@
          </h1>
          <ul>
             @if ($pertanyaanTerbanyak == null || $pertanyaanTerbanyak->jawaban_count == 0)
-                <p class="text-center">Tidak Ada Jawaban Dipilih</p>
+            <p class="text-center">Tidak Ada Jawaban Dipilih</p>
             @else
-                
-                <table class="w-full text-sm text-left text-gray-500 rounded-lg">
-                   <thead class="text-xs text-white uppercase bg-red-400 rounded-lg">
-                      <tr>
-                         <th scope="col" class="px-6 py-3">
-                            #
-                         </th>
-                         <th scope="col" class="px-6 py-3">
-                            Pertanyaan
-                         </th>
-                         <th scope="col" class="px-6 py-3">
-                            <span>Banyak Jawaban</span>
-       
-                         </th>
-                      </tr>
-                   </thead>
-                   <tbody>
-                      @foreach ($tipePelaku as $tipe)
-                      @if ($tipe->jawaban_count == $pertanyaanTerbanyak->jawaban_count)   
-                      <tr class="bg-white border-b  hover:bg-gray-50 ">
-                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                            <span>{{ $loop->iteration }}</span>
-                         </th>
-                         <td class="px-6 py-4">
-                            <span class="sm:text-sm md:text-md text-center">{{ $tipe->pertanyaan }}</span>
-                         </td>
-                         <td class="px-6 py-4">
-                            <span class="sm:text-sm md:text-md text-center">{{ $tipe->jawaban_count }}
-                               Jawaban</span>
-                         </td>
-                      </tr>
-                      @endif
-                      @endforeach
-                   </tbody>
-                </table>
+
+            <table class="w-full text-sm text-left text-gray-500 rounded-lg">
+               <thead class="text-xs text-white uppercase bg-red-400 rounded-lg">
+                  <tr>
+                     <th scope="col" class="px-6 py-3">
+                        Pertanyaan
+                     </th>
+                     <th scope="col" class="px-6 py-3">
+                        <span>Banyak Jawaban</span>
+                     </th>
+                  </tr>
+               </thead>
+               <tbody>
+                  @foreach ($tipePelaku as $tipe)
+                  @if ($tipe->jawaban_count == $pertanyaanTerbanyak->jawaban_count)
+                  <tr class="bg-white border-b  hover:bg-gray-50 ">
+                     <td class="px-6 py-4">
+                        <span class="sm:text-sm md:text-md text-center">{{ $tipe->pertanyaan }}</span>
+                     </td>
+                     <td class="px-6 py-4">
+                        <span class="sm:text-sm md:text-md text-center">{{ $tipe->jawaban_count }}
+                           Jawaban</span>
+                     </td>
+                  </tr>
+                  @endif
+                  @endforeach
+               </tbody>
+            </table>
             @endif
-        </ul>
+         </ul>
       </div>
 
    </div>
