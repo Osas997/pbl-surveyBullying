@@ -108,9 +108,6 @@
                <thead class="text-xs text-white uppercase  bg-blue-500  ">
                   <tr>
                      <th scope="col" class="px-6 py-3">
-                        No
-                     </th>
-                     <th scope="col" class="px-6 py-3">
                         Pertanyaan
                      </th>
                      <th scope="col" class="px-6 py-3">
@@ -128,9 +125,6 @@
                   @foreach ($murid->jawaban as $jawaban)
                   @if ($jawaban->pertanyaan->tipe_pertanyaan == "pelaku")
                   <tr class="bg-white border-b  hover:bg-gray-50 ">
-                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                        <span class="sm:text-sm md:text-md ">{{ $loop->iteration }}</span>
-                     </th>
                      <td class="px-6 py-4">
                         <span class="sm:text-sm md:text-md text-center">{{ $jawaban->pertanyaan->pertanyaan }}</span>
                      </td>
