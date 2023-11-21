@@ -219,12 +219,12 @@
       <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
 
       </div>
-      <div class="mt-8 w-full  overflow-x-auto overflow-y-auto rounded-lg">
+      <div class="mt-8 w-full overflow-x-auto overflow-y-auto sm:rounded-lg">
          @if ($tipePelaku->isNotEmpty())
          <p class="text-sm font-normal text-gray-500 dark:text-gray-400">
             Berdasarkan Jumlah Jawaban Yang Dipilih Saat Survey</p>
-         <table class="w-full text-sm text-left text-gray-500 ">
-            <thead class="text-xs text-white uppercase  bg-blue-500  ">
+         <table class="w-full text-sm text-left text-gray-500 rounded-lg">
+            <thead class="text-xs text-white uppercase bg-blue-500 rounded-lg">
                <tr>
                   <th scope="col" class="px-6 py-3">
                      Soal
@@ -264,7 +264,8 @@
          @else
          <h1 class="text-center">Tidak Ada Pertanyaan</h1>
          @endif
-
+      </div>
+      <div>
          <h1 class="text-xl mt-8 mb-4 font-semibold text-center">
             Perilaku Bullying Yang Sering Dipilih Siswa
          </h1>
@@ -286,7 +287,6 @@
             @endif
          </ul>
       </div>
-
    </div>
 </div>
 @endsection
