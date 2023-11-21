@@ -23,10 +23,12 @@
          </a>
          <div class=" mt-10 mb-12">
             <div class="flex justify-center items-center flex-col md:flex-row gap-4">
-               <a href="{{route('guru.hasilPelaku', $murid->murid->id )}}" class="@if(Request::is('guru/hasil-pelaku/*')) bg-blue-500 @endif text-white w-full md:w-[240px] flex justify-center items-center py-4 rounded-lg">
+               <a href="{{route('guru.hasilPelaku', $murid->murid->id )}}"
+                  class="@if(Request::is('guru/hasil-pelaku/*')) bg-blue-500 @endif text-white w-full md:w-[240px] flex justify-center items-center py-4 rounded-lg">
                   Pelaku
                </a>
-               <a href="{{route('guru.hasilKorban', $murid->murid->id )}}" class="hover:text-white  w-full md:w-[240px] flex justify-center items-center py-4 rounded-lg hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
+               <a href="{{route('guru.hasilKorban', $murid->murid->id )}}"
+                  class="hover:text-white  w-full md:w-[240px] flex justify-center items-center py-4 rounded-lg hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
                   Korban
                </a>
             </div>
@@ -53,23 +55,22 @@
             <p class="text-center font-medium text-base">Nilai Anda</p>
             <h2 class="text-center font-semibold text-4xl">
                @if ($murid->skor_total_pelaku >= 46)
-                   <span class="text-red-500">
-                       {{ $murid->skor_total_pelaku }}
-                   </span>
-               @elseif ($murid->skor_total_pelaku >= 35 && $murid->skor_total_pelaku < 46)
-                   <span class="text-red-500">
-                       {{ $murid->skor_total_pelaku }}
-                   </span>
-               @elseif ($murid->skor_total_pelaku >= 24 && $murid->skor_total_pelaku < 35)
-                   <span class="text-yellow-300-400">
-                       {{ $murid->skor_total_pelaku }}
-                   </span>
-               @else
-                   <span class="text-green-400">
-                       {{ $murid->skor_total_pelaku }}
-                   </span>
-               @endif
-           </h2>
+               <span class="text-red-500">
+                  {{ $murid->skor_total_pelaku }}
+               </span>
+               @elseif ($murid->skor_total_pelaku >= 35 && $murid->skor_total_pelaku < 46) <span class="text-red-500">
+                  {{ $murid->skor_total_pelaku }}
+                  </span>
+                  @elseif ($murid->skor_total_pelaku >= 24 && $murid->skor_total_pelaku < 35) <span
+                     class="text-yellow-400">
+                     {{ $murid->skor_total_pelaku }}
+                     </span>
+                     @else
+                     <span class="text-green-400">
+                        {{ $murid->skor_total_pelaku }}
+                     </span>
+                     @endif
+            </h2>
          </div>
          <h1>Rentang Nilai : </h1>
          <div class="flex gap-4">
@@ -95,18 +96,18 @@
          <p class="text-base sm:text-1xl mb-1"> {{ $murid->murid->nama_murid }} memiliki
             kecenderungan menjadi pelaku bullying yang
             @if ($murid->skor_total_pelaku >= 35)
-                <span class="text-red-500">Tinggi</span> Dan anda berpotensi tinggi menjadi pelaku
-                bullying. Anda cenderung untuk melakukan Tindakan-tindakan yang mengarah pada perilaku kekerasan
-                sehingga membuat korban anda merasa tersakiti dan tersiksa
-            @elseif ($murid->skor_total_pelaku >= 24 && $murid->skor_total_pelaku < 35)
-                <span class="text-yellow-300-400">Sedang</span> Dan anda berpotensi sedang menjadi pelaku
-                bullying. Sebagian Tindakan anda mencerminkan perilaku bullying yang dapat membuat korban anda
-                merasa tersakiti.
-            @else
-                <span class="text-green-400">Rendah</span> Dan anda berpotensi rendah menjadi pelaku bullying.
-                Sebagian Tindakan anda mencerminkan perilaku bullying tetapi masih dalam taraf rendah
-            @endif
-        </p>
+            <span class="text-red-500">Tinggi</span> Dan anda berpotensi tinggi menjadi pelaku
+            bullying. Anda cenderung untuk melakukan Tindakan-tindakan yang mengarah pada perilaku kekerasan
+            sehingga membuat korban anda merasa tersakiti dan tersiksa
+            @elseif ($murid->skor_total_pelaku >= 24 && $murid->skor_total_pelaku < 35) <span class="text-yellow-400">
+               Sedang</span> Dan anda berpotensi sedang menjadi pelaku
+               bullying. Sebagian Tindakan anda mencerminkan perilaku bullying yang dapat membuat korban anda
+               merasa tersakiti.
+               @else
+               <span class="text-green-400">Rendah</span> Dan anda berpotensi rendah menjadi pelaku bullying.
+               Sebagian Tindakan anda mencerminkan perilaku bullying tetapi masih dalam taraf rendah
+               @endif
+         </p>
 
          <div class="mt-4 w-full  overflow-x-auto overflow-y-auto rounded-lg">
             <table class="w-full text-sm text-left text-gray-500 ">
@@ -161,7 +162,7 @@
          </div>
          {{-- print --}}
          <div class="flex justify-center items-center">
-            <a href="{{route('guru.printHasilPelaku',$murid->murid->id)}}" target="_blank"
+            <a href="{{route('guru.printHasil',$murid->murid->id)}}" target="_blank"
                class="bg-blue-500 w-[60px] md:w-[180px]  flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
                <span>
                   Print
@@ -170,6 +171,5 @@
          </div>
       </div>
    </div>
-
 </div>
 @endsection
