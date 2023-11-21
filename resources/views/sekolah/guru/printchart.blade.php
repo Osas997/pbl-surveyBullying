@@ -124,6 +124,9 @@
                         Pertanyaan
                      </th>
                      <th scope="col" class="px-6 py-3">
+                        Tipe Perilaku
+                     </th>
+                     <th scope="col" class="px-6 py-3">
                         <span>Banyak Jawaban</span>
                      </th>
                   </tr>
@@ -134,6 +137,9 @@
                   <tr class="bg-white border-b  hover:bg-gray-50 ">
                      <td class="px-6 py-4">
                         <span class="sm:text-sm md:text-md text-center">{{ $tipe->pertanyaan }}</span>
+                     </td>
+                     <td class="px-6 py-4">
+                        <span class="sm:text-sm md:text-md text-center">{{ $tipe->tipe_perilaku }}</span>
                      </td>
                      <td class="px-6 py-4">
                         <span class="sm:text-sm md:text-md text-center">{{ $tipe->jawaban_count }}

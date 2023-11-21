@@ -3,6 +3,7 @@
 @section('content')
 <div class="w-full min-h-screen overflow-x-hidden scroll-smooth ">
     <div class="w-full md:w-8/12 mx-auto px-10 mt-10">
+        @if ($dataPertanyaan->isNotEmpty())
         <div class="w-full mx-auto bg-white p-8 rounded shadow-md">
             <div class="flex justify-start items-center gap-4">
                 <div class="w-6 h-6 md:w-8 md:h-8">
@@ -108,6 +109,10 @@
                 </div>
             </form>
         </div>
+        @else
+        <p class="text-center text-3xl font-bold text-gray-500">Belum ada pertanyaan </p>
+        @endif
+      
     </div>
 </div>
 @endsection

@@ -238,7 +238,6 @@
                   </th>
                   <th scope="col" class="px-6 py-3">
                      <span>Banyak Jawaban</span>
-
                   </th>
                </tr>
             </thead>
@@ -274,12 +273,14 @@
             @if ($pertanyaanTerbanyak == null || $pertanyaanTerbanyak->jawaban_count == 0)
             <p class="text-center">Tidak Ada Jawaban Dipilih</p>
             @else
-
             <table class="w-full text-sm text-left text-gray-500 rounded-lg">
                <thead class="text-xs text-white uppercase bg-red-400 rounded-lg">
                   <tr>
                      <th scope="col" class="px-6 py-3">
                         Pertanyaan
+                     </th>
+                     <th scope="col" class="px-6 py-3">
+                        Tipe Perilaku
                      </th>
                      <th scope="col" class="px-6 py-3">
                         <span>Banyak Jawaban</span>
@@ -292,6 +293,9 @@
                   <tr class="bg-white border-b  hover:bg-gray-50 ">
                      <td class="px-6 py-4">
                         <span class="sm:text-sm md:text-md text-center">{{ $tipe->pertanyaan }}</span>
+                     </td>
+                     <td class="px-6 py-4">
+                        <span class="sm:text-sm md:text-md text-center">{{ $tipe->tipe_perilaku }}</span>
                      </td>
                      <td class="px-6 py-4">
                         <span class="sm:text-sm md:text-md text-center">{{ $tipe->jawaban_count }}
