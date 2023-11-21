@@ -14,4 +14,11 @@ class Sekolah extends Model
     protected $casts = [
         'password' => 'hashed',
     ];
+
+    public function scopeSearch($query, $search)
+    {
+        if ($search) {
+            $query->where('nama_sekolah', 'like', '%' . $search . '%');
+        }
+    }
 }

@@ -39,6 +39,7 @@ Route::post("/logout", [AuthContoller::class, "logout"])->name("logout")->middle
 Route::middleware("admin")->prefix("admin")->group(function () {
     Route::get("/dashboard", [DashboardController::class, "admin"])->name("admin.dashboard");
     Route::resource("/pertanyaan", PertanyaanController::class);
+    Route::get("/sekolah", [SekolahController::class, "indexAdmin"])->name("admin.sekolah");
 });
 
 Route::middleware('sekolah')->group(function () {
