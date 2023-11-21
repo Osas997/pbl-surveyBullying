@@ -22,25 +22,24 @@
                 </div>
             </a>
             @if ($murid)
-            <div class="px-20">
-                <div class="flex justify-around">
+            {{-- <div class=" mt-10 mb-12">
+                <div class="flex justify-center items-center flex-col md:flex-row gap-4">
+                   <a href="{{route('guru.hasilPelaku', $murid->murid->id )}}" class="@if(Request::is('guru/hasil-pelaku/*')) bg-blue-500 @endif text-white w-full md:w-[240px] flex justify-center items-center py-4 rounded-lg">
+                      Pelaku
+                   </a>
+                   <a href="{{route('guru.hasilKorban', $murid->murid->id )}}" class="hover:text-white  w-full md:w-[240px] flex justify-center items-center py-4 rounded-lg hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
+                      Korban
+                   </a>
+                </div>
+             </div> --}}
+            <div class="mt-10 mb-12">
+                <div class="flex justify-center items-center flex-col md:flex-row gap-4">
 
-                    <a href="{{route('murid.hasilpelaku')}}">
-                        <div
-                            class="bg-blue-500 w-[120px] md:w-[240px] flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-white hover:underline">
-                            <span>
-                                Pelaku
-                            </span>
-                        </div>
+                    <a href="{{route('murid.hasilpelaku')}}" class="bg-blue-500 w-full md:w-[240px] flex justify-center items-center py-4  rounded-lg text-white hover:underline">
+                        Pelaku
                     </a>
-                    <a href="{{route('murid.hasilkorban')}}">
-
-                        <div
-                            class=" w-[120px] md:w-[240px]  flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-black hover:text-white hover:bg-blue-500 duration-300 ease-in-out">
-                            <span>
-                                Korban
-                            </span>
-                        </div>
+                    <a href="{{route('murid.hasilkorban')}}" class=" w-full md:w-[240px]  flex justify-center items-center py-4  rounded-lg text-black hover:text-white hover:bg-blue-500 duration-300 ease-in-out">
+                        Korban
                     </a>
 
                 </div>

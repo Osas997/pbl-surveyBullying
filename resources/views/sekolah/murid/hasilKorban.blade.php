@@ -21,25 +21,14 @@
                 </div>
             </a>
             @if ($murid)
-            <div class="px-20">
-                <div class="flex justify-around">
-
-                    <a href="{{route('murid.hasilpelaku')}}">
-                        <div
-                            class=" hover:text-white w-[120px] md:w-[240px] flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-black hover:bg-blue-500 duration-300 ease-in-out">
-                            <span>
-                                Pelaku
-                            </span>
-                        </div>
+            <div class="mt-10 mb-12">
+                <div class="flex justify-center items-center flex-col md:flex-row gap-4">
+                    <a href="{{route('murid.hasilpelaku')}}" class=" hover:text-white w-full md:w-[240px] flex justify-center items-center py-4  rounded-lg text-black hover:bg-blue-500 duration-300 ease-in-out">
+                        Pelaku
                     </a>
 
-                    <a href="{{route('murid.hasilkorban')}}">
-                        <div
-                            class=" bg-blue-500 w-[120px] md:w-[240px] flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
-                            <span>
-                                Korban
-                            </span>
-                        </div>
+                    <a href="{{route('murid.hasilkorban')}}" class=" bg-blue-500 w-full md:w-[240px] flex justify-center items-center py-4  rounded-lg text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
+                        Korban
                     </a>
 
                 </div>

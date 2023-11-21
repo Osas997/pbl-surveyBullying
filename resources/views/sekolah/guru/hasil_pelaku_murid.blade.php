@@ -21,26 +21,14 @@
                <span class="font-semibold">Back</span>
             </div>
          </a>
-         <div class="px-20">
-            <div class="flex justify-around">
-               <a href="{{route('guru.hasilPelaku', $murid->murid->id )}}">
-                  <div
-                     class="@if(Request::is('guru/hasil-pelaku/*')) bg-blue-500 @endif text-white w-[120px] md:w-[240px] flex justify-center items-center py-4 mt-8 mb-14 rounded-lg">
-                     <span>
-                        Pelaku
-                     </span>
-                  </div>
+         <div class=" mt-10 mb-12">
+            <div class="flex justify-center items-center flex-col md:flex-row gap-4">
+               <a href="{{route('guru.hasilPelaku', $murid->murid->id )}}" class="@if(Request::is('guru/hasil-pelaku/*')) bg-blue-500 @endif text-white w-full md:w-[240px] flex justify-center items-center py-4 rounded-lg">
+                  Pelaku
                </a>
-
-               <a href="{{route('guru.hasilKorban', $murid->murid->id )}}">
-                  <div
-                     class="hover:text-white  w-[120px] md:w-[240px] flex justify-center items-center py-4 mt-8 mb-14 rounded-lg hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
-                     <span>
-                        Korban
-                     </span>
-                  </div>
+               <a href="{{route('guru.hasilKorban', $murid->murid->id )}}" class="hover:text-white  w-full md:w-[240px] flex justify-center items-center py-4 rounded-lg hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
+                  Korban
                </a>
-
             </div>
          </div>
          {{-- <h1 class="font-semibold text-lg md:text-xl mb-6">Pelaku</h1> --}}
