@@ -23,8 +23,11 @@
                     <p id="date" class="text-white py-2 px-3 md:p-0"></p>
                 </li>
                 <li>
-                    <a href="{{route('logout')}}"
-                        class="block py-2 px-3 hover:text-slate-900 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Logout</a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit"
+                            class="block py-2 px-3 hover:text-slate-900 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Logout</button>
+                    </form>
                 </li>
             </ul>
         </div>

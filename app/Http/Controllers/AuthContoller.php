@@ -26,12 +26,12 @@ class AuthContoller extends Controller
     public function register(Request $request)
     {
         $validate = $request->validate([
-            "npsn" => "required|unique:sekolah",
-            "password" => "required",
+            "npsn" => "required|unique:sekolah|min:8|max:8",
+            "password" => "required|min:6",
             "nama_sekolah" => "required",
             "alamat_sekolah" => "required",
             "status" => "required",
-            "pin_guru" => "required",
+            "pin_guru" => "required|min:6",
         ]);
 
         Sekolah::create($validate);
