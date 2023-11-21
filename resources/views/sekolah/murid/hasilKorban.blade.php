@@ -40,24 +40,24 @@
             <h1 class="text-center font-semibold text-base mb-4">Hasil Inventory Potensi Menjadi Korban Bullying
             </h1>
             <div class="flex gap-10">
-                <div class="left">
-                    <p>Nama</p>
-                    <p>NISN</p>
-                    <p>Kelas</p>
-                    <p>Jenis Kelamin</p>
-                    <p>Sekolah</p>
+                <div class="left ">
+                    <p class="text-sm sm:text-base">Nama</p>
+                    <p class="text-sm sm:text-base">NISN</p>
+                    <p class="text-sm sm:text-base">Kelas</p>
+                    <p class="text-sm sm:text-base whitespace-nowrap">Jenis Kelamin</p>
+                    <p class="text-sm sm:text-base">Sekolah</p>
                 </div>
                 <div class="right">
-                    <p class="uppercase">: {{ $murid->murid->nama_murid }}</p>
-                    <p class="uppercase">: {{ $murid->murid->nisn }}</p>
-                    <p class="uppercase">: {{ $murid->murid->kelas }}</p>
-                    <p class="uppercase">: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' : 'Perempuan' }}</p>
-                    <p class="uppercase">: {{ $murid->murid->sekolah->nama_sekolah }}</p>
+                    <p class="uppercase text-sm sm:text-base">: {{ $murid->murid->nama_murid }}</p>
+                    <p class="uppercase text-sm sm:text-base">: {{ $murid->murid->nisn }}</p>
+                    <p class="uppercase text-sm sm:text-base">: {{ $murid->murid->kelas }}</p>
+                    <p class="uppercase text-sm sm:text-base">: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' : 'Perempuan' }}</p>
+                    <p class="uppercase text-sm sm:text-base">: {{ $murid->murid->sekolah->nama_sekolah }}</p>
                 </div>
             </div>
             <div class="flex justify-center items-center flex-col gap-2 mt-4">
                 <p class="text-center font-medium text-base">Nilai Anda</p>
-                <h2 class="text-center font-semibold text-4xl">
+                <h2 class="text-center font-semibold text-4xl ">
                     @if ($murid->skor_total_korban >= 46)
                     <span class="text-red-500">
                         {{ $murid->skor_total_korban }}
@@ -80,21 +80,21 @@
             <h1>Rentang Nilai : </h1>
             <div class="flex gap-4">
                 <div class="left">
-                    <p class="font-medium">Skor 14 - 23</p>
-                    <p class="font-medium">Skor 24 - 34</p>
-                    <p class="font-medium">Skor 35 - 45</p>
-                    <p class="font-medium">Skor 46 - 56</p>
+                    <p class="font-medium text-sm sm:text-base whitespace-nowrap">Skor 14 - 23</p>
+                    <p class="font-medium text-sm sm:text-base whitespace-nowrap">Skor 24 - 34</p>
+                    <p class="font-medium text-sm sm:text-base whitespace-nowrap">Skor 35 - 45</p>
+                    <p class="font-medium text-sm sm:text-base whitespace-nowrap">Skor 46 - 56</p>
                 </div>
                 <div class="right">
-                    <p class="font-medium text-green-400"> : Berpontesi Rendah</p>
-                    <p class="font-medium text-yellow-400"> : Berpotensi Sedang</p>
-                    <p class="font-medium text-red-800"> : Berpotensi Tinggi</p>
-                    <p class="font-medium text-red-800"> : Berpotensi Sangat Tinggi</p>
+                    <p class="font-medium text-sm sm:text-base  text-green-400"> : Berpontesi Rendah</p>
+                    <p class="font-medium text-sm sm:text-base  text-yellow-400"> : Berpotensi Sedang</p>
+                    <p class="font-medium text-sm sm:text-base  text-red-800"> : Berpotensi Tinggi</p>
+                    <p class="font-medium text-sm sm:text-base  text-red-800"> : Berpotensi Sangat Tinggi</p>
                 </div>
             </div>
 
             <h1 class="mt-4">Interpretasi :</h1>
-            <p class="text-base sm:text-1xl mb-1"> {{ $murid->murid->nama_murid }} memiliki
+            <p class="text-sm sm:text-base mb-1"> {{ $murid->murid->nama_murid }} memiliki
                 kecenderungan menjadi pelaku bullying yang
                 @if ($murid->skor_total_korban >= 35)
                 <span class="text-red-500">Tinggi</span> Anda termasuk dalam kategori orang yang berpotensi
@@ -112,7 +112,7 @@
             </p>
 
             <h1 class="mt-4">Rekomendasi : </h1>
-            <p>
+            <p class="text-sm sm:text-base">
                 @if ($murid->skor_total_korban >= 35)
                 Karena anda termasuk dalam kategori berpotensi <span class="text-red-500">Tinggi</span> menjadi
                 Korban bullying, sebaiknya anda segera temui konselor anda dan mengkonsultasikan hal ini kepada
@@ -127,13 +127,19 @@
                     @endif
             </p>
             {{-- print --}}
-            <div class="flex justify-center items-center">
+            <div class="flex justify-center items-center flex-col gap-4 mt-10 md:flex-row">
                 <a href="{{ route('murid.hasil.print') }}" target="_blank"
-                    class="bg-blue-500 w-[60px] md:w-[180px]  flex justify-center items-center py-4 mt-8 mb-14 rounded-lg text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
+                    class="bg-blue-500 w-full md:w-[180px]  flex justify-center items-center py-4  rounded-lg text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
                     <span>
                         Print
                     </span>
                 </a>
+                <a href="" target="_blank"
+                class="bg-blue-500 w-full md:w-[180px]  flex justify-center items-center py-4  rounded-lg text-white hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
+                <span>
+                    Download
+                </span>
+            </a>
             </div>
             @else
             <h1 class="text-center text-2xl">Silahkan Mengisi Angket Terlebih Dahulu</h1>
