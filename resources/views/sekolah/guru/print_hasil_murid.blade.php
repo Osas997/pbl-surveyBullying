@@ -141,16 +141,16 @@
          <table class="w-full text-sm text-left text-gray-500 ">
             <thead class="text-xs text-white uppercase  bg-blue-500  ">
                <tr>
-                  <th scope="col" class="px-6 py-3">
+                  <th scope="col" class="pr-6 py-3">
                      Pertanyaan
                   </th>
-                  <th scope="col" class="px-6 py-3">
+                  <th scope="col" class="pr-6 py-3">
                      Tipe Pertanyaan
                   </th>
-                  <th scope="col" class="px-6 py-3">
+                  <th scope="col" class="pr-6 py-3">
                      Tipe Perilaku
                   </th>
-                  <th scope="col" class="px-6 py-3">
+                  <th scope="col" class="py-3">
                      Jawaban
                   </th>
                </tr>
@@ -158,17 +158,17 @@
             <tbody>
                @foreach ($murid->jawaban as $jawaban)
                <tr class="bg-white border-b  hover:bg-gray-50 ">
-                  <td class="px-6 py-4">
+                  <td class="pr-6 py-4">
                      <span class="sm:text-sm md:text-md text-center">{{ $jawaban->pertanyaan->pertanyaan }}</span>
                   </td>
-                  <td class="px-6 py-4">
+                  <td class="pr-6 py-4">
                      <span class="sm:text-sm md:text-md text-center">{{ $jawaban->pertanyaan->tipe_pertanyaan
                         }}</span>
                   </td>
-                  <td class="px-6 py-4">
+                  <td class="pr-6 py-4">
                      <span class="sm:text-sm md:text-md text-center">{{ $jawaban->pertanyaan->tipe_perilaku }}</span>
                   </td>
-                  <td class="px-6 py-4">
+                  <td class="py-4">
                      <span class="sm:text-sm md:text-md ">
                         @if ($jawaban->skor == 4)
                         Selalu
