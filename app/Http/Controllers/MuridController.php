@@ -34,7 +34,7 @@ class MuridController extends Controller
     public function store(Request $request)
     {
         $validate =  $request->validate([
-            "nisn" => "required",
+            "nisn" => "required|min:10|max:10",
             "nama_murid" => "required",
             "kelas" => "required",
             "jenis_kelamin" => "required",

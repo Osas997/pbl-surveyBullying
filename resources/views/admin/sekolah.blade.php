@@ -101,9 +101,6 @@
                     <th scope="col" class="px-6 py-3">
                         Aksi
                     </th>
-                    <th scope="col" class="px-6 py-3">
-                        <span>Links</span>
-                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -123,16 +120,17 @@
                     </td>
                     <td class="px-6 py-4">
                         <div class="flex justify-center items-center">
-                            {{-- <a href="{{ route('admin.editSekolah', $sekolah->id) }}"
+                            <a href="{{ route('admin.editSekolah', $sekolah->id) }}"
                                 class="font-medium text-blue-600 mx-2 hover:underline">Edit
                             </a>
-                            <form action="{{ route('admin.hapusSekolah', $sekolah->id) }}" method="POST" class="inline">
+                            <form action="{{ route('admin.deleteSekolah', $sekolah->id) }}" method="POST"
+                                class="inline">
                                 @method('DELETE')
                                 @csrf
                                 <button type="submit"
-                                    onclick="return confirm('Apakah Anda Ingin Menghapus Pertanyaan Ini ? \nAnda Juga Akan Menghapus Semua Data Terkait Pertanyaan Ini')"
+                                    onclick="return confirm('Apakah Anda Ingin Menghapus Sekolah Ini ? \nAnda Juga Akan Menghapus Semua Data Terkait Sekolah Ini')"
                                     class="font-medium text-red-600 mx-2 hover:underline">Delete</button>
-                            </form> --}}
+                            </form>
                         </div>
 
                     </td>

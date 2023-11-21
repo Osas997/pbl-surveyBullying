@@ -40,20 +40,24 @@ Route::middleware("admin")->prefix("admin")->group(function () {
     Route::get("/dashboard", [DashboardController::class, "admin"])->name("admin.dashboard");
     Route::resource("/pertanyaan", PertanyaanController::class);
     Route::get("/sekolah", [SekolahController::class, "indexAdmin"])->name("admin.sekolah");
+    Route::get("/sekolah/{sekolah}", [SekolahController::class, "edit"])->name("admin.editSekolah");
+    Route::patch("/sekolah/{sekolah}", [SekolahController::class, "update"])->name("admin.updateSekolah");
+    Route::delete("/sekolah/{sekolah}", [SekolahController::class, "destroy"])->name("admin.deleteSekolah");
 });
 
 Route::middleware('sekolah')->group(function () {
     Route::get("/sekolah/masuk", [SekolahController::class, "index"])->name("viewSekolah");
 
-    Route::get("/guru/masuk", [AuthContoller::class, "viewLoginGuru"])->name("viewLoginGuru");
-    Route::post("/guru/masuk", [AuthContoller::class, "loginGuru"])->name("loginGuru");
+    Route::middleware("login_guru")->group(function () {
+        Route::get("/guru/masuk", [AuthContoller::class, "viewLoginGuru"])->name("viewLoginGuru");
+        Route::post("/guru/masuk", [AuthContoller::class, "loginGuru"])->name("loginGuru");
+    });
 
     Route::middleware("guru")->prefix("guru")->group(function () {
         Route::get("/dashboard", [DashboardController::class, "guru"])->name("guru.dashboard");
         Route::get("/murid", [MuridController::class, "index"])->name("guru.murid");
         Route::get("/laporan", [LaporanSurvey::class, "index"])->name("guru.laporan");
         Route::get("/print-laporan", [LaporanSurvey::class, "print"])->name("guru.printLaporan");
-        // Route::get("/laporan-pdf", [LaporanSurvey::class, "downloadPdf"])->name("guru.downloadPdf");
         Route::get("/hasil-korban/{murid}", [HasilSurveyController::class, "guruKorban"])->name("guru.hasilKorban");
         Route::get("/hasil-pelaku/{murid}", [HasilSurveyController::class, "guruPelaku"])->name("guru.hasilPelaku");
         Route::get("/print-hasil-korban/{murid}", [HasilSurveyController::class, "printGuruKorban"])->name("guru.printHasilKorban");
