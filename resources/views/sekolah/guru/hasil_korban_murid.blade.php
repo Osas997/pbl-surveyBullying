@@ -63,7 +63,25 @@
          </div>
          <div class="flex justify-center items-center flex-col gap-2 mt-4">
             <p class="text-center font-medium text-base">Nilai Anda</p>
-            <h2 class="text-center font-semibold text-4xl">{{ $murid->skor_total_korban }}</h2>
+            <h2 class="text-center font-semibold text-4xl">
+               @if ($murid->skor_total_korban >= 46)
+                   <span class="text-red-500">
+                       {{ $murid->skor_total_korban }}
+                   </span>
+               @elseif ($murid->skor_total_korban >= 35 && $murid->skor_total_korban < 46)
+                   <span class="text-red-500">
+                       {{ $murid->skor_total_korban }}
+                   </span>
+               @elseif ($murid->skor_total_korban >= 24 && $murid->skor_total_korban < 35)
+                   <span class="text-yellow-300-400">
+                       {{ $murid->skor_total_korban }}
+                   </span>
+               @else
+                   <span class="text-green-400">
+                       {{ $murid->skor_total_korban }}
+                   </span>
+               @endif
+           </h2>
          </div>
          <h1>Rentang Nilai : </h1>
          <div class="flex gap-4">
@@ -82,22 +100,22 @@
          </div>
 
          <h1 class="mt-4">Interpretasi :</h1>
-         <p class="text-base sm:text-1xl mb-1"> {{ $murid->murid->nama_murid }} memiliki
-            kecenderungan menjadi Korban bullying yang
-            @if ($murid->skor_total_korban >= 46)
-            <span class="text-red-400">Sangat Tinggi</span>. Hal ini dapat disebabkan oleh beberapa faktor,
-            seperti kepercayaan diri, kemampuan sosial, atau dukungan dari orang-orang terdekat.
-            @elseif ($murid->skor_total_korban >= 35 && $murid->skor_total_korban < 46) <span class="text-yellow-400">
-               Tinggi</span>. Hal ini dapat disebabkan oleh beberapa faktor, seperti
-               kepercayaan diri, kemampuan sosial, atau dukungan dari orang-orang terdekat.
-               @elseif ($murid->skor_total_korban >= 24 && $murid->skor_total_korban < 35) <span class="text-teal-400">
-                  Sedang</span>. Hal ini dapat disebabkan oleh beberapa faktor,
-                  seperti kepercayaan diri, kemampuan sosial, atau dukungan dari orang-orang terdekat.
-                  @else
-                  <span class="text-green-400">Rendah</span>. Hal ini dapat disebabkan oleh beberapa faktor,
-                  seperti kepercayaan diri, kemampuan sosial, atau dukungan dari orang-orang terdekat.
-                  @endif
-         </p>
+                    <p class="text-base sm:text-1xl mb-1"> {{ $murid->murid->nama_murid }} memiliki
+                        kecenderungan menjadi pelaku bullying yang
+                        @if ($murid->skor_total_korban >= 35)
+                            <span class="text-red-500">Tinggi</span> Anda termasuk dalam kategori orang yang berpotensi
+                            tinggi menjadi korban Bullying. Anda cenderung mengalami tindakan-tindakan yang mengarah pada
+                            perilaku kekerasan dan membuat anda tersiksa.
+                        @elseif ($murid->skor_total_korban >= 24 && $murid->skor_total_korban < 35)
+                            <span class="text-yellow-300-400">Sedang</span> Anda termasuk dalam kategori orang yang
+                            berpotensi sedang menjadi korban Bullying. Anda cenderung mengalami tindakan-tindakan yang
+                            mengarah pada perilaku kekerasan dan membuat anda tersiksa
+                        @else
+                            <span class="text-green-400">Rendah</span> Anda termasuk dalam kategori orang yang berpotensi
+                            Rendah menjadi korban Bullying. Anda terkadang mengalami tindakan-tindakan yang membuat anda
+                            tersakiti.
+                        @endif
+                    </p>
          <div class="mt-4 w-full  overflow-x-auto overflow-y-auto rounded-lg">
             <table class="w-full text-sm text-left text-gray-500 ">
                <thead class="text-xs text-white uppercase  bg-blue-500  ">
