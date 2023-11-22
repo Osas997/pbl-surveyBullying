@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Murid;
 use App\Models\SurveyRespon;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
-
 
 class HasilSurveyController extends Controller
 {
@@ -34,12 +34,21 @@ class HasilSurveyController extends Controller
 
     public function downloadPdf()
     {
+        // dd('asu');
         $cookieMurid = request()->cookie('survey_murid');
         $murid = SurveyRespon::where('id_murid', $cookieMurid)->first();
 
         if (!$murid) {
             abort(404);
         }
+
+        // $view = view('sekolah.murid.hasil_survey_pdf', compact('murid'));
+
+        $pdf = Pdf::loadView('sekolah.murid.hasil_survey_pdf', compact('murid'))->setPaper('a4', 'portrait');
+
+        return $pdf->download('Hasil Survey.pdf', 'D');
+
+        // return view('sekolah.murid.hasil_survey_pdf', compact('murid'));
     }
 
     public function guruKorban(Murid $murid)

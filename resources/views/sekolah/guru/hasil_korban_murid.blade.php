@@ -50,7 +50,8 @@
                <p class="uppercase text-sm sm:text-base">: {{ $murid->murid->nama_murid }}</p>
                <p class="uppercase text-sm sm:text-base">: {{ $murid->murid->nisn }}</p>
                <p class="uppercase text-sm sm:text-base">: {{ $murid->murid->kelas }}</p>
-               <p class="uppercase text-sm sm:text-base">: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' : 'Perempuan' }}</p>
+               <p class="uppercase text-sm sm:text-base">: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' :
+                  'Perempuan' }}</p>
                <p class="uppercase text-sm sm:text-base">: {{ $murid->murid->sekolah->nama_sekolah }}</p>
             </div>
          </div>
@@ -93,7 +94,7 @@
 
          <h1 class="mt-4">Interpretasi :</h1>
          <p class="text-sm sm:text-base mb-1"> {{ $murid->murid->nama_murid }} memiliki
-            kecenderungan menjadi pelaku bullying yang
+            kecenderungan menjadi Korban bullying yang
             @if ($murid->skor_total_korban >= 35)
             <span class="text-red-500">Tinggi</span> Anda termasuk dalam kategori orang yang berpotensi
             tinggi menjadi korban Bullying. Anda cenderung mengalami tindakan-tindakan yang mengarah pada
