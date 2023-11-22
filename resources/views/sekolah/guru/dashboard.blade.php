@@ -237,7 +237,16 @@
                      <span>Tipe Perilaku</span>
                   </th>
                   <th scope="col" class="px-6 py-3">
-                     <span>Banyak Jawaban</span>
+                     Jawaban Tidak Pernah
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                     Jawaban Jarang
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                     Jawaban Sering
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                     Jawaban Selalu
                   </th>
                </tr>
             </thead>
@@ -254,8 +263,20 @@
                      <span class="sm:text-sm md:text-md text-center">{{ $tipe->tipe_perilaku }}</span>
                   </td>
                   <td class="px-6 py-4">
-                     <span class="sm:text-sm md:text-md text-center">{{ $tipe->jawaban_count }}
-                        Jawaban</span>
+                     <span class="sm:text-sm md:text-md text-center">{{ $tipe->count_tidak_pernah }}
+                     </span>
+                  </td>
+                  <td class="px-6 py-4">
+                     <span class="sm:text-sm md:text-md text-center">{{ $tipe->count_jarang }}
+                     </span>
+                  </td>
+                  <td class="px-6 py-4">
+                     <span class="sm:text-sm md:text-md text-center">{{ $tipe->count_sering }}
+                     </span>
+                  </td>
+                  <td class="px-6 py-4">
+                     <span class="sm:text-sm md:text-md text-center">{{ $tipe->count_selalu }}
+                     </span>
                   </td>
                </tr>
                @endforeach
@@ -265,7 +286,7 @@
          <h1 class="text-center">Tidak Ada Pertanyaan</h1>
          @endif
       </div>
-      <div>
+      {{-- <div>
          <h1 class="text-xl mt-8 mb-4 font-semibold text-center">
             Perilaku Bullying Yang Sering Dipilih Siswa
          </h1>
@@ -283,7 +304,13 @@
                         Tipe Perilaku
                      </th>
                      <th scope="col" class="px-6 py-3">
-                        <span>Banyak Jawaban</span>
+                        Jarang
+                     </th>
+                     <th scope="col" class="px-6 py-3">
+                        Sering
+                     </th>
+                     <th scope="col" class="px-6 py-3">
+                        Selalu
                      </th>
                   </tr>
                </thead>
@@ -298,7 +325,15 @@
                         <span class="sm:text-sm md:text-md text-center">{{ $tipe->tipe_perilaku }}</span>
                      </td>
                      <td class="px-6 py-4">
-                        <span class="sm:text-sm md:text-md text-center">{{ $tipe->jawaban_count }}
+                        <span class="sm:text-sm md:text-md text-center">{{ $tipe->count_jarang }}
+                           Jawaban</span>
+                     </td>
+                     <td class="px-6 py-4">
+                        <span class="sm:text-sm md:text-md text-center">{{ $tipe->count_sering }}
+                           Jawaban</span>
+                     </td>
+                     <td class="px-6 py-4">
+                        <span class="sm:text-sm md:text-md text-center">{{ $tipe->count_selalu }}
                            Jawaban</span>
                      </td>
                   </tr>
@@ -308,7 +343,7 @@
             </table>
             @endif
          </ul>
-      </div>
+      </div> --}}
    </div>
 </div>
 @endsection

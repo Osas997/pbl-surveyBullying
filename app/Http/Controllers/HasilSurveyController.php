@@ -32,6 +32,15 @@ class HasilSurveyController extends Controller
         return view('sekolah.murid.print_hasil', compact('murid'));
     }
 
+    public function downloadPdf()
+    {
+        $cookieMurid = request()->cookie('survey_murid');
+        $murid = SurveyRespon::where('id_murid', $cookieMurid)->first();
+
+        if (!$murid) {
+            abort(404);
+        }
+    }
 
     public function guruKorban(Murid $murid)
     {

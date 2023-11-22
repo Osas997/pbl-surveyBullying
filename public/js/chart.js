@@ -168,9 +168,14 @@ if (totalResponKorban != 0 || totalResponPelaku != 0) {
     });
 
     window.addEventListener("load", function () {
-        let dataTinggi = [];
+        let dataPelaku = [];
         tipePelaku.forEach((element) => {
-            dataTinggi.push(element.jawaban_count);
+            const weightedValue =
+                element.count_tidak_pernah * 1 +
+                element.count_jarang * 2 +
+                element.count_sering * 3 +
+                element.count_selalu * 4;
+            dataPelaku.push(weightedValue);
         });
         const options = {
             colors: ["#FDBA8C"],
@@ -178,7 +183,7 @@ if (totalResponKorban != 0 || totalResponPelaku != 0) {
                 {
                     name: "Jawaban",
                     color: "#f87171",
-                    data: dataTinggi.map((value, index) => ({
+                    data: dataPelaku.map((value, index) => ({
                         x: `Soal ${index + 1}`, // Menggunakan data soal yang sesuai
                         y: Math.round(value), // Membulatkan nilai menjadi bilangan bulat
                     })),

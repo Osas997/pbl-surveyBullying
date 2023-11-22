@@ -27,12 +27,37 @@ class Pertanyaan extends Model
     public function scopeCountPerilaku($query)
     {
         return $query->withCount([
-            'jawaban' => function ($query) {
-                $query->where('skor', '>', 2)->whereHas('surveyRespon', function ($query) {
-                    $query->whereHas("murid", function ($query) {
-                        $query->where("id_sekolah", auth("sekolah")->user()->id);
+            'jawaban as count_tidak_pernah' => function ($query) {
+                $query->where('skor', '=', 1)
+                    ->whereHas('surveyRespon', function ($query) {
+                        $query->whereHas("murid", function ($query) {
+                            $query->where("id_sekolah", auth("sekolah")->user()->id);
+                        });
                     });
-                });
+            },
+            'jawaban as count_jarang' => function ($query) {
+                $query->where('skor', '=', 2)
+                    ->whereHas('surveyRespon', function ($query) {
+                        $query->whereHas("murid", function ($query) {
+                            $query->where("id_sekolah", auth("sekolah")->user()->id);
+                        });
+                    });
+            },
+            'jawaban as count_sering' => function ($query) {
+                $query->where('skor', '=', 3)
+                    ->whereHas('surveyRespon', function ($query) {
+                        $query->whereHas("murid", function ($query) {
+                            $query->where("id_sekolah", auth("sekolah")->user()->id);
+                        });
+                    });
+            },
+            'jawaban as count_selalu' => function ($query) {
+                $query->where('skor', '=', 4)
+                    ->whereHas('surveyRespon', function ($query) {
+                        $query->whereHas("murid", function ($query) {
+                            $query->where("id_sekolah", auth("sekolah")->user()->id);
+                        });
+                    });
             },
         ]);
     }

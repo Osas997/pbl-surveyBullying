@@ -109,7 +109,7 @@
 
         <h1 class="mt-4">Interpretasi :</h1>
         <p class="text-base sm:text-1xl mb-1"> {{ $murid->murid->nama_murid }} memiliki
-            kecenderungan menjadi pelaku bullying yang
+            kecenderungan menjadi Korban bullying yang
             @if ($murid->skor_total_korban >= 35)
             <span class="text-red-500">Tinggi</span> Anda termasuk dalam kategori orang yang berpotensi
             tinggi menjadi korban Bullying. Anda cenderung mengalami tindakan-tindakan yang mengarah pada

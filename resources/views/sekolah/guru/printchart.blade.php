@@ -67,11 +67,12 @@
       <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
 
       </div>
-      <div class="mt-8 w-full  overflow-x-auto overflow-y-auto rounded-lg">
+      <div class="mt-8 w-full overflow-x-auto overflow-y-auto sm:rounded-lg">
+         @if ($tipePelaku->isNotEmpty())
          <p class="text-sm font-normal text-gray-500 dark:text-gray-400">
             Berdasarkan Jumlah Jawaban Yang Dipilih Saat Survey</p>
-         <table class="w-full text-sm text-left text-gray-500 ">
-            <thead class="text-xs text-white uppercase  bg-blue-500  ">
+         <table class="w-full text-sm text-left text-gray-500 rounded-lg">
+            <thead class="text-xs text-white uppercase bg-blue-500 rounded-lg">
                <tr>
                   <th scope="col" class="px-6 py-3">
                      Soal
@@ -83,8 +84,16 @@
                      <span>Tipe Perilaku</span>
                   </th>
                   <th scope="col" class="px-6 py-3">
-                     <span>Banyak Jawaban</span>
-
+                     Jawaban Tidak Pernah
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                     Jawaban Jarang
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                     Jawaban Sering
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                     Jawaban Selalu
                   </th>
                </tr>
             </thead>
@@ -101,59 +110,29 @@
                      <span class="sm:text-sm md:text-md text-center">{{ $tipe->tipe_perilaku }}</span>
                   </td>
                   <td class="px-6 py-4">
-                     <span class="sm:text-sm md:text-md text-center">{{ $tipe->jawaban_count }}
-                        Jawaban</span>
+                     <span class="sm:text-sm md:text-md text-center">{{ $tipe->count_tidak_pernah }}
+                     </span>
+                  </td>
+                  <td class="px-6 py-4">
+                     <span class="sm:text-sm md:text-md text-center">{{ $tipe->count_jarang }}
+                     </span>
+                  </td>
+                  <td class="px-6 py-4">
+                     <span class="sm:text-sm md:text-md text-center">{{ $tipe->count_sering }}
+                     </span>
+                  </td>
+                  <td class="px-6 py-4">
+                     <span class="sm:text-sm md:text-md text-center">{{ $tipe->count_selalu }}
+                     </span>
                   </td>
                </tr>
                @endforeach
             </tbody>
          </table>
-
-         <h1 class="text-xl mt-8 mb-4 font-semibold text-center">
-            Perilaku Bullying Yang Sering Dipilih Siswa
-         </h1>
-         <ul>
-            @if ($pertanyaanTerbanyak == null || $pertanyaanTerbanyak->jawaban_count == 0)
-            <p class="text-center">Tidak Ada Jawaban Dipilih</p>
-            @else
-
-            <table class="w-full text-sm text-left text-gray-500 rounded-lg">
-               <thead class="text-xs text-white uppercase bg-red-400 rounded-lg">
-                  <tr>
-                     <th scope="col" class="px-6 py-3">
-                        Pertanyaan
-                     </th>
-                     <th scope="col" class="px-6 py-3">
-                        Tipe Perilaku
-                     </th>
-                     <th scope="col" class="px-6 py-3">
-                        <span>Banyak Jawaban</span>
-                     </th>
-                  </tr>
-               </thead>
-               <tbody>
-                  @foreach ($tipePelaku as $tipe)
-                  @if ($tipe->jawaban_count == $pertanyaanTerbanyak->jawaban_count)
-                  <tr class="bg-white border-b  hover:bg-gray-50 ">
-                     <td class="px-6 py-4">
-                        <span class="sm:text-sm md:text-md text-center">{{ $tipe->pertanyaan }}</span>
-                     </td>
-                     <td class="px-6 py-4">
-                        <span class="sm:text-sm md:text-md text-center">{{ $tipe->tipe_perilaku }}</span>
-                     </td>
-                     <td class="px-6 py-4">
-                        <span class="sm:text-sm md:text-md text-center">{{ $tipe->jawaban_count }}
-                           Jawaban</span>
-                     </td>
-                  </tr>
-                  @endif
-                  @endforeach
-               </tbody>
-            </table>
-            @endif
-         </ul>
+         @else
+         <h1 class="text-center">Tidak Ada Pertanyaan</h1>
+         @endif
       </div>
-
    </div>
 </div>
 @endsection

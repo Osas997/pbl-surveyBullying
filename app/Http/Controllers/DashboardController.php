@@ -35,9 +35,7 @@ class DashboardController extends Controller
 
         $tipePelaku = Pertanyaan::where('tipe_pertanyaan', 'pelaku')->countPerilaku()->get();
 
-        $pertanyaanTerbanyak = Pertanyaan::where('tipe_pertanyaan', 'pelaku')->countPerilaku()->orderByDesc('jawaban_count')->first();
-
-        return view('sekolah.guru.dashboard', compact('title', 'jumlahMurid', 'korbanRendah', 'korbanSedang', 'korbanTinggi', 'korbanSangatTinggi', 'pelakuRendah', 'pelakuSedang', 'pelakuTinggi', 'pelakuSangatTinggi', 'tipePelaku', 'pertanyaanTerbanyak'));
+        return view('sekolah.guru.dashboard', compact('title', 'jumlahMurid', 'korbanRendah', 'korbanSedang', 'korbanTinggi', 'korbanSangatTinggi', 'pelakuRendah', 'pelakuSedang', 'pelakuTinggi', 'pelakuSangatTinggi', 'tipePelaku'));
     }
 
     public function printChart()
@@ -56,8 +54,6 @@ class DashboardController extends Controller
 
         $tipePelaku = Pertanyaan::where('tipe_pertanyaan', 'pelaku')->countPerilaku()->get();
 
-        $pertanyaanTerbanyak = Pertanyaan::where('tipe_pertanyaan', 'pelaku')->countPerilaku()->orderByDesc('jawaban_count')->first();
-
-        return view('sekolah.guru.printchart', compact('korbanRendah', 'korbanSedang', 'korbanTinggi', 'korbanSangatTinggi', 'pelakuRendah', 'pelakuSedang', 'pelakuTinggi', 'pelakuSangatTinggi', 'tipePelaku', 'pertanyaanTerbanyak'));
+        return view('sekolah.guru.printchart', compact('korbanRendah', 'korbanSedang', 'korbanTinggi', 'korbanSangatTinggi', 'pelakuRendah', 'pelakuSedang', 'pelakuTinggi', 'pelakuSangatTinggi', 'tipePelaku'));
     }
 }
