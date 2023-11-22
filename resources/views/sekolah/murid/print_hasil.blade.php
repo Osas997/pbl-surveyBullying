@@ -4,6 +4,18 @@
 <div class="container mx-auto px-4 py-8">
     @if ($murid)
     <div>
+        {{-- header logo --}}
+        <div class="grid grid-cols-4 justify-center items-center mb-10">
+            <div class="w-full flex justify-center items-center">
+                <img src="{{asset('assets/img/uniba.png')}}" alt="" srcset="" class="w-20 h-20">
+            </div>
+            <h1 class="text-md text-center col-span-2">PENELITIAN DOSEN PEMULA, KEMENTRIAN RISET, TEKNOLOGI, DAN PENDIDIKAN TINGGI BIMBINGAN DAN KONSELING</h1>
+            <div class="w-full flex justify-center items-center">
+                <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" srcset="" class="w-20 h-20">
+                <img src="{{asset('assets/img/ristekdikti.png')}}" alt="" srcset="" class="w-20 h-20">
+            </div>
+        </div>
+
         <h1 class="text-center font-semibold text-base mb-4">Hasil Instrumen Assesment Bullying</h1>
         <div class="flex gap-10">
             <div class="left">

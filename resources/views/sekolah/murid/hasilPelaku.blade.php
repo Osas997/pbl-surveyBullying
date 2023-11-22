@@ -5,6 +5,7 @@
 <div class="w-full bg-[#0090D4] min-h-screen overflow-x-hidden scroll-smooth ">
     <div class="w-full  md:w-8/12 mx-auto px-10 mt-10">
         <div class="w-full bg-white mx-auto p-8 rounded shadow-md">
+
             <a href="{{ route('murid.welcome') }}">
                 <div class="flex justify-start items-center gap-1">
                     <div class="w-7 h-7">
@@ -46,6 +47,17 @@
                         Korban
                     </a>
 
+                </div>
+            </div>
+            {{-- header logo --}}
+            <div class="grid grid-cols-4 justify-center items-center mb-10">
+                <div class="w-full flex justify-center items-center">
+                    <img src="{{asset('assets/img/uniba.png')}}" alt="" srcset="" class="w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20">
+                </div>
+                <h1 class="text-[8px]  md:text-xs lg:text-base text-center col-span-2">PENELITIAN DOSEN PEMULA, KEMENTRIAN RISET, TEKNOLOGI, DAN PENDIDIKAN TINGGI BIMBINGAN DAN KONSELING</h1>
+                <div class="w-full flex justify-center items-center">
+                    <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" srcset="" class="w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20">
+                    <img src="{{asset('assets/img/ristekdikti.png')}}" alt="" srcset="" class="w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20">
                 </div>
             </div>
             {{-- <h1 class="font-semibold text-lg md:text-xl mb-6">Pelaku</h1> --}}
