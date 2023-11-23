@@ -33,6 +33,19 @@
                </a>
             </div>
          </div>
+
+         
+            {{-- header logo --}}
+            <div class="grid grid-cols-4 justify-center items-center mb-10">
+               <div class="w-full flex justify-center items-center">
+                   <img src="{{asset('assets/img/uniba.png')}}" alt="" srcset="" class="w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20">
+               </div>
+               <h1 class="text-[8px]  md:text-xs lg:text-base text-center col-span-2">PENELITIAN DOSEN PEMULA, KEMENTRIAN RISET, TEKNOLOGI, DAN PENDIDIKAN TINGGI BIMBINGAN DAN KONSELING</h1>
+               <div class="w-full flex justify-center items-center">
+                   <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" srcset="" class="w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20">
+                   <img src="{{asset('assets/img/ristekdikti.png')}}" alt="" srcset="" class="w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20">
+               </div>
+           </div>
          {{-- <h1 class="font-semibold text-lg md:text-xl mb-6">Pelaku</h1> --}}
          <h1 class="text-center font-semibold text-base mb-4">Hasil Inventory Potensi Menjadi Pelaku Bullying</h1>
          <div class="flex gap-10">
