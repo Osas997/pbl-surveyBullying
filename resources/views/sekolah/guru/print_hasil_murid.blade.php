@@ -7,32 +7,39 @@
             {{-- header logo --}}
             <div class="grid grid-cols-4 justify-center items-center mb-10">
                <div class="w-full flex justify-center items-center">
-                   <img src="{{asset('assets/img/uniba.png')}}" alt="" srcset="" class="w-10 h-10 md:w-20 md:h-20">
+                   <img src="{{asset('assets/img/uniba.png')}}" alt="" srcset="" class="w-10 h-10 md:w-20 md:h-20 lg:w-40 lg:h-40 ">
                </div>
                <h1 class="text-[8px] md:text-base text-center col-span-2">PENELITIAN DOSEN PEMULA, KEMENTRIAN RISET, TEKNOLOGI, DAN PENDIDIKAN TINGGI BIMBINGAN DAN KONSELING</h1>
                <div class="w-full flex justify-center items-center">
-                   <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" srcset="" class="w-10 h-10 md:w-20 md:h-20">
-                   <img src="{{asset('assets/img/ristekdikti.png')}}" alt="" srcset="" class=" w-10 h-10 md:w-20 md:h-20">
+                   <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" srcset="" class="w-10 h-10 md:w-20 md:h-20 lg:w-40 lg:h-40">
+                   <img src="{{asset('assets/img/ristekdikti.png')}}" alt="" srcset="" class=" w-10 h-10 md:w-20 md:h-20 lg:w-40 lg:h-40">
                </div>
            </div>
      </div>
      <h1 class="text-center font-semibold text-base mb-4">Hasil Instrumen Assesment Bullying</h1>
-        <div class="flex gap-10">
-            <div class="left">
-                <p class="text-sm">Nama</p>
-                <p class="text-sm">NISN</p>
-                <p class="text-sm">Kelas</p>
-                <p class="text-sm">Jenis Kelamin</p>
-                <p class="text-sm">Sekolah</p>
-            </div>
-            <div class="right">
-                <p class="text-sm">: {{ $murid->murid->nama_murid }}</p>
-                <p class="text-sm">: {{ $murid->murid->nisn }}</p>
-                <p class="text-sm">: {{ $murid->murid->kelas }}</p>
-                <p class="text-sm">: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' : 'Perempuan' }}</p>
-                <p class="text-sm">: {{ $murid->murid->sekolah->nama_sekolah }}</p>
-            </div>
-        </div>
+     <div class="flex flex-col gap-1">
+      <div class="flex justify-center items-start w-full">
+          <p class="text-xs sm:text-base w-1/3">Nama</p>
+          <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->nama_murid }}</p>
+      </div>
+      <div class="flex justify-center items-start w-full">
+          <p class="text-xs sm:text-base w-1/3">NISN</p>
+          <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->nisn }}</p>
+      </div>
+      <div class="flex justify-center items-start w-full">
+          <p class="text-xs sm:text-base w-1/3">Kelas</p>
+          <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->kelas }}</p>
+      </div>
+      <div class="flex justify-center items-start w-full">
+          <p class="text-xs sm:text-base w-1/3 whitespace-nowrap">Jenis Kelamin</p>
+          <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' : 'Perempuan' }}</p>
+      </div>
+      <div class="flex justify-center items-start w-full">
+          <p class="text-xs sm:text-base w-1/3">Sekolah</p>
+          <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->sekolah->nama_sekolah}}</p>
+      </div>
+
+  </div>
         <p class="text-sm md:text-base font-semibold mt-4">Kecenderungan menjadi Korban Bullying</p>
         <div class="flex gap-8 md:gap-14 ">
             <div class="nilai">
