@@ -21,13 +21,17 @@
         {{-- header logo --}}
         <div class="grid grid-cols-4 justify-center items-center mb-10">
             <div class="w-full flex justify-center items-center">
-                <img src="{{asset('assets/img/uniba.png')}}" id="uniba-logo" alt="" srcset="" class="w-10 h-10 md:w-20 md:h-20 ">
+                <img src="{{asset('assets/img/uniba.png')}}" id="uniba-logo" alt="" srcset=""
+                    class="w-10 h-10 md:w-20 md:h-20 ">
             </div>
-            {{--  ! ketika di download atau di print maka menggunakan text mobile --}}
-            <h1 class="text-[8px] md:text-base text-center col-span-2" id="header-title">PENELITIAN DOSEN PEMULA, KEMENTRIAN RISET, TEKNOLOGI, DAN PENDIDIKAN TINGGI BIMBINGAN DAN KONSELING</h1>
+            {{-- ! ketika di download atau di print maka menggunakan text mobile --}}
+            <h1 class="text-[8px] md:text-base text-center col-span-2" id="header-title">PENELITIAN DOSEN PEMULA,
+                KEMENTRIAN RISET, TEKNOLOGI, DAN PENDIDIKAN TINGGI BIMBINGAN DAN KONSELING</h1>
             <div class="w-full flex justify-center items-center">
-                <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" id="kemdigbud-logo" srcset="" class="w-10 h-10 md:w-20 md:h-20">
-                <img src="{{asset('assets/img/ristekdikti.png')}}" alt="" id="ristekdikti-logo" srcset="" class="w-10 h-10 md:w-20 md:h-20 ">
+                <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" id="kemdigbud-logo" srcset=""
+                    class="w-10 h-10 md:w-20 md:h-20">
+                <img src="{{asset('assets/img/ristekdikti.png')}}" alt="" id="ristekdikti-logo" srcset=""
+                    class="w-10 h-10 md:w-20 md:h-20 ">
             </div>
         </div>
 
@@ -47,7 +51,8 @@
             </div>
             <div class="flex justify-center items-start w-full">
                 <p class="text-xs sm:text-base w-1/3 whitespace-nowrap">Jenis Kelamin</p>
-                <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' : 'Perempuan' }}</p>
+                <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' :
+                    'Perempuan' }}</p>
             </div>
             <div class="flex justify-center items-start w-full">
                 <p class="text-xs sm:text-base w-1/3">Sekolah</p>
