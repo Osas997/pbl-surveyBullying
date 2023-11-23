@@ -31,27 +31,6 @@ class HasilSurveyController extends Controller
         return view('sekolah.murid.print_hasil', compact('murid'));
     }
 
-    // public function downloadPdf()
-    // {
-    //     // dd('asu');
-    //     $cookieMurid = request()->cookie('survey_murid');
-    //     $murid = SurveyRespon::where('id_murid', $cookieMurid)->first();
-
-    //     if (!$murid) {
-    //         abort(404);
-    //     }
-
-    //     // $view = view('sekolah.murid.hasil_survey_pdf', compact('murid'))->render();
-
-    //     $mpdf = new \Mpdf\Mpdf();
-    //     $mpdf->WriteHTML(view('sekolah.murid.hasil_survey_pdf')->render());
-    //     $mpdf->Output('Hasil Survey.pdf', 'D');
-
-    //     // return $pdf->download('Hasil Survey.pdf', 'D');
-
-    //     // return view('sekolah.murid.hasil_survey_pdf', compact('murid'));
-    // }
-
     public function guruKorban(Murid $murid)
     {
         $dataLaporan = SurveyRespon::with(['jawaban', 'jawaban.pertanyaan'])->where("id_murid", $murid->id)->first();
