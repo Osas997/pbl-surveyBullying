@@ -61,7 +61,6 @@ Route::middleware('sekolah')->group(function () {
         Route::get("/hasil-korban/{murid}", [HasilSurveyController::class, "guruKorban"])->name("guru.hasilKorban");
         Route::get("/hasil-pelaku/{murid}", [HasilSurveyController::class, "guruPelaku"])->name("guru.hasilPelaku");
         Route::get("/print-hasil-survey/{murid}", [HasilSurveyController::class, "printGuru"])->name("guru.printHasil");
-        // Route::get("/print-hasil-pelaku/{murid}", [HasilSurveyController::class, "printGuruPelaku"])->name("guru.printHasilPelaku");
         Route::get("/print-chart", [DashboardController::class, "printChart"])->name('guru.print-chart');
     });
 
@@ -72,6 +71,7 @@ Route::middleware('sekolah')->group(function () {
         Route::get('/hasil-korban', [HasilSurveyController::class, 'korban'])->name('murid.hasilkorban');
         Route::get('/hasil-pelaku', [HasilSurveyController::class, 'pelaku'])->name('murid.hasilpelaku');
         Route::get('/print-hasil', [HasilSurveyController::class, 'print'])->name('murid.hasil.print');
+        Route::get('/download-hasil', [HasilSurveyController::class, 'downloadPdf'])->name('murid.downloadPdf');
 
         Route::middleware("murid_survey")->group(function () {
             Route::get("/survey", [SurveyController::class, "index"])->name("viewSurvey");

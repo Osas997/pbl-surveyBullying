@@ -70,7 +70,7 @@
             <form action="{{ route('login') }}" method="post">
                @csrf
                <div class="form-group min-w-[280px] sm:min-w-[330px]">
-                  <p class="font-semibold text-black mb-1">Username</p>
+                  <p class="font-semibold text-black mb-1">Username (NPSN)</p>
                   <input autocomplete="off" type="text" placeholder="Masukan Username" name="username" class="input input-bordered bg-transparent rounded-md
                             @error('username')
                             border-red-600 @else border-[#0090D4]
