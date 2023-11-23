@@ -51,22 +51,28 @@
             {{-- <h1 class="font-semibold text-lg md:text-xl mb-6">Pelaku</h1> --}}
             <h1 class="text-center font-semibold text-base mb-4">Hasil Inventory Potensi Menjadi Korban Bullying
             </h1>
-            <div class="flex gap-10">
-                <div class="left ">
-                    <p class="text-sm sm:text-base">Nama</p>
-                    <p class="text-sm sm:text-base">NISN</p>
-                    <p class="text-sm sm:text-base">Kelas</p>
-                    <p class="text-sm sm:text-base whitespace-nowrap">Jenis Kelamin</p>
-                    <p class="text-sm sm:text-base">Sekolah</p>
+            <div class="flex flex-col gap-1">
+                <div class="flex justify-center items-start w-full">
+                    <p class="text-xs sm:text-base w-1/3">Nama</p>
+                    <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->nama_murid }}</p>
                 </div>
-                <div class="right">
-                    <p class="uppercase text-sm sm:text-base">: {{ $murid->murid->nama_murid }}</p>
-                    <p class="uppercase text-sm sm:text-base">: {{ $murid->murid->nisn }}</p>
-                    <p class="uppercase text-sm sm:text-base">: {{ $murid->murid->kelas }}</p>
-                    <p class="uppercase text-sm sm:text-base">: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' :
-                        'Perempuan' }}</p>
-                    <p class="uppercase text-sm sm:text-base">: {{ $murid->murid->sekolah->nama_sekolah }}</p>
+                <div class="flex justify-center items-start w-full">
+                    <p class="text-xs sm:text-base w-1/3">NISN</p>
+                    <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->nisn }}</p>
                 </div>
+                <div class="flex justify-center items-start w-full">
+                    <p class="text-xs sm:text-base w-1/3">Kelas</p>
+                    <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->kelas }}</p>
+                </div>
+                <div class="flex justify-center items-start w-full">
+                    <p class="text-xs sm:text-base w-1/3 whitespace-nowrap">Jenis Kelamin</p>
+                    <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' : 'Perempuan' }}</p>
+                </div>
+                <div class="flex justify-center items-start w-full">
+                    <p class="text-xs sm:text-base w-1/3">Sekolah</p>
+                    <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->sekolah->nama_sekolah}}</p>
+                </div>
+
             </div>
             <div class="flex justify-center items-center flex-col gap-2 mt-4">
                 <p class="text-center font-medium text-base">Nilai Anda</p>
