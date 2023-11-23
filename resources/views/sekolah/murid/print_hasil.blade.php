@@ -4,35 +4,17 @@
 <div class="container mx-auto px-4 py-8">
     @if ($murid)
     <div class="flex justify-center items-center gap-2 mb-8" id="print-display">
-        <div class="flex justify-center items-center gap-1 cursor-pointer bg-blue-200 px-3 py-1 rounded-xl hover:bg-blue-300 duration-300"
-            id="btnprint">
+        <div class="flex justify-center items-center gap-1 cursor-pointer bg-blue-200 px-3 py-1 rounded-xl hover:bg-blue-300 duration-300"id="btnprint">
             <div class="w-8 h-8">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path
-                            d="M7 17H5C3.89543 17 3 16.1046 3 15V11C3 9.34315 4.34315 8 6 8H7M7 17V14H17V17M7 17V18C7 19.1046 7.89543 20 9 20H15C16.1046 20 17 19.1046 17 18V17M17 17H19C20.1046 17 21 16.1046 21 15V11C21 9.34315 19.6569 8 18 8H17M7 8V6C7 4.89543 7.89543 4 9 4H15C16.1046 4 17 4.89543 17 6V8M7 8H17M15 11H17"
-                            stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </g>
-                </svg>
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17H5C3.89543 17 3 16.1046 3 15V11C3 9.34315 4.34315 8 6 8H7M7 17V14H17V17M7 17V18C7 19.1046 7.89543 20 9 20H15C16.1046 20 17 19.1046 17 18V17M17 17H19C20.1046 17 21 16.1046 21 15V11C21 9.34315 19.6569 8 18 8H17M7 8V6C7 4.89543 7.89543 4 9 4H15C16.1046 4 17 4.89543 17 6V8M7 8H17M15 11H17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
             </div>
             <h1>Print</h1>
         </div>
-        <div class="flex justify-center items-center gap-1 cursor-pointer bg-blue-200 px-3 py-1 rounded-xl hover:bg-blue-300 duration-300"
-            id="btndownload">
+        <div class="flex justify-center items-center gap-1 cursor-pointer bg-blue-200 px-3 py-1 rounded-xl hover:bg-blue-300 duration-300"id="btndownload">
             <div class="w-8 h-8">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                    <g id="SVGRepo_iconCarrier">
-                        <path
-                            d="M17 17H17.01M17.4 14H18C18.9319 14 19.3978 14 19.7654 14.1522C20.2554 14.3552 20.6448 14.7446 20.8478 15.2346C21 15.6022 21 16.0681 21 17C21 17.9319 21 18.3978 20.8478 18.7654C20.6448 19.2554 20.2554 19.6448 19.7654 19.8478C19.3978 20 18.9319 20 18 20H6C5.06812 20 4.60218 20 4.23463 19.8478C3.74458 19.6448 3.35523 19.2554 3.15224 18.7654C3 18.3978 3 17.9319 3 17C3 16.0681 3 15.6022 3.15224 15.2346C3.35523 14.7446 3.74458 14.3552 4.23463 14.1522C4.60218 14 5.06812 14 6 14H6.6M12 15V4M12 15L9 12M12 15L15 12"
-                            stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </g>
-                </svg>
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M17 17H17.01M17.4 14H18C18.9319 14 19.3978 14 19.7654 14.1522C20.2554 14.3552 20.6448 14.7446 20.8478 15.2346C21 15.6022 21 16.0681 21 17C21 17.9319 21 18.3978 20.8478 18.7654C20.6448 19.2554 20.2554 19.6448 19.7654 19.8478C19.3978 20 18.9319 20 18 20H6C5.06812 20 4.60218 20 4.23463 19.8478C3.74458 19.6448 3.35523 19.2554 3.15224 18.7654C3 18.3978 3 17.9319 3 17C3 16.0681 3 15.6022 3.15224 15.2346C3.35523 14.7446 3.74458 14.3552 4.23463 14.1522C4.60218 14 5.06812 14 6 14H6.6M12 15V4M12 15L9 12M12 15L15 12" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
             </div>
-            <h1>Download</h1>
+            <h1>Donwload</h1>
         </div>
     </div>
     <div id="download-page">
@@ -41,6 +23,7 @@
             <div class="w-full flex justify-center items-center">
                 <img src="{{asset('assets/img/uniba.png')}}" id="uniba-logo" alt="" srcset="" class="w-10 h-10 md:w-20 md:h-20 ">
             </div>
+            {{--  ! ketika di download atau di print maka menggunakan text mobile --}}
             <h1 class="text-[8px] md:text-base text-center col-span-2" id="header-title">PENELITIAN DOSEN PEMULA, KEMENTRIAN RISET, TEKNOLOGI, DAN PENDIDIKAN TINGGI BIMBINGAN DAN KONSELING</h1>
             <div class="w-full flex justify-center items-center">
                 <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" id="kemdigbud-logo" srcset="" class="w-10 h-10 md:w-20 md:h-20">
@@ -235,14 +218,56 @@
     let btnprint = document.getElementById("btnprint")
     let downloadpage = document.getElementById('download-page')
     let printdisplay = document.getElementById('print-display');
+
+    let uniba_logo = document.getElementById('uniba-logo');
+    let header_title = document.getElementById('header-title')
+    let kemdigbud_logo = document.getElementById('kemdigbud-logo');
+    let ristekdikti_logo = document.getElementById('ristekdikti-logo')
+
     btnprint.addEventListener('click',()=>{
         printdisplay.classList.add('hidden')
+        uniba_logo.classList.remove('w-10', 'h-10', 'md:w-20', 'md:h-20')
+        uniba_logo.classList.add('w-20','h-20')
+
+        kemdigbud_logo.classList.remove('w-10', 'h-10', 'md:w-20', 'md:h-20')
+        kemdigbud_logo.classList.add('w-20','h-20')
+
+        ristekdikti_logo.classList.remove('w-10', 'h-10', 'md:w-20', 'md:h-20')
+        ristekdikti_logo.classList.add('w-20','h-20')
+
+        header_title.classList.remove('text-[8px]')
+        header_title.classList.add('text-md')
+
         window.print()
+
     })
     window.addEventListener('afterprint', () => {
             printdisplay.classList.remove('hidden');
+
+            uniba_logo.classList.add('w-10', 'h-10', 'md:w-20', 'md:h-20')
+            uniba_logo.classList.remove('w-20','h-20')
+
+            kemdigbud_logo.classList.add('w-10', 'h-10', 'md:w-20', 'md:h-20')
+            kemdigbud_logo.classList.remove('w-20','h-20')
+
+            ristekdikti_logo.classList.add('w-10', 'h-10', 'md:w-20', 'md:h-20')
+            ristekdikti_logo.classList.remove('w-20','h-20')
+
+            header_title.classList.add('text-[8px]')
+            header_title.classList.remove('text-md')
     });
     btndownload.addEventListener('click',()=>{
+        uniba_logo.classList.remove('w-10', 'h-10', 'md:w-20', 'md:h-20')
+        uniba_logo.classList.add('w-20','h-20')
+
+        kemdigbud_logo.classList.remove('w-10', 'h-10', 'md:w-20', 'md:h-20')
+        kemdigbud_logo.classList.add('w-20','h-20')
+
+        ristekdikti_logo.classList.remove('w-10', 'h-10', 'md:w-20', 'md:h-20')
+        ristekdikti_logo.classList.add('w-20','h-20')
+
+        header_title.classList.remove('text-[8px]')
+        header_title.classList.add('text-md')
         var opt = {
                 margin: 1,
                 filename: 'Hasil Survey.pdf',
@@ -251,6 +276,19 @@
                 jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
         };
         html2pdf().from(downloadpage).set(opt).save();
+        setTimeout(() => {
+            uniba_logo.classList.add('w-10', 'h-10', 'md:w-20', 'md:h-20')
+            uniba_logo.classList.remove('w-20','h-20')
+
+            kemdigbud_logo.classList.add('w-10', 'h-10', 'md:w-20', 'md:h-20')
+            kemdigbud_logo.classList.remove('w-20','h-20')
+
+            ristekdikti_logo.classList.add('w-10', 'h-10', 'md:w-20', 'md:h-20')
+            ristekdikti_logo.classList.remove('w-20','h-20')
+
+            header_title.classList.add('text-[8px]')
+            header_title.classList.remove('text-md')
+        }, 0.001);
     })
 </script>
 @endif
