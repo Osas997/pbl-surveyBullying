@@ -32,7 +32,7 @@
                     </g>
                 </svg>
             </div>
-            <h1>Donwload</h1>
+            <h1>Download</h1>
         </div>
     </div>
     <div id="download-page">

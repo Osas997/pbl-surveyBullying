@@ -34,43 +34,48 @@
             </div>
          </div>
 
-         
-            {{-- header logo --}}
-            <div class="grid grid-cols-4 justify-center items-center mb-10">
-               <div class="w-full flex justify-center items-center">
-                   <img src="{{asset('assets/img/uniba.png')}}" alt="" srcset="" class="w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20">
-               </div>
-               <h1 class="text-[8px]  md:text-xs lg:text-base text-center col-span-2">PENELITIAN DOSEN PEMULA, KEMENTRIAN RISET, TEKNOLOGI, DAN PENDIDIKAN TINGGI BIMBINGAN DAN KONSELING</h1>
-               <div class="w-full flex justify-center items-center">
-                   <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" srcset="" class="w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20">
-                   <img src="{{asset('assets/img/ristekdikti.png')}}" alt="" srcset="" class="w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20">
-               </div>
-           </div>
+
+         {{-- header logo --}}
+         <div class="grid grid-cols-4 justify-center items-center mb-10">
+            <div class="w-full flex justify-center items-center">
+               <img src="{{asset('assets/img/uniba.png')}}" alt="" srcset=""
+                  class="w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20">
+            </div>
+            <h1 class="text-[8px]  md:text-xs lg:text-base text-center col-span-2">PENELITIAN DOSEN PEMULA, KEMENTRIAN
+               RISET, TEKNOLOGI, DAN PENDIDIKAN TINGGI BIMBINGAN DAN KONSELING</h1>
+            <div class="w-full flex justify-center items-center">
+               <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" srcset=""
+                  class="w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20">
+               <img src="{{asset('assets/img/ristekdikti.png')}}" alt="" srcset=""
+                  class="w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20">
+            </div>
+         </div>
          {{-- <h1 class="font-semibold text-lg md:text-xl mb-6">Pelaku</h1> --}}
          <h1 class="text-center font-semibold text-base mb-4">Hasil Inventory Potensi Menjadi Pelaku Bullying</h1>
          <div class="flex flex-col gap-1">
             <div class="flex justify-center items-start w-full">
-                <p class="text-xs sm:text-base w-1/3">Nama</p>
-                <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->nama_murid }}</p>
+               <p class="text-xs sm:text-base w-1/3">Nama</p>
+               <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->nama_murid }}</p>
             </div>
             <div class="flex justify-center items-start w-full">
-                <p class="text-xs sm:text-base w-1/3">NISN</p>
-                <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->nisn }}</p>
+               <p class="text-xs sm:text-base w-1/3">NISN</p>
+               <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->nisn }}</p>
             </div>
             <div class="flex justify-center items-start w-full">
-                <p class="text-xs sm:text-base w-1/3">Kelas</p>
-                <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->kelas }}</p>
+               <p class="text-xs sm:text-base w-1/3">Kelas</p>
+               <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->kelas }}</p>
             </div>
             <div class="flex justify-center items-start w-full">
-                <p class="text-xs sm:text-base w-1/3 whitespace-nowrap">Jenis Kelamin</p>
-                <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' : 'Perempuan' }}</p>
+               <p class="text-xs sm:text-base w-1/3 whitespace-nowrap">Jenis Kelamin</p>
+               <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' :
+                  'Perempuan' }}</p>
             </div>
             <div class="flex justify-center items-start w-full">
-                <p class="text-xs sm:text-base w-1/3">Sekolah</p>
-                <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->sekolah->nama_sekolah}}</p>
+               <p class="text-xs sm:text-base w-1/3">Sekolah</p>
+               <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->sekolah->nama_sekolah}}</p>
             </div>
 
-        </div>
+         </div>
          <div class="flex justify-center items-center flex-col gap-2 mt-4">
             <p class="text-center font-medium text-base">Nilai Anda</p>
             <h2 class="text-center font-semibold text-4xl">
@@ -95,20 +100,16 @@
          <h1>Rentang Nilai : </h1>
          <div class="flex gap-4">
             <div class="left">
-               <p class="font-medium">Skor 14 - 23</p>
-               <p class="font-medium">Skor 24 - 34</p>
-               <p class="font-medium">Skor 35 - 45</p>
-               <p class="font-medium">Skor 46 - 56</p>
+               <p class="font-medium text-sm sm:text-base whitespace-nowrap">Skor 14 - 23</p>
+               <p class="font-medium text-sm sm:text-base whitespace-nowrap">Skor 24 - 34</p>
+               <p class="font-medium text-sm sm:text-base whitespace-nowrap">Skor 35 - 45</p>
+               <p class="font-medium text-sm sm:text-base whitespace-nowrap">Skor 46 - 56</p>
             </div>
             <div class="right">
-               <p class="font-medium text-green-400"> : Berpontesi Rendah</p>
-               <p class="font-medium text-yellow-400"> : Berpotensi Sedang</p>
-               <p class="font-medium text-red-800"> : Berpotensi Tinggi</p>
-               <p class="font-medium text-red-800"> : Berpotensi Sangat Tinggi</p>
-               {{-- jika nilai sedang --}}
-               {{-- <p class="font-medium text-amber-400"> : Berpontesi Sedang</p> --}}
-               {{-- jika nilai tinggi --}}
-               {{-- <p class="font-medium text-red-500"> : Berpontesi Tinggi</p> --}}
+               <p class="font-medium text-sm sm:text-base  text-green-400"> : Berpontesi Rendah</p>
+               <p class="font-medium text-sm sm:text-base  text-yellow-400"> : Berpotensi Sedang</p>
+               <p class="font-medium text-sm sm:text-base  text-red-800"> : Berpotensi Tinggi</p>
+               <p class="font-medium text-sm sm:text-base  text-red-800"> : Berpotensi Sangat Tinggi</p>
             </div>
          </div>
 
