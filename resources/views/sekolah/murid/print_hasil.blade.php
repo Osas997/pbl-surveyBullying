@@ -3,7 +3,21 @@
 @section('content')
 <div class="container mx-auto px-4 py-8">
     @if ($murid)
-    <div>
+    <div class="flex justify-center items-center gap-2 mb-8" id="print-display">
+        <div class="flex justify-center items-center gap-1 cursor-pointer bg-blue-200 px-3 py-1 rounded-xl hover:bg-blue-300 duration-300"id="btnprint">
+            <div class="w-8 h-8">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 17H5C3.89543 17 3 16.1046 3 15V11C3 9.34315 4.34315 8 6 8H7M7 17V14H17V17M7 17V18C7 19.1046 7.89543 20 9 20H15C16.1046 20 17 19.1046 17 18V17M17 17H19C20.1046 17 21 16.1046 21 15V11C21 9.34315 19.6569 8 18 8H17M7 8V6C7 4.89543 7.89543 4 9 4H15C16.1046 4 17 4.89543 17 6V8M7 8H17M15 11H17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            </div>
+            <h1>Print</h1>
+        </div>
+        <div class="flex justify-center items-center gap-1 cursor-pointer bg-blue-200 px-3 py-1 rounded-xl hover:bg-blue-300 duration-300"id="btndownload">
+            <div class="w-8 h-8">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M17 17H17.01M17.4 14H18C18.9319 14 19.3978 14 19.7654 14.1522C20.2554 14.3552 20.6448 14.7446 20.8478 15.2346C21 15.6022 21 16.0681 21 17C21 17.9319 21 18.3978 20.8478 18.7654C20.6448 19.2554 20.2554 19.6448 19.7654 19.8478C19.3978 20 18.9319 20 18 20H6C5.06812 20 4.60218 20 4.23463 19.8478C3.74458 19.6448 3.35523 19.2554 3.15224 18.7654C3 18.3978 3 17.9319 3 17C3 16.0681 3 15.6022 3.15224 15.2346C3.35523 14.7446 3.74458 14.3552 4.23463 14.1522C4.60218 14 5.06812 14 6 14H6.6M12 15V4M12 15L9 12M12 15L15 12" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            </div>
+            <h1>Donwload</h1>
+        </div>
+    </div>
+    <div id="download-page">
         {{-- header logo --}}
         <div class="grid grid-cols-4 justify-center items-center mb-10">
             <div class="w-full flex justify-center items-center">
@@ -33,11 +47,11 @@
                 <p>: {{ $murid->murid->sekolah->nama_sekolah }}</p>
             </div>
         </div>
-        <p class="text-xl font-semibold mt-4">Kecenderungan menjadi Korban Bullying</p>
+        <p class="text-base font-semibold mt-4">Kecenderungan menjadi Korban Bullying</p>
         <div class="flex gap-14 ">
             <div class="nilai">
                 <p class="font-medium text-base">Nilai Anda</p>
-                <h2 class="text-center font-semibold text-4xl">
+                <h2 class="text-center font-semibold text-2xl">
                     @if ($murid->skor_total_korban >= 46)
                     <span class="text-red-500">
                         {{ $murid->skor_total_korban }}
@@ -61,26 +75,26 @@
                 <h1>Rentang Nilai : </h1>
                 <div class="flex gap-4">
                     <div class="left">
-                        <p class="font-medium">Skor 14 - 23</p>
-                        <p class="font-medium">Skor 24 - 34</p>
-                        <p class="font-medium">Skor 35 - 45</p>
-                        <p class="font-medium">Skor 46 - 56</p>
+                        <p class="text-sm">Skor 14 - 23</p>
+                        <p class="text-sm">Skor 24 - 34</p>
+                        <p class="text-sm">Skor 35 - 45</p>
+                        <p class="text-sm">Skor 46 - 56</p>
                     </div>
                     <div class="right">
-                        <p class="font-medium text-green-400"> : Berpontesi Rendah</p>
-                        <p class="font-medium text-yellow-400"> : Berpotensi Sedang</p>
-                        <p class="font-medium text-red-800"> : Berpotensi Tinggi</p>
-                        <p class="font-medium text-red-800"> : Berpotensi Sangat Tinggi</p>
+                        <p class="text-sm text-green-400"> : Berpontesi Rendah</p>
+                        <p class="text-sm text-yellow-400"> : Berpotensi Sedang</p>
+                        <p class="text-sm text-red-800"> : Berpotensi Tinggi</p>
+                        <p class="text-sm text-red-800"> : Berpotensi Sangat Tinggi</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <p class="text-xl font-semibold mt-4">Kecenderungan menjadi Pelaku Bullying</p>
+        <p class="text-base font-semibold mt-4">Kecenderungan menjadi Pelaku Bullying</p>
         <div class="flex gap-14">
             <div class="nilai">
                 <p class="font-medium text-base">Nilai Anda</p>
-                <h2 class="text-center font-semibold text-4xl">
+                <h2 class="text-center font-semibold text-2xl">
                     @if ($murid->skor_total_pelaku >= 46)
                     <span class="text-red-500">
                         {{ $murid->skor_total_pelaku }}
@@ -104,23 +118,23 @@
                 <h1>Rentang Nilai : </h1>
                 <div class="flex gap-4">
                     <div class="left">
-                        <p class="font-medium">Skor 14 - 23</p>
-                        <p class="font-medium">Skor 24 - 34</p>
-                        <p class="font-medium">Skor 35 - 45</p>
-                        <p class="font-medium">Skor 46 - 56</p>
+                        <p class="text-sm">Skor 14 - 23</p>
+                        <p class="text-sm">Skor 24 - 34</p>
+                        <p class="text-sm">Skor 35 - 45</p>
+                        <p class="text-sm">Skor 46 - 56</p>
                     </div>
                     <div class="right">
-                        <p class="font-medium text-green-400"> : Berpontesi Rendah</p>
-                        <p class="font-medium text-yellow-400"> : Berpotensi Sedang</p>
-                        <p class="font-medium text-red-800"> : Berpotensi Tinggi</p>
-                        <p class="font-medium text-red-800"> : Berpotensi Sangat Tinggi</p>
+                        <p class="text-sm text-green-400"> : Berpontesi Rendah</p>
+                        <p class="text-sm text-yellow-400"> : Berpotensi Sedang</p>
+                        <p class="text-sm text-red-800"> : Berpotensi Tinggi</p>
+                        <p class="text-sm text-red-800"> : Berpotensi Sangat Tinggi</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <h1 class="mt-4">Interpretasi :</h1>
-        <p class="text-base sm:text-1xl mb-1"> {{ $murid->murid->nama_murid }} memiliki
+        <h1 class="mt-4 text-sm">Interpretasi :</h1>
+        <p class="text-sm sm:text-1xl mb-1"> {{ $murid->murid->nama_murid }} memiliki
             kecenderungan menjadi Korban bullying yang
             @if ($murid->skor_total_korban >= 35)
             <span class="text-red-500">Tinggi</span> Anda termasuk dalam kategori orang yang berpotensi
@@ -136,7 +150,7 @@
                 tersakiti.
                 @endif
         </p>
-        <p class="text-base sm:text-1xl mb-1">
+        <p class="text-sm sm:text-1xl mb-1">
             Dan
             @if ($murid->skor_total_pelaku >= 35)
             Anda berpotensi <span class="text-red-600">Tinggi</span> menjadi pelaku
@@ -152,8 +166,8 @@
                 @endif
         </p>
 
-        <h1 class="mt-4">Rekomendasi : </h1>
-        <p>
+        <h1 class="mt-4 text-sm">Rekomendasi : </h1>
+        <p class="text-sm">
             @if ($murid->skor_total_korban >= 35)
             Karena anda termasuk dalam kategori berpotensi <span class="text-red-500">Tinggi</span> menjadi
             Korban bullying, sebaiknya anda segera temui konselor anda dan mengkonsultasikan hal ini kepada
@@ -168,8 +182,8 @@
                 lebih jelasnya silahkan menemui dan konsultasikan hal ini dengan konselor anda.
                 @endif
         </p>
-        <p>Dan</p>
-        <p>
+        <p class="text-sm">Dan</p>
+        <p class="text-sm">
             @if ($murid->skor_total_pelaku >= 35)
             Karena anda termasuk dalam kategori berpotensi <span class="text-red-500">Tinggi</span> menjadi
             Pelaku bullying, sebaiknya anda segera temui konselor anda dan mengkonsultasikan hal ini kepada
@@ -191,7 +205,28 @@
 </div>
 @if ($murid)
 <script>
-    window.print()
+
+    let btndownload = document.getElementById("btndownload");
+    let btnprint = document.getElementById("btnprint")
+    let downloadpage = document.getElementById('download-page')
+    let printdisplay = document.getElementById('print-display');
+    btnprint.addEventListener('click',()=>{
+        printdisplay.classList.add('hidden')
+        window.print()
+    })
+    window.addEventListener('afterprint', () => {
+            printdisplay.classList.remove('hidden');
+    });
+    btndownload.addEventListener('click',()=>{
+        var opt = {
+                margin: 1,
+                filename: 'Hasil Survey.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        html2pdf().from(downloadpage).set(opt).save();
+    })
 </script>
 @endif
 @endsection

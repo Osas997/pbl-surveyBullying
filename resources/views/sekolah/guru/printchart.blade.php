@@ -1,6 +1,5 @@
 @extends('layout.pages')
 @section('title','Print Chart')
-
 @section('content')
 <div
    class="relative bg-blue-200 w-full flex justify-center items-center flex-col gap-10 p-4 sm:p-6 rounded-sm overflow-hidden mb-8 ">
@@ -74,54 +73,54 @@
          <table class="w-full text-sm text-left text-gray-500 rounded-lg">
             <thead class="text-xs text-white uppercase bg-blue-500 rounded-lg">
                <tr>
-                  <th scope="col" class="px-6 py-3">
+                  <th scope="col" class="px-3 py-1">
                      Soal
                   </th>
-                  <th scope="col" class="px-6 py-3">
+                  <th scope="col" class="px-3 py-1">
                      Pertanyaan
                   </th>
-                  <th scope="col" class="px-6 py-3">
+                  <th scope="col" class="px-3 py-1">
                      <span>Tipe Perilaku</span>
                   </th>
-                  <th scope="col" class="px-6 py-3">
+                  <th scope="col" class="px-3 py-1">
                      Jawaban Tidak Pernah
                   </th>
-                  <th scope="col" class="px-6 py-3">
+                  <th scope="col" class="px-3 py-1">
                      Jawaban Jarang
                   </th>
-                  <th scope="col" class="px-6 py-3">
+                  <th scope="col" class="px-3 py-1">
                      Jawaban Sering
                   </th>
-                  <th scope="col" class="px-6 py-3">
+                  <th scope="col" class="px-3 py-1">
                      Jawaban Selalu
                   </th>
                </tr>
             </thead>
             <tbody>
                @foreach ($tipePelaku as $tipe)
-               <tr class="bg-white border-b  hover:bg-gray-50 ">
+               <tr class="bg-white border-b hover:bg-gray-50 ">
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                      <span>{{ $loop->iteration }}</span>
                   </th>
-                  <td class="px-6 py-4">
+                  <td class="px-3 py-1">
                      <span class="sm:text-sm md:text-md text-center">{{ $tipe->pertanyaan }}</span>
                   </td>
-                  <td class="px-6 py-4">
+                  <td class="px-3 py-1">
                      <span class="sm:text-sm md:text-md text-center">{{ $tipe->tipe_perilaku }}</span>
                   </td>
-                  <td class="px-6 py-4">
+                  <td class="px-3 py-1">
                      <span class="sm:text-sm md:text-md text-center">{{ $tipe->count_tidak_pernah }}
                      </span>
                   </td>
-                  <td class="px-6 py-4">
+                  <td class="px-3 py-1">
                      <span class="sm:text-sm md:text-md text-center">{{ $tipe->count_jarang }}
                      </span>
                   </td>
-                  <td class="px-6 py-4">
+                  <td class="px-3 py-1">
                      <span class="sm:text-sm md:text-md text-center">{{ $tipe->count_sering }}
                      </span>
                   </td>
-                  <td class="px-6 py-4">
+                  <td class="px-3 py-1">
                      <span class="sm:text-sm md:text-md text-center">{{ $tipe->count_selalu }}
                      </span>
                   </td>
