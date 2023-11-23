@@ -11,13 +11,13 @@ let ristekdikti_logo = document.getElementById("ristekdikti-logo");
 btnprint.addEventListener("click", () => {
     printdisplay.classList.add("hidden");
     uniba_logo.classList.remove("w-10", "h-10", "md:w-20", "md:h-20");
-    uniba_logo.classList.add("w-20", "h-20");
+    uniba_logo.classList.add("w-12", "h-12");
 
     kemdigbud_logo.classList.remove("w-10", "h-10", "md:w-20", "md:h-20");
-    kemdigbud_logo.classList.add("w-20", "h-20");
+    kemdigbud_logo.classList.add("w-12", "h-12");
 
     ristekdikti_logo.classList.remove("w-10", "h-10", "md:w-20", "md:h-20");
-    ristekdikti_logo.classList.add("w-20", "h-20");
+    ristekdikti_logo.classList.add("w-12", "h-12");
 
     header_title.classList.remove("text-[8px]");
     header_title.classList.add("text-md");
@@ -28,26 +28,26 @@ window.addEventListener("afterprint", () => {
     printdisplay.classList.remove("hidden");
 
     uniba_logo.classList.add("w-10", "h-10", "md:w-20", "md:h-20");
-    uniba_logo.classList.remove("w-20", "h-20");
+    uniba_logo.classList.remove("w-12", "h-12");
 
     kemdigbud_logo.classList.add("w-10", "h-10", "md:w-20", "md:h-20");
-    kemdigbud_logo.classList.remove("w-20", "h-20");
+    kemdigbud_logo.classList.remove("w-12", "h-12");
 
     ristekdikti_logo.classList.add("w-10", "h-10", "md:w-20", "md:h-20");
-    ristekdikti_logo.classList.remove("w-20", "h-20");
+    ristekdikti_logo.classList.remove("w-12", "h-12");
 
     header_title.classList.add("text-[8px]");
     header_title.classList.remove("text-md");
 });
 btndownload.addEventListener("click", () => {
     uniba_logo.classList.remove("w-10", "h-10", "md:w-20", "md:h-20");
-    uniba_logo.classList.add("w-20", "h-20");
+    uniba_logo.classList.add("w-12", "h-12");
 
     kemdigbud_logo.classList.remove("w-10", "h-10", "md:w-20", "md:h-20");
-    kemdigbud_logo.classList.add("w-20", "h-20");
+    kemdigbud_logo.classList.add("w-12", "h-12");
 
     ristekdikti_logo.classList.remove("w-10", "h-10", "md:w-20", "md:h-20");
-    ristekdikti_logo.classList.add("w-20", "h-20");
+    ristekdikti_logo.classList.add("w-12", "h-12");
 
     header_title.classList.remove("text-[8px]");
     header_title.classList.add("text-md");
@@ -61,13 +61,13 @@ btndownload.addEventListener("click", () => {
     html2pdf().from(downloadpage).set(opt).save();
     setTimeout(() => {
         uniba_logo.classList.add("w-10", "h-10", "md:w-20", "md:h-20");
-        uniba_logo.classList.remove("w-20", "h-20");
+        uniba_logo.classList.remove("w-12", "h-12");
 
         kemdigbud_logo.classList.add("w-10", "h-10", "md:w-20", "md:h-20");
-        kemdigbud_logo.classList.remove("w-20", "h-20");
+        kemdigbud_logo.classList.remove("w-12", "h-12");
 
         ristekdikti_logo.classList.add("w-10", "h-10", "md:w-20", "md:h-20");
-        ristekdikti_logo.classList.remove("w-20", "h-20");
+        ristekdikti_logo.classList.remove("w-12", "h-12");
 
         header_title.classList.add("text-[8px]");
         header_title.classList.remove("text-md");
