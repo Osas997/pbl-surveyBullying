@@ -46,7 +46,7 @@
    <!-- Content -->
    <div class="relative">
       <h1 class="text-2xl md:text-3xl text-slate-800 font-bold mb-1">Welcome Back Guru
-         {{ auth('sekolah')->user()->nama_sekolah }} 👋
+         <span class="uppercase">{{ auth('sekolah')->user()->nama_sekolah }} 👋</span>
       </h1>
       <p class="lg:w-8/12 text-slate-800 ">Kami sangat senang melihat Anda kembali ke dashboard admin kami. Dengan
          tekad

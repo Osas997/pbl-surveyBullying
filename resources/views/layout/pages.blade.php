@@ -9,6 +9,8 @@
     @vite(['resources/css/app.css','resources/js/app.js'])
     <link rel="shortcut icon" href="{{asset('assets/img/blue-logo.png')}}" type="image/x-icon">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    
     <title>@yield('title')</title>
 </head>
 
