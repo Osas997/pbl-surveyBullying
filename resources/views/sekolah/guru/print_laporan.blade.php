@@ -5,7 +5,7 @@
     @if ($dataSiswa->isNotEmpty())    
     <table class="w-full text-sm text-left text-gray-500 rounded-lg">
         <thead class="text-xs text-white uppercase bg-blue-500 rounded-lg">
-           <tr>
+           <tr class="text-gray-900">
               <th scope="col" class="px-3 py-1">
                  Nama Murid
               </th>
