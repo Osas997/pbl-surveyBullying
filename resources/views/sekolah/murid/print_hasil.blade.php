@@ -21,36 +21,36 @@
         {{-- header logo --}}
         <div class="grid grid-cols-4 justify-center items-center mb-10">
             <div class="w-full flex justify-center items-center">
-                <img src="{{asset('assets/img/uniba.png')}}" alt="" srcset="" class="w-20 h-20">
+                <img src="{{asset('assets/img/uniba.png')}}" alt="" srcset="" class="w-10 h-10 md:w-20 md:h-20">
             </div>
-            <h1 class="text-md text-center col-span-2">PENELITIAN DOSEN PEMULA, KEMENTRIAN RISET, TEKNOLOGI, DAN PENDIDIKAN TINGGI BIMBINGAN DAN KONSELING</h1>
+            <h1 class="text-[8px] md:text-base text-center col-span-2">PENELITIAN DOSEN PEMULA, KEMENTRIAN RISET, TEKNOLOGI, DAN PENDIDIKAN TINGGI BIMBINGAN DAN KONSELING</h1>
             <div class="w-full flex justify-center items-center">
-                <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" srcset="" class="w-20 h-20">
-                <img src="{{asset('assets/img/ristekdikti.png')}}" alt="" srcset="" class="w-20 h-20">
+                <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" srcset="" class="w-10 h-10 md:w-20 md:h-20">
+                <img src="{{asset('assets/img/ristekdikti.png')}}" alt="" srcset="" class=" w-10 h-10 md:w-20 md:h-20">
             </div>
         </div>
 
         <h1 class="text-center font-semibold text-base mb-4">Hasil Instrumen Assesment Bullying</h1>
         <div class="flex gap-10">
             <div class="left">
-                <p>Nama</p>
-                <p>NISN</p>
-                <p>Kelas</p>
-                <p>Jenis Kelamin</p>
-                <p>Sekolah</p>
+                <p class="text-sm">Nama</p>
+                <p class="text-sm">NISN</p>
+                <p class="text-sm">Kelas</p>
+                <p class="text-sm">Jenis Kelamin</p>
+                <p class="text-sm">Sekolah</p>
             </div>
             <div class="right">
-                <p>: {{ $murid->murid->nama_murid }}</p>
-                <p>: {{ $murid->murid->nisn }}</p>
-                <p>: {{ $murid->murid->kelas }}</p>
-                <p>: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' : 'Perempuan' }}</p>
-                <p>: {{ $murid->murid->sekolah->nama_sekolah }}</p>
+                <p class="text-sm">: {{ $murid->murid->nama_murid }}</p>
+                <p class="text-sm">: {{ $murid->murid->nisn }}</p>
+                <p class="text-sm">: {{ $murid->murid->kelas }}</p>
+                <p class="text-sm">: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' : 'Perempuan' }}</p>
+                <p class="text-sm">: {{ $murid->murid->sekolah->nama_sekolah }}</p>
             </div>
         </div>
-        <p class="text-base font-semibold mt-4">Kecenderungan menjadi Korban Bullying</p>
-        <div class="flex gap-14 ">
+        <p class="text-sm md:text-base font-semibold mt-4">Kecenderungan menjadi Korban Bullying</p>
+        <div class="flex gap-8 md:gap-14 ">
             <div class="nilai">
-                <p class="font-medium text-base">Nilai Anda</p>
+                <p class="text-sm font-medium md:text-base">Nilai Anda</p>
                 <h2 class="text-center font-semibold text-2xl">
                     @if ($murid->skor_total_korban >= 46)
                     <span class="text-red-500">
@@ -73,12 +73,12 @@
             </div>
             <div class="rentan">
                 <h1>Rentang Nilai : </h1>
-                <div class="flex gap-4">
+                <div class="flex  md:gap-4">
                     <div class="left">
-                        <p class="text-sm">Skor 14 - 23</p>
-                        <p class="text-sm">Skor 24 - 34</p>
-                        <p class="text-sm">Skor 35 - 45</p>
-                        <p class="text-sm">Skor 46 - 56</p>
+                        <p class="text-sm whitespace-nowrap">Skor 14 - 23</p>
+                        <p class="text-sm  whitespace-nowrap">Skor 24 - 34</p>
+                        <p class="text-sm  whitespace-nowrap">Skor 35 - 45</p>
+                        <p class="text-sm  whitespace-nowrap">Skor 46 - 56</p>
                     </div>
                     <div class="right">
                         <p class="text-sm text-green-400"> : Berpontesi Rendah</p>
@@ -90,10 +90,10 @@
             </div>
         </div>
 
-        <p class="text-base font-semibold mt-4">Kecenderungan menjadi Pelaku Bullying</p>
-        <div class="flex gap-14">
+        <p class="text-sm md:text-base font-semibold mt-4">Kecenderungan menjadi Pelaku Bullying</p>
+        <div class="flex gap-8 md:gap-14">
             <div class="nilai">
-                <p class="font-medium text-base">Nilai Anda</p>
+                <p class="text-sm  whitespace-nowrap font-medium md:text-base">Nilai Anda</p>
                 <h2 class="text-center font-semibold text-2xl">
                     @if ($murid->skor_total_pelaku >= 46)
                     <span class="text-red-500">
@@ -116,12 +116,12 @@
             </div>
             <div class="rentan">
                 <h1>Rentang Nilai : </h1>
-                <div class="flex gap-4">
+                <div class="flex ">
                     <div class="left">
-                        <p class="text-sm">Skor 14 - 23</p>
-                        <p class="text-sm">Skor 24 - 34</p>
-                        <p class="text-sm">Skor 35 - 45</p>
-                        <p class="text-sm">Skor 46 - 56</p>
+                        <p class="text-sm whitespace-nowrap">Skor 14 - 23</p>
+                        <p class="text-sm  whitespace-nowrap">Skor 24 - 34</p>
+                        <p class="text-sm  whitespace-nowrap">Skor 35 - 45</p>
+                        <p class="text-sm  whitespace-nowrap">Skor 46 - 56</p>
                     </div>
                     <div class="right">
                         <p class="text-sm text-green-400"> : Berpontesi Rendah</p>
