@@ -4,7 +4,7 @@
 <div class="container mx-auto px-4 py-8">
     @if ($murid)
     <div class="flex justify-center items-center gap-2 mb-8" id="print-display">
-        <div class="flex justify-center items-center gap-1 cursor-pointer bg-blue-200 px-3 py-1 rounded-xl hover:bg-blue-300 duration-300"
+        <div class="justify-center items-center gap-1 cursor-pointer bg-blue-200 px-3 py-1 rounded-xl hover:bg-blue-300 duration-300 hidden md:flex"
             id="btnprint">
             <div class="w-8 h-8">
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,15 +1,20 @@
 @extends('layout.pages')
 @section('title','Print Chart')
 @section('content')
-<div
+<div id="download-page"
    class="relative bg-blue-200 w-full flex justify-center items-center flex-col gap-10 p-4 sm:p-6 rounded-sm overflow-hidden mb-8 ">
-   <div class="flex justify-center items-center">
+   {{-- <div class="flex justify-center items-center " id="btn-download">
+      <button 
+         class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 cursor-pointer rounded">Download</button>
+   </div> --}}
+   <div class=" justify-center items-center flex">
       <button id="btn-print"
          class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 cursor-pointer rounded">Print</button>
    </div>
    {{-- pie chart --}}
    <div id="pie-chart-grid" class="grid md:grid-cols-2 gap-8">
-      <div class=" max-w-full bg-white rounded-lg dark:bg-gray-800 p-4 md:p-6 shadow-lg">
+      {{-- w-[320px] --}}
+      <div id="pie-chart-korban" class=" w-full bg-white rounded-lg dark:bg-gray-800 p-4 md:p-6 shadow-lg">
          <div class="flex justify-between items-start w-full">
             <div class="flex-col items-center">
                <div class="flex items-center mb-1">
@@ -27,7 +32,7 @@
 
       </div>
 
-      <div class=" max-w-full bg-white rounded-lg  dark:bg-gray-800 p-4 md:p-6 shadow-lg">
+      <div id="pie-chart-pelaku" class=" w-full bg-white rounded-lg  dark:bg-gray-800 p-4 md:p-6 shadow-lg">
          <div class="flex justify-between items-start w-full">
             <div class="flex-col items-center">
                <div class="flex items-center mb-1">
@@ -61,7 +66,7 @@
       </div>
 
       <div id="print-column-chart" class="">
-         <div id="column-chart"></div>
+         <div id="column-chart" class=""></div>
       </div>
       <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between">
 
@@ -149,6 +154,28 @@
         const pelakuRendah = @json($pelakuRendah);
 
         const tipePelaku = @json($tipePelaku);  
+
+        let downloadbtn = document.getElementById("btn-download")
+        let downloadpage = document.getElementById("download-page")
+      //   btn_print.addEventListener("click", function () {
+      //   downloadbtn.addEventListener('click',function(){
+      //      downloadbtn.classList.remove("flex");
+      //      downloadpage.classList.remove("bg-blue-200");
+      //      downloadpage.classList.add("bg-white");
+      //      setTimeout(() => {
+      //         var opt = {
+      //            margin: 1,
+      //            filename: "Chart Survey.pdf",
+      //            image: { type: "jpeg", quality: 1 },
+      //            html2canvas: { scale: 2 },
+      //            jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
+      //         };
+      //         html2pdf().from(downloadpage).set(opt).save();
+      //         downloadbtn.classList.add("flex");
+      //         downloadpage.classList.add("bg-blue-200");
+      //       }, 1000);
+      //   })
+      //   let btn_print = document.getElementById("btn-print");
 </script>
 <script src="{{ asset('js/chart.js') }}"></script>
 <script src="{{ asset('js/printchart.js') }}"></script>

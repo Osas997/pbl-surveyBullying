@@ -2,7 +2,7 @@
 @section('title', 'Register')
 @section('content')
 <div>
-   <div class="bg-[#0090D4] w-screen h-screen overflow-x-hidden ">
+   <div class="bg-white md:bg-[#0090D4] w-screen h-screen overflow-x-hidden ">
       <div class=" w-full sm:cointainer">
          <div class="flex justify-center items-center">
             <div
