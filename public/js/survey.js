@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 1. Muat pilihan dari localStorage saat halaman dimuat
     const surveys = document.querySelectorAll('[name^="survey"]');
     surveys.forEach((survey) => {
-        console.log(survey.name);
+
         const nilaiTersimpan = localStorage.getItem(survey.name);
         if (nilaiTersimpan) {
             document.querySelector(

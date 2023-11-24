@@ -3,19 +3,21 @@
 @section('content')
 <div class="container mx-auto px-4 py-8">
     <div>
-
         {{-- header logo --}}
         <div class="grid grid-cols-4 justify-center items-center mb-10">
             <div class="w-full flex justify-center items-center">
-                <img src="{{asset('assets/img/uniba.png')}}" alt="" srcset=""
+                <img src="{{asset('assets/img/uniba.png')}}" alt="" srcset="" id="logo-uniba"
                     class="w-10 h-10 md:w-20 md:h-20 lg:w-40 lg:h-40 ">
+                {{-- image w-20 h-20 --}}
             </div>
-            <h1 class="text-[8px] md:text-base text-center col-span-2">PENELITIAN DOSEN PEMULA, KEMENTRIAN RISET,
+            <h1 class="text-[8px] md:text-base text-center col-span-2" id="header-title">PENELITIAN DOSEN PEMULA,
+                KEMENTRIAN RISET,
                 TEKNOLOGI, DAN PENDIDIKAN TINGGI BIMBINGAN DAN KONSELING</h1>
+            {{-- text text-base --}}
             <div class="w-full flex justify-center items-center">
-                <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" srcset=""
+                <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" srcset="" id="logo-kemdigbud"
                     class="w-10 h-10 md:w-20 md:h-20 lg:w-40 lg:h-40">
-                <img src="{{asset('assets/img/ristekdikti.png')}}" alt="" srcset=""
+                <img src="{{asset('assets/img/ristekdikti.png')}}" alt="" srcset="" id="logo-ristekdikti"
                     class=" w-10 h-10 md:w-20 md:h-20 lg:w-40 lg:h-40">
             </div>
         </div>
@@ -213,11 +215,5 @@
     </div>
 </div>
 </div>
-<script>
-    window.print();
-    
-</script>
-{{-- @else
-belum mengisi survey
-@endif --}}
+<script src="{{ asset('js/print.js') }}"></script>
 @endsection
