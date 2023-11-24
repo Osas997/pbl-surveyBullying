@@ -21,11 +21,6 @@ function handlePrintChange(mql) {
         piechartpelaku.classList.add("w-[320px]");
         piechartkorban.classList.add("w-[320px]");
 
-        console.log(piechart);
-        console.log(columnchart);
-        console.log(btn_print);
-        console.log(piechartkorban);
-        console.log(piechartpelaku);
 
         // Sembunyikan tombol cetak
         btn_print.classList.add("hidden");
