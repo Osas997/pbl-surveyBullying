@@ -23,18 +23,6 @@
                 </div>
             </a>
             @if ($murid)
-            {{-- <div class=" mt-10 mb-12">
-                <div class="flex justify-center items-center flex-col md:flex-row gap-4">
-                    <a href="{{route('guru.hasilPelaku', $murid->murid->id )}}"
-                        class="@if (Request::is('guru/hasil-pelaku/*')) bg-blue-500 @endif text-white w-full md:w-[240px] flex justify-center items-center py-4 rounded-lg">
-                        Pelaku
-                    </a>
-                    <a href="{{route('guru.hasilKorban', $murid->murid->id )}}"
-                        class="hover:text-white  w-full md:w-[240px] flex justify-center items-center py-4 rounded-lg hover:bg-[#0090D4] transition-colors duration-300 ease-in-out">
-                        Korban
-                    </a>
-                </div>
-            </div> --}}
             <div class="mt-10 mb-12">
                 <div class="flex justify-center items-center flex-col md:flex-row gap-4">
 
