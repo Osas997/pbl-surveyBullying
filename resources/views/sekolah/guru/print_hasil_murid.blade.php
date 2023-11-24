@@ -3,17 +3,17 @@
 @section('content')
 <div class="container mx-auto px-4 py-8">
     <div>
-
         {{-- header logo --}}
         <div class="grid grid-cols-4 justify-center items-center mb-10">
             <div class="w-full flex justify-center items-center">
                 <img src="{{asset('assets/img/uniba.png')}}" alt="" srcset="" id="logo-uniba"
                     class="w-10 h-10 md:w-20 md:h-20 lg:w-40 lg:h-40 ">
-                    {{-- image w-20 h-20 --}}
+                {{-- image w-20 h-20 --}}
             </div>
-            <h1 class="text-[8px] md:text-base text-center col-span-2" id="header-title">PENELITIAN DOSEN PEMULA, KEMENTRIAN RISET,
+            <h1 class="text-[8px] md:text-base text-center col-span-2" id="header-title">PENELITIAN DOSEN PEMULA,
+                KEMENTRIAN RISET,
                 TEKNOLOGI, DAN PENDIDIKAN TINGGI BIMBINGAN DAN KONSELING</h1>
-                {{-- text text-base --}}
+            {{-- text text-base --}}
             <div class="w-full flex justify-center items-center">
                 <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" srcset="" id="logo-kemdigbud"
                     class="w-10 h-10 md:w-20 md:h-20 lg:w-40 lg:h-40">
@@ -215,45 +215,5 @@
     </div>
 </div>
 </div>
-<script>
-    let unibaLogo = document.getElementById('logo-uniba');
-    let headerTitle = document.getElementById('header-title')
-    let kemdigbudLogo = document.getElementById('logo-kemdigbud')
-    let ristekdiktiLogo = document.getElementById('logo-ristekdikti')
-    
-    function handlePrintChange(mql) {
-    if (mql.matches) {
-        // Kode yang dijalankan saat pencetakan dimulai
-        unibaLogo.classList.remove('w-10', 'h-10', 'md:w-20', 'md:h-20');
-        headerTitle.classList.remove('text-[8px]', 'md:text-base');
-        kemdigbudLogo.classList.remove('w-10', 'h-10', 'md:w-20', 'md:h-20');
-        ristekdiktiLogo.classList.remove('w-10', 'h-10', 'md:w-20', 'md:h-20');
-
-        unibaLogo.classList.add('w-20', 'h-20');
-        headerTitle.classList.add('text-base');
-        kemdigbudLogo.classList.add('w-20', 'h-20');
-        ristekdiktiLogo.classList.add('w-20', 'h-20');
-     
-    } else {
-        // Kode yang dijalankan setelah pencetakan selesai
-        unibaLogo.classList.remove('w-20', 'h-20');
-        headerTitle.classList.remove('text-base');
-        kemdigbudLogo.classList.remove('w-20', 'h-20');
-        ristekdiktiLogo.classList.remove('w-20', 'h-20');
-
-        unibaLogo.classList.add('w-10', 'h-10', 'md:w-20', 'md:h-20');
-        headerTitle.classList.add('text-[8px]', 'md:text-base');
-        kemdigbudLogo.classList.add('w-10', 'h-10', 'md:w-20', 'md:h-20');
-        ristekdiktiLogo.classList.add('w-10', 'h-10', 'md:w-20', 'md:h-20');
-    }
-}
-
-// Mendengarkan perubahan media query untuk pencetakan
-let mediaQueryList = window.matchMedia('print');
-mediaQueryList.addListener(handlePrintChange);
-window.print()
-</script>
-{{-- @else
-belum mengisi survey
-@endif --}}
+<script src="{{ asset('js/print.js') }}"></script>
 @endsection
