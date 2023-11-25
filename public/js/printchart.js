@@ -1,5 +1,5 @@
 // Fungsi untuk menangani event setelah proses pencetakan selesai
-console.log('test')
+// console.log('test')
 let piechart = document.getElementById("pie-chart-grid");
 let btn_print = document.getElementById('btn-print');
 let columnchart = document.getElementById("print-column-chart");
