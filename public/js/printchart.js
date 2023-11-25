@@ -21,7 +21,6 @@
 //     this.window.location.reload();
 // });
 
-
 // Fungsi untuk menangani event setelah proses pencetakan selesai
 let piechart = document.getElementById("pie-chart-grid");
 let btn_print = document.getElementById("btn-print");
@@ -48,7 +47,7 @@ function handlePrintChange(mql) {
 }
 
 // Membuat objek media query
-let mediaQueryList = window.matchMedia('print');
+let mediaQueryList = window.matchMedia("print");
 
 // Menambahkan event listener untuk perubahan ukuran
 mediaQueryList.addListener(handlePrintChange);
@@ -59,7 +58,6 @@ btn_print.addEventListener("click", function () {
     // Memanggil fungsi untuk menangani perubahan ukuran
     handlePrintChange(mediaQueryList);
 
-
     setTimeout(() => {
         window.print();
     }, 1000);
@@ -68,5 +66,7 @@ btn_print.addEventListener("click", function () {
 // Menangani event setelah proses pencetakan selesai
 window.addEventListener("afterprint", function () {
     // Me-refresh halaman
-    window.location.reload();
+    this.setTimeout(() => {
+        window.location.reload();
+    }, 1000);
 });
