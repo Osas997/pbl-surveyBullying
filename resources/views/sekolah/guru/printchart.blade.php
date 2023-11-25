@@ -3,7 +3,7 @@
 @section('content')
     <div id="download-page"
         class="relative bg-blue-200 w-full flex justify-center items-center flex-col gap-10 p-4 sm:p-6 rounded-sm overflow-hidden mb-8 ">
-
+         {{-- <p id="test">test</p> --}}
         <div class=" justify-center items-center flex">
             <button id="btn-print"
                 class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 cursor-pointer rounded">Print</button>
@@ -150,9 +150,7 @@
         const pelakuSedang = @json($pelakuSedang);
         const pelakuRendah = @json($pelakuRendah);
 
-        const tipePelaku = @json($tipePelaku);
-
-     
+        const tipePelaku = @json($tipePelaku);   
     </script>
     <script src="{{ asset('js/chart.js') }}"></script>
     <script src="{{ asset('js/printchart.js') }}"></script>
