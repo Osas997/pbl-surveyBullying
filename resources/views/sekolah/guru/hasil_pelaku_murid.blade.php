@@ -54,25 +54,25 @@
          <h1 class="text-center font-semibold text-base mb-4">Hasil Inventory Potensi Menjadi Pelaku Bullying</h1>
          <div class="flex flex-col gap-1">
             <div class="flex justify-center items-start w-full">
-               <p class="text-xs sm:text-base w-1/3">Nama</p>
-               <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->nama_murid }}</p>
+               <p class="text-xs sm:text-base w-1/3 md:w-1/4 lg:w-1/5">Nama</p>
+               <p class="uppercase text-xs sm:text-base w-2/3 md:w-3/4 lg:w-4/5">: {{ $murid->murid->nama_murid }}</p>
             </div>
             <div class="flex justify-center items-start w-full">
-               <p class="text-xs sm:text-base w-1/3">NISN</p>
-               <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->nisn }}</p>
+               <p class="text-xs sm:text-base w-1/3 md:w-1/4 lg:w-1/5">NISN</p>
+               <p class="uppercase text-xs sm:text-base w-2/3 md:w-3/4 lg:w-4/5">: {{ $murid->murid->nisn }}</p>
             </div>
             <div class="flex justify-center items-start w-full">
-               <p class="text-xs sm:text-base w-1/3">Kelas</p>
-               <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->kelas }}</p>
+               <p class="text-xs sm:text-base w-1/3 md:w-1/4 lg:w-1/5">Kelas</p>
+               <p class="uppercase text-xs sm:text-base w-2/3 md:w-3/4 lg:w-4/5">: {{ $murid->murid->kelas }}</p>
             </div>
             <div class="flex justify-center items-start w-full">
-               <p class="text-xs sm:text-base w-1/3 whitespace-nowrap">Jenis Kelamin</p>
-               <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' :
+               <p class="text-xs sm:text-base w-1/3 md:w-1/4 lg:w-1/5 whitespace-nowrap">Jenis Kelamin</p>
+               <p class="uppercase text-xs sm:text-base w-2/3 md:w-3/4 lg:w-4/5">: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' :
                   'Perempuan' }}</p>
             </div>
             <div class="flex justify-center items-start w-full">
-               <p class="text-xs sm:text-base w-1/3">Sekolah</p>
-               <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->sekolah->nama_sekolah}}</p>
+               <p class="text-xs sm:text-base w-1/3 md:w-1/4 lg:w-1/5">Sekolah</p>
+               <p class="uppercase text-xs sm:text-base w-2/3 md:w-3/4 lg:w-4/5">: {{ $murid->murid->sekolah->nama_sekolah}}</p>
             </div>
 
          </div>
@@ -101,20 +101,20 @@
         <h1 class="text-sm">Rentang Nilai : </h1>
         <div class="flex gap-1 flex-col">
             <div class="flex justify-center items-start w-full ">
-                <p class="font-medium text-xs sm:text-base whitespace-nowrap w-1/3">Skor 14 - 23</p>
-                <p class="font-medium text-xs sm:text-base  text-green-400 w-2/3"> : Berpontesi Rendah</p>
+                <p class="font-medium text-xs sm:text-base whitespace-nowrap w-1/3 md:w-1/4 lg:w-1/5">Skor 14 - 23</p>
+                <p class="font-medium text-xs sm:text-base  text-green-400 w-2/3 md:w-3/4 lg:w-4/5"> : Berpontesi Rendah</p>
             </div>
             <div class="flex justify-center items-start w-full ">
-                <p class="font-medium text-xs sm:text-base whitespace-nowrap w-1/3">Skor 24 - 34</p>
-                <p class="font-medium text-xs sm:text-base  text-yellow-400 w-2/3"> : Berpotensi Sedang</p>
+                <p class="font-medium text-xs sm:text-base whitespace-nowrap w-1/3 md:w-1/4 lg:w-1/5">Skor 24 - 34</p>
+                <p class="font-medium text-xs sm:text-base  text-yellow-400 w-2/3 md:w-3/4 lg:w-4/5"> : Berpotensi Sedang</p>
             </div>
             <div class="flex justify-center items-start w-full ">
-                <p class="font-medium text-xs sm:text-base whitespace-nowrap w-1/3">Skor 35 - 45</p>
-                <p class="font-medium text-xs sm:text-base  text-red-400 w-2/3"> : Berpotensi Tinggi</p>
+                <p class="font-medium text-xs sm:text-base whitespace-nowrap w-1/3 md:w-1/4 lg:w-1/5">Skor 35 - 45</p>
+                <p class="font-medium text-xs sm:text-base  text-red-400 w-2/3 md:w-3/4 lg:w-4/5"> : Berpotensi Tinggi</p>
             </div>
             <div class="flex justify-center items-start w-full ">
-                <p class="font-medium text-xs sm:text-base whitespace-nowrap w-1/3">Skor 46 - 56</p>
-                <p class="font-medium text-xs sm:text-base  text-red-400 w-2/3"> : Berpotensi Sangat Tinggi</p>
+                <p class="font-medium text-xs sm:text-base whitespace-nowrap w-1/3 md:w-1/4 lg:w-1/5">Skor 46 - 56</p>
+                <p class="font-medium text-xs sm:text-base  text-red-400 w-2/3 md:w-3/4 lg:w-4/5"> : Berpotensi Sangat Tinggi</p>
             </div>
     </div>
 
