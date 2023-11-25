@@ -1,4 +1,7 @@
 @extends('layout.pages')
+@section('pdf')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+@endsection
 @section('title','Print Hasil Survey')
 @section('content')
 <div class="container mx-auto px-4 py-8">
