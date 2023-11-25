@@ -156,16 +156,3 @@
     </div>
 
     @endsection
-
-
-
-
-    {{-- <input type="hidden" value="1" name="survey[0][pertanyaan]">
-    <input type="text" name="survey[0][jawaban]">
-
-    <input type="hidden" value="1" name="survey[1][pertanyaan]"> --}}
-    {{-- <input type="text" name="survey[1][jawaban]"> --}}
-    {{-- <input type="file" name="exel">
-
-    <button type="submit">kirim</button>
-    </form> --}}

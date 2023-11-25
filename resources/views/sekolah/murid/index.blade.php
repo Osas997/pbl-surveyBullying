@@ -119,17 +119,6 @@
 </div>
 @endsection
 @section('script')
-<script>
-    window.addEventListener("scroll", () => {
-      const nav = document.querySelector("nav");
-      const navOff = nav.offsetTop;
-  
-      if (window.scrollY > navOff) {
-        nav.classList.add("backdrop-blur", "shadow-md");
-      } else {
-        nav.classList.remove("backdrop-blur", "shadow-md");
-      }
-    });
-</script>
+<script src="{{ asset('js/nav-blur.js') }}"></script>
 
 @endsection

@@ -215,5 +215,7 @@
     </div>
 </div>
 </div>
+@endsection
+@section('script')
 <script src="{{ asset('js/print.js') }}"></script>
 @endsection
