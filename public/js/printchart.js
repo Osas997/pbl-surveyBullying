@@ -15,7 +15,7 @@ btn_print.addEventListener("click", function () {
     btn_print.classList.add("hidden");
     setTimeout(() => {
         window.print();
-    }, 1000);
+    }, 2000);
 });
 window.addEventListener("afterprint", function () {
     this.window.location.reload();
