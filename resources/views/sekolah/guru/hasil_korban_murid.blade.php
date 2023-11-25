@@ -78,41 +78,46 @@
 
          </div>
          <div class="flex justify-center items-center flex-col gap-2 mt-4">
-            <p class="text-center font-medium text-base">Nilai Anda</p>
-            <h2 class="text-center font-semibold text-4xl">
-               @if ($murid->skor_total_korban >= 46)
-               <span class="text-red-500">
-                  {{ $murid->skor_total_korban }}
-               </span>
-               @elseif ($murid->skor_total_korban >= 35 && $murid->skor_total_korban < 46) <span class="text-red-500">
-                  {{ $murid->skor_total_korban }}
-                  </span>
-                  @elseif ($murid->skor_total_korban >= 24 && $murid->skor_total_korban < 35) <span
-                     class="text-yellow-400">
-                     {{ $murid->skor_total_korban }}
-                     </span>
-                     @else
-                     <span class="text-green-400">
+            <p class="text-center font-medium text-sm md:text-base">Nilai Anda</p>
+            <h2 class="text-center font-semibold text-3xl md:text-4xl ">
+                @if ($murid->skor_total_korban >= 46)
+                <span class="text-red-500">
+                    {{ $murid->skor_total_korban }}
+                </span>
+                @elseif ($murid->skor_total_korban >= 35 && $murid->skor_total_korban < 46) <span
+                    class="text-red-500">
+                    {{ $murid->skor_total_korban }}
+                    </span>
+                    @elseif ($murid->skor_total_korban >= 24 && $murid->skor_total_korban < 35) <span
+                        class="text-yellow-400">
                         {{ $murid->skor_total_korban }}
-                     </span>
-                     @endif
+                        </span>
+                        @else
+                        <span class="text-green-400">
+                            {{ $murid->skor_total_korban }}
+                        </span>
+                        @endif
             </h2>
-         </div>
-         <h1>Rentang Nilai : </h1>
-         <div class="flex gap-4">
-            <div class="left">
-               <p class="font-medium text-sm sm:text-base whitespace-nowrap">Skor 14 - 23</p>
-               <p class="font-medium text-sm sm:text-base whitespace-nowrap">Skor 24 - 34</p>
-               <p class="font-medium text-sm sm:text-base whitespace-nowrap">Skor 35 - 45</p>
-               <p class="font-medium text-sm sm:text-base whitespace-nowrap">Skor 46 - 56</p>
-            </div>
-            <div class="right">
-               <p class="font-medium text-sm sm:text-base  text-green-400"> : Berpontesi Rendah</p>
-               <p class="font-medium text-sm sm:text-base  text-yellow-400"> : Berpotensi Sedang</p>
-               <p class="font-medium text-sm sm:text-base  text-red-800"> : Berpotensi Tinggi</p>
-               <p class="font-medium text-sm sm:text-base  text-red-800"> : Berpotensi Sangat Tinggi</p>
-            </div>
-         </div>
+        </div>
+        <h1 class="text-sm">Rentang Nilai : </h1>
+        <div class="flex gap-1 flex-col">
+                <div class="flex justify-center items-start w-full ">
+                    <p class="font-medium text-xs sm:text-base whitespace-nowrap w-1/3">Skor 14 - 23</p>
+                    <p class="font-medium text-xs sm:text-base  text-green-400 w-2/3"> : Berpontesi Rendah</p>
+                </div>
+                <div class="flex justify-center items-start w-full ">
+                    <p class="font-medium text-xs sm:text-base whitespace-nowrap w-1/3">Skor 24 - 34</p>
+                    <p class="font-medium text-xs sm:text-base  text-yellow-400 w-2/3"> : Berpotensi Sedang</p>
+                </div>
+                <div class="flex justify-center items-start w-full ">
+                    <p class="font-medium text-xs sm:text-base whitespace-nowrap w-1/3">Skor 35 - 45</p>
+                    <p class="font-medium text-xs sm:text-base  text-red-400 w-2/3"> : Berpotensi Tinggi</p>
+                </div>
+                <div class="flex justify-center items-start w-full ">
+                    <p class="font-medium text-xs sm:text-base whitespace-nowrap w-1/3">Skor 46 - 56</p>
+                    <p class="font-medium text-xs sm:text-base  text-red-400 w-2/3"> : Berpotensi Sangat Tinggi</p>
+                </div>
+        </div>
 
          <h1 class="mt-4">Interpretasi :</h1>
          <p class="text-sm sm:text-base mb-1"> {{ $murid->murid->nama_murid }} memiliki
