@@ -6,30 +6,38 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
     public function authenticate(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'username' => 'required',
             'password' => 'required',
         ]);
 
-        if (Auth::guard("admin")->attempt(["username" => $request->username, "password" => $request->password])) {
-
-            $admin = auth("admin")->user();
-            $token = $admin->createToken("api_token")->plainTextToken;
-
-            return response()->json(["token" => $token]);
+        if ($validator->fails()) {
+            throw new HttpResponseException(response()->json([
+                'errors' => $validator->errors()
+            ], 400));
         }
+
+        // if (Auth::guard("admin")->attempt(["username" => $request->username, "password" => $request->password])) {
+
+        //     $admin = auth("admin")->user();
+        //     $token = $admin->createToken("api_token")->plainTextToken;
+
+        //     return response()->json(["token" => $token]);
+        // }
 
         if (Auth::guard("sekolah")->attempt(["npsn" => $request->username, "password" => $request->password])) {
 
             $sekolah = auth("sekolah")->user();
             $token = $sekolah->createToken("api_token")->plainTextToken;
 
-            return response()->json(["token" => $token]);
+            return response()->json(["token" => $token], 200);
         }
 
         throw new HttpResponseException(response()->json([

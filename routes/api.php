@@ -20,5 +20,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+Route::get('/test', function () {
+    return response()->json([
+        'success' => true,
+    ]);
+});
+
 Route::post('/login', [AuthController::class, 'authenticate'])->middleware('guest:sanctum');
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
