@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\PertanyaanController;
+use App\Http\Controllers\Api\SiswaController;
+use App\Http\Controllers\Api\SurveyController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,16 +18,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:sanctum')->group(function () {
+
+    Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
+
+    Route::get('/pertanyaan', [PertanyaanController::class, 'index']);
+
+    Route::post('/signup', [SiswaController::class, 'store']);
+    Route::post("/survey", [SurveyController::class, "store"]);
 });
 
-
+Route::post('/login', [AuthController::class, 'authenticate'])->middleware('guest:sanctum');
 Route::get('/test', function () {
     return response()->json([
         'success' => true,
     ]);
 });
-
-Route::post('/login', [AuthController::class, 'authenticate'])->middleware('guest:sanctum');
-Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
