@@ -32,8 +32,3 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 
 Route::post('/login', [AuthController::class, 'authenticate'])->middleware('guest:sanctum');
-Route::get('/test', function () {
-    return response()->json([
-        'success' => true,
-    ]);
-});

@@ -69,7 +69,7 @@ class SurveyController extends Controller
 
             return response()->json([
                 'success' => true,
-                'data' => $surveyRespon
+                'data' => $surveyRespon->load("murid")
             ], 200);
         } catch (\Exception $e) {
             DB::rollback();
