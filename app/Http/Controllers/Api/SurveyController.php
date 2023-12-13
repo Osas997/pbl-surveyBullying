@@ -15,6 +15,10 @@ class SurveyController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
+            "nisn" => "required",
+            "nama_murid" => "required",
+            "kelas" => "required",
+            "jenis_kelamin" => "required",
             "survey.*.id_pertanyaan" => "required",
             "survey.*.skor" => "required",
         ]);
@@ -69,7 +73,7 @@ class SurveyController extends Controller
 
             return response()->json([
                 'success' => true,
-                'data' => $surveyRespon->load("murid")
+                'data' => $surveyRespon->load(["murid", "murid.sekolah"]),
             ], 200);
         } catch (\Exception $e) {
             DB::rollback();

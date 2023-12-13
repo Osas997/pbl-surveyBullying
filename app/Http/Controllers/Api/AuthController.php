@@ -23,14 +23,6 @@ class AuthController extends Controller
             ], 400));
         }
 
-        // if (Auth::guard("admin")->attempt(["username" => $request->username, "password" => $request->password])) {
-
-        //     $admin = auth("admin")->user();
-        //     $token = $admin->createToken("api_token")->plainTextToken;
-
-        //     return response()->json(["token" => $token]);
-        // }
-
         if (Auth::guard("sekolah")->attempt(["npsn" => $request->username, "password" => $request->password])) {
 
             $sekolah = auth("sekolah")->user();
