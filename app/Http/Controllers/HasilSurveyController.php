@@ -33,6 +33,7 @@ class HasilSurveyController extends Controller
 
     public function guruKorban(Murid $murid)
     {
+        $this->cekHakAkses($murid);
         $dataLaporan = SurveyRespon::with(['jawaban', 'jawaban.pertanyaan'])->where("id_murid", $murid->id)->first();
         return view("sekolah.guru.hasil_korban_murid", [
             "title" => "Hasil Survey Murid",
@@ -41,6 +42,7 @@ class HasilSurveyController extends Controller
     }
     public function guruPelaku(Murid $murid)
     {
+        $this->cekHakAkses($murid);
         $dataLaporan = SurveyRespon::with(['jawaban', 'jawaban.pertanyaan'])->where("id_murid", $murid->id)->first();
         return view("sekolah.guru.hasil_pelaku_murid", [
             "title" => "Hasil Survey Murid",
@@ -49,11 +51,19 @@ class HasilSurveyController extends Controller
     }
     public function printGuru(Murid $murid)
     {
+        $this->cekHakAkses($murid);
         $dataLaporan = SurveyRespon::with(['jawaban', 'jawaban.pertanyaan'])->where("id_murid", $murid->id)->first();
         return view("sekolah.guru.print_hasil_murid", [
             "title" => "Hasil Survey Murid",
             "murid" => $dataLaporan,
         ]);
+    }
+
+    public function cekHakAkses(Murid $murid)
+    {
+        if (auth('sekolah')->user()->id != $murid->id_sekolah) {
+            abort(401, 'Unauthorized action.');
+        }
     }
     // public function printGuruPelaku(Murid $murid)
     // {
