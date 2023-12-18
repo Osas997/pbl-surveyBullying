@@ -34,46 +34,53 @@
             </div>
          </div>
 
-         
-            {{-- header logo --}}
-            <div class="grid grid-cols-4 justify-center items-center mb-10">
-               <div class="w-full flex justify-center items-center">
-                   <img src="{{asset('assets/img/uniba.png')}}" alt="" srcset="" class="w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20">
-               </div>
-               <h1 class="text-[8px]  md:text-xs lg:text-base text-center col-span-2">PENELITIAN DOSEN PEMULA, KEMENTRIAN RISET, TEKNOLOGI, DAN PENDIDIKAN TINGGI BIMBINGAN DAN KONSELING</h1>
-               <div class="w-full flex justify-center items-center">
-                   <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" srcset="" class="w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20">
-                   <img src="{{asset('assets/img/ristekdikti.png')}}" alt="" srcset="" class="w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20">
-               </div>
-           </div>
+
+         {{-- header logo --}}
+         <div class="grid grid-cols-4 justify-center items-center mb-10">
+            <div class="w-full flex justify-center items-center">
+               <img src="{{asset('assets/img/uniba.png')}}" alt="" srcset=""
+                  class="w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20">
+            </div>
+            <h1 class="text-[8px]  md:text-xs lg:text-base text-center col-span-2">PENELITIAN DOSEN PEMULA, KEMENTRIAN
+               RISET, TEKNOLOGI, DAN PENDIDIKAN TINGGI BIMBINGAN DAN KONSELING</h1>
+            <div class="w-full flex justify-center items-center">
+               <img src="{{asset('assets/img/kemdigbud.png')}}" alt="" srcset=""
+                  class="w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20">
+               <img src="{{asset('assets/img/ristekdikti.png')}}" alt="" srcset=""
+                  class="w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20">
+            </div>
+         </div>
          {{-- <h1 class="font-semibold text-lg md:text-xl mb-6">Pelaku</h1> --}}
          <h1 class="text-center font-semibold text-base mb-4">Hasil Inventory Potensi Menjadi Pelaku Bullying</h1>
          <div class="flex flex-col gap-1">
             <div class="flex justify-center items-start w-full">
-                <p class="text-xs sm:text-base w-1/3">Nama</p>
-                <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->nama_murid }}</p>
+               <p class="text-xs sm:text-base w-1/3 md:w-1/4 lg:w-1/5">Nama</p>
+               <p class="uppercase text-xs sm:text-base w-2/3 md:w-3/4 lg:w-4/5">: {{ $murid->murid->nama_murid }}</p>
             </div>
             <div class="flex justify-center items-start w-full">
-                <p class="text-xs sm:text-base w-1/3">NISN</p>
-                <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->nisn }}</p>
+               <p class="text-xs sm:text-base w-1/3 md:w-1/4 lg:w-1/5">NISN</p>
+               <p class="uppercase text-xs sm:text-base w-2/3 md:w-3/4 lg:w-4/5">: {{ $murid->murid->nisn }}</p>
             </div>
             <div class="flex justify-center items-start w-full">
-                <p class="text-xs sm:text-base w-1/3">Kelas</p>
-                <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->kelas }}</p>
+               <p class="text-xs sm:text-base w-1/3 md:w-1/4 lg:w-1/5">Kelas</p>
+               <p class="uppercase text-xs sm:text-base w-2/3 md:w-3/4 lg:w-4/5">: {{ $murid->murid->kelas }}</p>
             </div>
             <div class="flex justify-center items-start w-full">
-                <p class="text-xs sm:text-base w-1/3 whitespace-nowrap">Jenis Kelamin</p>
-                <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->jenis_kelamin == 'L' ? 'Laki-Laki' : 'Perempuan' }}</p>
+               <p class="text-xs sm:text-base w-1/3 md:w-1/4 lg:w-1/5 whitespace-nowrap">Jenis Kelamin</p>
+               <p class="uppercase text-xs sm:text-base w-2/3 md:w-3/4 lg:w-4/5">: {{ $murid->murid->jenis_kelamin ==
+                  'L' ? 'Laki-Laki' :
+                  'Perempuan' }}</p>
             </div>
             <div class="flex justify-center items-start w-full">
-                <p class="text-xs sm:text-base w-1/3">Sekolah</p>
-                <p class="uppercase text-xs sm:text-base w-2/3">: {{ $murid->murid->sekolah->nama_sekolah}}</p>
+               <p class="text-xs sm:text-base w-1/3 md:w-1/4 lg:w-1/5">Sekolah</p>
+               <p class="uppercase text-xs sm:text-base w-2/3 md:w-3/4 lg:w-4/5">: {{
+                  $murid->murid->sekolah->nama_sekolah}}</p>
             </div>
 
-        </div>
+         </div>
          <div class="flex justify-center items-center flex-col gap-2 mt-4">
-            <p class="text-center font-medium text-base">Nilai Anda</p>
-            <h2 class="text-center font-semibold text-4xl">
+            <p class="text-center font-medium text-sm md:text-base">Nilai Anda</p>
+            <h2 class="text-center font-semibold text-3xl md:text-4xl">
                @if ($murid->skor_total_pelaku >= 46)
                <span class="text-red-500">
                   {{ $murid->skor_total_pelaku }}
@@ -92,28 +99,32 @@
                      @endif
             </h2>
          </div>
-         <h1>Rentang Nilai : </h1>
-         <div class="flex gap-4">
-            <div class="left">
-               <p class="font-medium">Skor 14 - 23</p>
-               <p class="font-medium">Skor 24 - 34</p>
-               <p class="font-medium">Skor 35 - 45</p>
-               <p class="font-medium">Skor 46 - 56</p>
+         <h1 class="text-sm">Rentang Nilai : </h1>
+         <div class="flex gap-1 flex-col">
+            <div class="flex justify-center items-start w-full ">
+               <p class="font-medium text-xs sm:text-base whitespace-nowrap w-1/3 md:w-1/4 lg:w-1/5">Skor 14 - 23</p>
+               <p class="font-medium text-xs sm:text-base  text-green-400 w-2/3 md:w-3/4 lg:w-4/5"> : Berpontesi Rendah
+               </p>
             </div>
-            <div class="right">
-               <p class="font-medium text-green-400"> : Berpontesi Rendah</p>
-               <p class="font-medium text-yellow-400"> : Berpotensi Sedang</p>
-               <p class="font-medium text-red-800"> : Berpotensi Tinggi</p>
-               <p class="font-medium text-red-800"> : Berpotensi Sangat Tinggi</p>
-               {{-- jika nilai sedang --}}
-               {{-- <p class="font-medium text-amber-400"> : Berpontesi Sedang</p> --}}
-               {{-- jika nilai tinggi --}}
-               {{-- <p class="font-medium text-red-500"> : Berpontesi Tinggi</p> --}}
+            <div class="flex justify-center items-start w-full ">
+               <p class="font-medium text-xs sm:text-base whitespace-nowrap w-1/3 md:w-1/4 lg:w-1/5">Skor 24 - 34</p>
+               <p class="font-medium text-xs sm:text-base  text-yellow-400 w-2/3 md:w-3/4 lg:w-4/5"> : Berpotensi Sedang
+               </p>
+            </div>
+            <div class="flex justify-center items-start w-full ">
+               <p class="font-medium text-xs sm:text-base whitespace-nowrap w-1/3 md:w-1/4 lg:w-1/5">Skor 35 - 45</p>
+               <p class="font-medium text-xs sm:text-base  text-red-400 w-2/3 md:w-3/4 lg:w-4/5"> : Berpotensi Tinggi
+               </p>
+            </div>
+            <div class="flex justify-center items-start w-full ">
+               <p class="font-medium text-xs sm:text-base whitespace-nowrap w-1/3 md:w-1/4 lg:w-1/5">Skor 46 - 56</p>
+               <p class="font-medium text-xs sm:text-base  text-red-400 w-2/3 md:w-3/4 lg:w-4/5"> : Berpotensi Sangat
+                  Tinggi</p>
             </div>
          </div>
 
          <h1 class="mt-4">Interpretasi :</h1>
-         <p class="text-base sm:text-1xl mb-1"> {{ $murid->murid->nama_murid }} memiliki
+         <p class="text-sm sm:text-base mb-1"> {{ $murid->murid->nama_murid }} memiliki
             kecenderungan menjadi pelaku bullying yang
             @if ($murid->skor_total_pelaku >= 35)
             <span class="text-red-500">Tinggi</span> Dan anda berpotensi tinggi menjadi pelaku

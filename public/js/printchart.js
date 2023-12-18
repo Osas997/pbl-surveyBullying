@@ -1,34 +1,49 @@
-let piechart = document.getElementById("pie-chart-grid");
-let columnchart = document.getElementById("print-column-chart");
-let btn_print = document.getElementById("btn-print");
 // Fungsi untuk menangani event setelah proses pencetakan selesai
-function handleAfterPrint() {
-    // Tambahkan kembali kelas yang dihapus sebelum pencetakan
-    piechart.classList.add("md:grid-cols-2");
-    piechart.classList.remove("grid-cols-2");
+let piechart = document.getElementById("pie-chart-grid");
+let btn_print = document.getElementById("btn-print");
+let columnchart = document.getElementById("print-column-chart");
+let piechartpelaku = document.getElementById("pie-chart-pelaku");
+let piechartkorban = document.getElementById("pie-chart-korban");
+let test = document.getElementById("test");
 
-    columnchart.classList.remove("w-1/2");
-    // Hapus kelas 'hidden' dari tombol cetak
-    btn_print.classList.remove("hidden");
-
-    // Hapus event listener afterprint agar tidak dijalankan secara berulang
-    window.removeEventListener("afterprint", handleAfterPrint);
+// Fungsi untuk menangani perubahan ukuran saat pencetakan dimulai atau selesai
+function handlePrintChange(mql) {
+    if (mql.matches) {
+        // Kode yang dijalankan saat pencetakan dimulai
+        piechart.style.gridTemplateColumns = "1fr 1fr";
+        columnchart.classList.remove("w-full");
+        columnchart.style.width = "640px";
+        piechartkorban.style.width = "320px";
+        piechartpelaku.style.width = "320px";
+        btn_print.classList.add("hidden");
+    } else {
+        // Kode yang dijalankan setelah pencetakan selesai
+        piechart.style.gridTemplateColumns = "1fr";
+        btn_print.classList.remove("hidden");
+    }
 }
 
+// Membuat objek media query
+let mediaQueryList = window.matchMedia("print");
+
+// Menambahkan event listener untuk perubahan ukuran
+mediaQueryList.addListener(handlePrintChange);
+
+// Menangani event saat tombol cetak ditekan
 btn_print.addEventListener("click", function () {
-    // Hapus kelas untuk tampilan cetak
-    piechart.classList.remove("md:grid-cols-2");
-    piechart.classList.add("grid-cols-2");
-    console.log(columnchart);
-    columnchart.classList.add("w-1/2");
-    // Sembunyikan tombol cetak
-    btn_print.classList.add("hidden");
+    columnchart.style.width = "640px";
+    // Memanggil fungsi untuk menangani perubahan ukuran
+    handlePrintChange(mediaQueryList);
 
-    // Tambahkan event listener untuk menangani event afterprint
-    window.addEventListener("afterprint", handleAfterPrint);
-
-    // Lakukan pencetakan
     setTimeout(() => {
         window.print();
     }, 1000);
+});
+
+// Menangani event setelah proses pencetakan selesai
+window.addEventListener("afterprint", function () {
+    // Me-refresh halaman
+    this.setTimeout(() => {
+        window.location.reload();
+    }, 2000);
 });

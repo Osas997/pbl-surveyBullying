@@ -2,11 +2,11 @@
 @section('title', 'Register')
 @section('content')
 <div>
-   <div class="bg-[#0090D4] w-screen h-screen overflow-x-hidden ">
+   <div class="bg-white md:bg-[#0090D4] w-screen h-screen overflow-x-hidden ">
       <div class=" w-full sm:cointainer">
          <div class="flex justify-center items-center">
             <div
-               class="sm:bg-white bg-gray-100 w-screen h-screen px-16 flex flex-col items-center justify-center sm:my-6 sm:max-w-[550px] sm:rounded-[40px] sm:h-full">
+               class="sm:bg-white bg-gray-100 w-screen min-h-screen px-16 flex flex-col items-center justify-center sm:my-6 sm:max-w-[550px] sm:rounded-[40px] sm:h-full">
                <div class="flex justify-center items-center mt-12 mb-8 ">
                   <img src="{{ asset('assets/img/kemdigbud.png') }}" alt="" srcset="" class="w-16 h-16">
                </div>
