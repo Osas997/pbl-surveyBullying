@@ -6,6 +6,7 @@ use App\Models\Jawaban;
 use App\Models\Murid;
 use App\Models\Pertanyaan;
 use App\Models\SurveyRespon;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
@@ -41,7 +42,9 @@ class SurveyController extends Controller
                 "id_murid" =>  $murid->id,
                 "id_sekolah" => auth("sekolah")->user()->id,
                 "skor_total_korban" => 0,
-                "skor_total_pelaku" => 0
+                "skor_total_pelaku" => 0,
+                "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
             ]);
 
             $skorTotalKorban = 0;

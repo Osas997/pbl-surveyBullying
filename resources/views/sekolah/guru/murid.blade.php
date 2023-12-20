@@ -46,7 +46,7 @@
                             Jenis kelamin
                         </th>
                         <th scope="col" class="px-6 py-3 text-center">
-                            Aksi
+                            Action
                         </th>
                     </tr>
                 </thead>
@@ -69,7 +69,7 @@
                         </td>
                         <td class="px-6 py-4 text-center">
                             <a class="sm:text-sm md:text-md text-teal-400"
-                                href="{{ route('guru.hasilKorban', $murid->id) }}">Lihat
+                                href="{{ route('guru.pilihSurvey', $murid->id) }}">Pilih
                                 Survey Respon</a>
                         </td>
                     </tr>

@@ -56,6 +56,7 @@ Route::middleware('sekolah')->group(function () {
     Route::middleware("guru")->prefix("guru")->group(function () {
         Route::get("/dashboard", [DashboardController::class, "guru"])->name("guru.dashboard");
         Route::get("/murid", [MuridController::class, "index"])->name("guru.murid");
+        Route::get("/murid/pilih-survey/{murid}", [MuridController::class, "pilihSurvey"])->name("guru.pilihSurvey");
         Route::get("/laporan", [LaporanSurvey::class, "index"])->name("guru.laporan");
         Route::get("/print-laporan", [LaporanSurvey::class, "print"])->name("guru.printLaporan");
         Route::get("/hasil-korban/{murid}", [HasilSurveyController::class, "guruKorban"])->name("guru.hasilKorban");

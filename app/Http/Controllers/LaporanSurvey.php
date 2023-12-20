@@ -12,7 +12,7 @@ class LaporanSurvey extends Controller
     {
         $namaSekolah = auth('sekolah')->user()->nama_sekolah;
         $title = "Laporan | " .  $namaSekolah;
-        $dataSiswa = Murid::with('surveyRespon')->where('id_sekolah', auth('sekolah')->user()->id)->search(request("search"))->abjad()->get();
+        $dataSiswa = Murid::with('surveyRespon')->where('id_sekolah', auth('sekolah')->user()->id)->searchFilter(request("search"), request('filter'))->abjad()->get();
         $totalSiswa = Murid::where('id_sekolah', auth('sekolah')->user()->id)->count();
         return view('sekolah.guru.laporan', compact('title', 'dataSiswa', 'namaSekolah', 'totalSiswa'));
     }
@@ -20,7 +20,7 @@ class LaporanSurvey extends Controller
     public function print()
     {
         $namaSekolah = auth('sekolah')->user()->nama_sekolah;
-        $dataSiswa = Murid::with('surveyRespon')->where('id_sekolah', auth('sekolah')->user()->id)->search(request("search"))->abjad()->get();
+        $dataSiswa = Murid::with('surveyRespon')->where('id_sekolah', auth('sekolah')->user()->id)->searchFilter(request("search"), request('filter'))->abjad()->get();
         return view('sekolah.guru.print_laporan', compact('dataSiswa', 'namaSekolah'));
     }
 }
