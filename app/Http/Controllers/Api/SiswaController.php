@@ -25,8 +25,6 @@ class SiswaController extends Controller
         $datas = $validator->validated();
         $datas["id_sekolah"] = auth()->user()->id;
 
-        // Lakukan apa pun yang perlu Anda lakukan dengan $datas, misalnya, simpan ke database
-
         return response()->json($datas, 200);
     }
 }

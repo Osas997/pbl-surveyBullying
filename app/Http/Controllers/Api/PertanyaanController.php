@@ -11,6 +11,11 @@ class PertanyaanController extends Controller
     public function index()
     {
         $pertanyaan = Pertanyaan::all();
+
+        if ($pertanyaan->isEmpty()) {
+            return response()->json(['message' => 'Tidak ada data.'], 404);
+        }
+
         return response()->json(['data' => $pertanyaan]);
     }
 }

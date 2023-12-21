@@ -27,6 +27,11 @@
             <input type="text" autocomplete="off" id="nama_pertanyaan" name="pertanyaan"
                 placeholder="Input Pertanyaan .. "
                 class="bg-slate-50 border-2 border-blue-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+            @error('pertanyaan')
+            <div class="">
+                <p class="text-red-500 text-sm italic">{{ $message }}</p>
+            </div>
+            @enderror
         </div>
         <div class="mb-6 lg:w-5/12">
             <label for="status" class="block mb-2 text-sm font-medium text-gray-900 ">Tipe Pertanyaan</label>
