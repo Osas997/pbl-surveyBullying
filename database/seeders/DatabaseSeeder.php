@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Admin;
 use App\Models\Pertanyaan;
+use App\Models\Sekolah;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -20,6 +21,15 @@ class DatabaseSeeder extends Seeder
             "nama" => "admin",
             "username" => "admin",
             "password" => Hash::make('admin')
+        ]);
+
+        Sekolah::create([
+            "npsn" => "87654321", // Ganti dengan npsn yang belum terdaftar
+            "password" => "123456",
+            "nama_sekolah" => "SMP 1 Banyuwangi",
+            "alamat_sekolah" => "Kebalenan",
+            "status" => "Negeri",
+            "pin_guru" => "232323",
         ]);
 
         Pertanyaan::create([

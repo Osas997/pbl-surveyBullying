@@ -65,12 +65,4 @@ class HasilSurveyController extends Controller
             abort(401, 'Unauthorized action.');
         }
     }
-    // public function printGuruPelaku(Murid $murid)
-    // {
-    //     $dataLaporan = SurveyRespon::with(['jawaban', 'jawaban.pertanyaan'])->where("id_murid", $murid->id)->first();
-    //     return view("sekolah.guru.print_hasil_pelaku_murid", [
-    //         "title" => "Hasil Survey Murid",
-    //         "murid" => $dataLaporan,
-    //     ]);
-    // }
 }

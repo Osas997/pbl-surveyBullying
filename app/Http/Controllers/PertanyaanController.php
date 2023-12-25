@@ -26,8 +26,8 @@ class PertanyaanController extends Controller
     {
         $validate = $request->validate([
             "pertanyaan" => "required",
-            "tipe_pertanyaan" => "required",
-            "tipe_perilaku" => "required",
+            "tipe_pertanyaan" => "required|in:korban,pelaku",
+            "tipe_perilaku" => "required|in:verbal,fisik,relational",
         ]);
 
         Pertanyaan::create($validate);
