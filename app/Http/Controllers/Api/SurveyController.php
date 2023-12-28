@@ -3,30 +3,17 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SurveyRequest;
+use App\Http\Resources\SurveyResponResource;
 use App\Models\Jawaban;
 use App\Models\Murid;
 use App\Models\SurveyRespon;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator;
 
 class SurveyController extends Controller
 {
-    public function store(Request $request)
+    public function store(SurveyRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            "nisn" => "required",
-            "nama_murid" => "required",
-            "kelas" => "required",
-            "jenis_kelamin" => "required",
-            "survey.*.id_pertanyaan" => "required",
-            "survey.*.skor" => "required",
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 400);
-        }
-
         try {
             DB::beginTransaction();
 
@@ -71,10 +58,7 @@ class SurveyController extends Controller
 
             DB::commit();
 
-            return response()->json([
-                'success' => true,
-                'data' => $surveyRespon->load(["murid", "murid.sekolah"]),
-            ], 200);
+            return (new SurveyResponResource($surveyRespon->load('murid')))->response()->setStatusCode(200);
         } catch (\Exception $e) {
             DB::rollback();
             return response()->json([

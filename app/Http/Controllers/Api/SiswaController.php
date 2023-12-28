@@ -3,28 +3,18 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Exceptions\HttpResponseException;
+use App\Http\Requests\MuridRequest;
+use App\Http\Resources\MuridResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class SiswaController extends Controller
 {
-    public function store(Request $request)
+    public function store(MuridRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            "nisn" => "required|min:10|max:10",
-            "nama_murid" => "required",
-            "kelas" => "required",
-            "jenis_kelamin" => "required",
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 400);
-        }
-
-        $datas = $validator->validated();
+        $datas = $request->all();
         $datas["id_sekolah"] = auth()->user()->id;
 
-        return response()->json($datas, 200);
+        return new MuridResource($datas);
     }
 }

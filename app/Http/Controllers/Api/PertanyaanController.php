@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\PertanyaanResource;
 use App\Models\Pertanyaan;
-use Illuminate\Http\Request;
 
 class PertanyaanController extends Controller
 {
@@ -16,6 +16,6 @@ class PertanyaanController extends Controller
             return response()->json(['message' => 'Tidak ada data.'], 404);
         }
 
-        return response()->json(['data' => $pertanyaan]);
+        return PertanyaanResource::collection($pertanyaan);
     }
 }
