@@ -24,7 +24,6 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/pertanyaan', [PertanyaanController::class, 'index']);
 
-    Route::post('/signup', [SiswaController::class, 'store']);
     Route::post("/survey", [SurveyController::class, "store"]);
 });
 
