@@ -16,6 +16,7 @@ class LoginResource extends JsonResource
     {
         return [
             'token' =>  $this['token'],
+            'sekolah' => $this['sekolah']
         ];
     }
 }

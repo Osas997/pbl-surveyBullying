@@ -18,7 +18,7 @@ class AuthController extends Controller
             $sekolah = auth("sekolah")->user();
             $token = $sekolah->createToken("api_token")->plainTextToken;
 
-            return new LoginResource(["token" => $token]);
+            return new LoginResource(["token" => $token, "sekolah" => $sekolah]);
         }
 
         throw new HttpResponseException(response()->json([
