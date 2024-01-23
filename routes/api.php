@@ -20,14 +20,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->group(function () {
 
-    Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
-    Route::get('/user', function (Request $request) {
-        return $request->user();
-    });
+    Route::post('/logout', [AuthController::class, 'logout']);
 
     Route::get('/pertanyaan', [PertanyaanController::class, 'index']);
 
-    Route::post('/signup', [SiswaController::class, 'store']);
     Route::post("/survey", [SurveyController::class, "store"]);
 });
 

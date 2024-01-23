@@ -3,32 +3,22 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
+use App\Http\Resources\LoginResource;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
-    public function authenticate(Request $request)
+    public function authenticate(LoginRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'username' => 'required',
-            'password' => 'required',
-        ]);
-
-        if ($validator->fails()) {
-            throw new HttpResponseException(response()->json([
-                'errors' => $validator->errors()
-            ], 400));
-        }
-
         if (Auth::guard("sekolah")->attempt(["npsn" => $request->username, "password" => $request->password])) {
 
             $sekolah = auth("sekolah")->user();
             $token = $sekolah->createToken("api_token")->plainTextToken;
 
-            return response()->json(["token" => $token], 200);
+            return new LoginResource(["token" => $token, "sekolah" => $sekolah]);
         }
 
         throw new HttpResponseException(response()->json([
